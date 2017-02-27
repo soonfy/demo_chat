@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
+const Anon = require('../app/controllers/anon.js');
+
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', Anon.getLogin);
 
 module.exports = router;
