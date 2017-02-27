@@ -1,58 +1,130 @@
 body {
-  padding: 50px;
+  background-color: #fff;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0px;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
 }
 
 .header {
+  height: 600px;
   margin: 0 auto;
   padding: 0;
-  width: 300px;
+  position: relative;
   text-align: center;
+  top: 150px;
   white-space: normal;
+  width: 400px;
 }
 
 h1 {
-  margin: 0 auto;
-  width: 160px;
-  height: 74px;
   background: url('/images/logo.png') no-repeat;
   background-size: contain;
+  height: 74px;
+  margin: 0 auto;
+  width: 160px;
 }
 
 h2 {
   font-size: 18px;
   font-weight: 400;
   line-height: 1;
+  margin-top: 30px;
   text-align: center;
 }
 
 .navs {
   font-size: 18px;
-  text-align: center;
   line-height: 1;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .navs a {
-  text-decoration: none;
   color: #555;
+  display: inline-block;
+  margin-right: 20px;
   opacity: .7;
+  padding: 10px;
 }
+
+.active {
+  border-bottom: 2px solid #0f88eb;
+}
+
+.sign-wrapper {
+  position: relative;
+  height: 220px;
+}
+
 .signin, .signup {
+  display: none;
+  margin-top: 20px;
+  padding: 0;
   position: absolute;
+  width: 100%;
+}
+
+.signup {
+  display: block;
 }
 
 input {
-  text-rendering: auto;
-  letter-spacing: normal;
-  word-spacing: normal;
-  display: inline-block;
-  text-align: start;
-  width: 100%;
   box-sizing: border-box;
-  padding: 1em .8em;
+  display: inline-block;
+  letter-spacing: normal;
   margin: 0;
+  padding: 1em .8em;
+  text-align: start;
+  text-rendering: auto;
+  width: 80%;
+  word-spacing: normal;
+}
+
+button {
+  background-color: #0f88eb;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  height: 40px;
+  line-height: 15px;
+  margin-top: 20px;
+  text-align: center;
+  width: 80%;
+}
+
+p {
+  color: #999;
+  opacity: .8;
+  padding: 1em .8em;
+  text-align: right;
+  width: 80%;
+}
+
+p a {
+  color: #698ebf;
+  cursor: pointer;
+}
+
+.anon {
+  background-color: #fff;
+  border: 1px solid #96c2e9;
+  border-radius: 3px;
+  color: #5fa6e5;
+  padding: 0;
+}
+
+.anon a {
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 100%;
 }

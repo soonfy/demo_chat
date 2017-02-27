@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="header">
+    <h1></h1>
+    <h2>
+      <%= subtitle %>
+    </h2>
+    <div class="navs">
+      <a class="active" href="#signin">登录</a>
+      <a href="#signup">注册</a>
+    </div>
+    <div class="sign-wrapper">
+      <div class="signin">
+        <form>
+          <input type="text" name="name" value="" placeholder="name">
+          <input type="text" name="password" value="" placeholder="password">
+          <button type="submit">登录</button>
+          <p><a>无法登录？</a></p>
+        </form>
+      </div>
+      <div class="signup">
+        <form>
+          <input type="text" name="name" value="" placeholder="name">
+          <input type="text" name="password" value="" placeholder="password">
+          <button type="submit">注册</button>
+          <p>点击「注册」按钮，即代表你同意<a href="#xieyi">《好学协议》</a></p>
+        </form>
+      </div>
+    </div>
+    <button class="anon" type="button"><a href="/index">游客</a></button>
+  </div>
+
+  <script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="250" src="/canvas-nest.js/dist/canvas-nest.min.js"></script>
+</body>
+
+</html>

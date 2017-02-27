@@ -65,12 +65,20 @@ const getLogin = (req, res, next) => {
   ipadd_pro(req).then((data) => {
     console.log(data);
   })
-  res.render('index', {
+  res.render('entry', {
     title: 'chat',
     subtitle: '勇士，这个世界需要你。'
   });
 }
 
+const getIndex = (req, res, next) => {
+  res.render('index', {
+    title: 'chat',
+    subtitle: '勇士，这个世界欢迎你。'
+  });
+}
+
 module.exports = {
-  getLogin
+  getLogin,
+  getIndex
 }
