@@ -56,8 +56,10 @@ h2 {
   padding: 10px;
 }
 
-.active {
+.navs a.active {
   border-bottom: 2px solid #0f88eb;
+  color: #0f88eb;
+  font-weight: 600;
 }
 
 .sign-wrapper {
@@ -87,6 +89,15 @@ input {
   text-rendering: auto;
   width: 80%;
   word-spacing: normal;
+}
+
+label {
+  color: #c33;
+  display: none;
+  opacity: .8;
+  padding: 12px 30px;
+  position: absolute;
+  right: 22px;
 }
 
 button {

@@ -1,43 +1,42 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>
-    <%= title %>
-  </title>
+<%- include header %>
   <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="/javascripts/main.js"></script>
   <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
+  
   <div class="banner">
     <div style="float:right;" id="github_iframe"></div>
-  </div>  
+  </div>
   <div class="header">
     <h1></h1>
     <h2>
       <%= subtitle %>
     </h2>
     <div class="navs">
-      <a class="active" href="#signin">登录</a>
-      <a href="#signup">注册</a>
+      <a class="active" href="#signup">注册</a>
+      <a href="#signin">登录</a>
     </div>
     <div class="sign-wrapper">
-      <div class="signin">
-        <form>
-          <input type="text" name="name" value="" placeholder="name">
-          <input type="text" name="password" value="" placeholder="password">
-          <button type="submit">登录</button>
-          <p><a href="#error">无法登录？</a></p>
-        </form>
-      </div>
       <div class="signup">
-        <form>
-          <input type="text" name="name" value="" placeholder="name">
-          <input type="text" name="password" value="" placeholder="password">
+        <form method="post" action="/user/signup">
+          <label>请输入正确字符</label>
+          <input type="text" name="name" value="" placeholder="name" required="true">
+          <label>请输入2-10个字符</label>
+          <input type="text" name="password" value="" placeholder="password" required="true">
+          <label>请输入2-20个字符</label>
           <button type="submit">注册</button>
           <p>点击「注册」按钮，即代表你同意<a href="#xieyi">《好学协议》</a></p>
+        </form>
+      </div>
+      <div class="signin">
+        <form method="post" action="/user/signin">
+          <label>请输入正确字符</label>
+          <label>请输入2-10个字符</label>
+          <input type="text" name="name" value="" placeholder="name" required="true">
+          <label>请输入2-10个字符</label>
+          <input type="text" name="password" value="" placeholder="password" required="true">
+          <label>请输入2-20个字符</label>
+          <button type="submit">登录</button>
+          <p><a href="#error">无法登录？</a></p>
         </form>
       </div>
     </div>
@@ -56,25 +55,6 @@
     <span class="split">·</span>
     <span>后学生证</span>
   </div>
-  <div class="suggest" title="建议反馈"><span></span></div>
   <script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="250" src="/canvas-nest.js/dist/canvas-nest.min.js"></script>
-  <script type="text/javascript">
-    function async_load() {
-        //async load github
-        var i = document.createElement("iframe");
-        i.src = "https://ghbtns.com/github-btn.html?user=soonfy&repo=soonfy_chat&type=star&count=true";
-        i.scrolling = "no";
-        i.frameborder = "0";
-        i.border = "0";
-        i.setAttribute("frameborder", "0", 0);
-        i.width = "100px";
-        i.height = "20px";
-        document.getElementById("github_iframe").appendChild(i);
-    }
-    if (window.addEventListener) {window.addEventListener("load", async_load, false);}
-    else if (window.attachEvent) {window.attachEvent("onload", async_load);}
-    else {window.onload = async_load;}
-  </script>
-</body>
 
-</html>
+  <%- include footer %>
