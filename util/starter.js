@@ -7,6 +7,7 @@ const cpus = require('os').cpus().length;
 
 cluster.setupMaster({
   exec: './bin/www',
+  args: []
 })
 
 if (cluster.isMaster) {

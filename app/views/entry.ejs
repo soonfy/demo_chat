@@ -11,6 +11,9 @@
 </head>
 
 <body>
+  <div class="banner">
+    <div style="float:right;" id="github_iframe"></div>
+  </div>  
   <div class="header">
     <h1></h1>
     <h2>
@@ -26,7 +29,7 @@
           <input type="text" name="name" value="" placeholder="name">
           <input type="text" name="password" value="" placeholder="password">
           <button type="submit">登录</button>
-          <p><a>无法登录？</a></p>
+          <p><a href="#error">无法登录？</a></p>
         </form>
       </div>
       <div class="signup">
@@ -40,8 +43,38 @@
     </div>
     <button class="anon" type="button"><a href="/index">游客</a></button>
   </div>
-
+  <div class="footer">
+    <span>© 2017 后学</span>
+    <span class="split">·</span>
+    <a href="#contact">联系我们</a>
+    <span class="split">·</span>
+    <a href="#join">加入我们</a>
+    <br>
+    <span>京 ICP 证 123456 号</span>
+    <span class="split">·</span>
+    <span>京公网安备 1234567890 号</span>
+    <span class="split">·</span>
+    <span>后学生证</span>
+  </div>
+  <div class="suggest" title="建议反馈"><span></span></div>
   <script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="250" src="/canvas-nest.js/dist/canvas-nest.min.js"></script>
+  <script type="text/javascript">
+    function async_load() {
+        //async load github
+        var i = document.createElement("iframe");
+        i.src = "https://ghbtns.com/github-btn.html?user=soonfy&repo=soonfy_chat&type=star&count=true";
+        i.scrolling = "no";
+        i.frameborder = "0";
+        i.border = "0";
+        i.setAttribute("frameborder", "0", 0);
+        i.width = "100px";
+        i.height = "20px";
+        document.getElementById("github_iframe").appendChild(i);
+    }
+    if (window.addEventListener) {window.addEventListener("load", async_load, false);}
+    else if (window.attachEvent) {window.attachEvent("onload", async_load);}
+    else {window.onload = async_load;}
+  </script>
 </body>
 
 </html>
