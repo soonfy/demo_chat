@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
+mongoose.set('debug', true);
 const dburi = 'mongodb://localhost/owner';
 const connection = mongoose.connection;
 connection.once('open', () => {
@@ -18,6 +19,7 @@ connection.once('close', () => {
 connection.on('error', console.error.bind(console, `[mongo] connect error.\n`))
 mongoose.connect(dburi);
 
+const middle = require('./routes/middle');
 var index = require('./routes/index');
 var user = require('./routes/user');
 
@@ -38,8 +40,27 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
-app.use('/', index);
-app.use('/user', user);
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+app.use(session({
+  secret: 'soonfy',
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24
+  },
+  saveUninitialized: false, // don't create session until something stored
+  resave: true, // don't save session if unmodified
+  store: new MongoStore({
+    mongooseConnection: connection,
+    collection: 'owner_sessions',
+    ttl: 14 * 24 * 60 * 60, // 14days
+    autoRemove: 'native' // 自动移除过期session
+  })
+}))
+
+
+
+app.use('/', middle.authenticate, middle.countVisit, index);
+app.use('/user', middle.authenticate, middle.countVisit, user);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

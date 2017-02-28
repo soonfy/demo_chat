@@ -5,54 +5,52 @@ const minlength = [2, 'The value of path `{PATH}` (`{VALUE}`) is shorter than th
 const maxlength = [10, 'The value of path `{PATH}` (`{VALUE}`) is longer than the maxmum allowed length ({MAXLENGTH}).'];
 const pslength = [20, 'The value of path `{PATH}` (`{VALUE}`) is longer than the maxmum allowed length ({MAXLENGTH}).'];
 
-const userSchema = new Schema({
-  name: {
+const visitSchema = new Schema({
+  ip: {
     type: String,
-    unique: true,
-    minlength,
-    maxlength,
     required: true
   },
-  password: {
+  address: {
     type: String,
-    minlength,
-    maxlength: pslength,
     required: true
   },
-  // 0 - 注册未认证
-  // 1 - 注册并认证
-  // -1 - 注销
-  status: {
-    type: Number,
-    default: 0,
+  url: {
+    type: String,
+    required: true
   },
-  createdAt: {
-    type: Date,
+  title: {
+    type: String,
+    default: ''
   },
-  updatedAt: {
+  desc: {
+    type: String,
+    default: ''
+  },
+  user: {
+    type: String,
+    default: ''
+  },
+  visitedAt: {
     type: Date,
   }
 })
 
-userSchema.pre('save', function (next) {
-  if (!this.createdAt) {
-    this.createdAt = new Date();
-  }
-  if (!this.updatedAt) {
-    this.updatedAt = new Date();
+visitSchema.pre('save', function (next) {
+  if (!this.visitedAt) {
+    this.visitedAt = new Date();
   }
   next();
 })
 
-userSchema.post('save', (doc) => {
-  console.log(`user ${doc.name} saved success.`);
+visitSchema.post('save', (doc) => {
+  console.log(`user visit ${doc.title} saved success.`);
 })
 
-userSchema.post('find', (docs) => {
+visitSchema.post('find', (docs) => {
   console.log(`find success, all ${docs.length} data.`);
 })
 
-userSchema.post('findOne', (doc) => {
+visitSchema.post('findOne', (doc) => {
   if (doc) {
     console.log(`findOne data.`);
     console.log(doc);
@@ -61,9 +59,9 @@ userSchema.post('findOne', (doc) => {
   }
 })
 
-userSchema.post('count', (num) => {
+visitSchema.post('count', (num) => {
   console.log(`count success, all ${num} data.`);
 })
 
-const userModel = mongoose.model('user', userSchema, 'owner_users');
-module.exports = userModel;
+const visitModel = mongoose.model('visit', visitSchema, 'owner_visits');
+module.exports = visitModel;

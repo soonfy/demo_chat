@@ -21,17 +21,20 @@ const postSign = (req, res, next) => {
     createdAt: new Date(),
     updatedAt: new Date()
   })
-  UserModel.find({ name: name })
-    .then(() => {
-      _user.save();
-    })
-    .then(() => {
-      res.redirect('/index');
-    })
-    .catch((error) => {
-      console.log(error);
-      res.redirect('back');
-    })
+  UserModel.findOne({
+    name: name
+  }).then((data) => {
+    if (data) {
+      throw new Error(`name ${name} already exists.`)
+    }
+    _user.save();
+    }).then(() => {
+    req.session.user = _user;
+    res.redirect('/index');
+  }).catch((error) => {
+    console.log(error);
+    res.redirect('back');
+  })
 }
 
 module.exports = {

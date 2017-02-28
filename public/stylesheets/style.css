@@ -12,7 +12,7 @@ a {
 
 .banner {
   height: 80px;
-  padding: 10px 0;
+  padding: 30px 0;
 }
 
 .header {
@@ -94,6 +94,7 @@ input {
 label {
   color: #c33;
   display: none;
+  font-size: 12px;
   opacity: .8;
   padding: 12px 30px;
   position: absolute;
