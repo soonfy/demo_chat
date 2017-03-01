@@ -40,6 +40,10 @@ let ipadd_pro = (req) => {
 }
 
 const authenticate = (req, res, next) => {
+  let noLoginUrls = ['/index'];
+  if (noLoginUrls.includes(req.url)) {
+    return next();
+  }
   let loginUrls = ['/', '/signup', '/signin', '/user/signup', '/user/signin'];
   if (!loginUrls.includes(req.url) && !req.session.user) {
     console.log('未登录，跳转到登录页。');
@@ -49,7 +53,7 @@ const authenticate = (req, res, next) => {
     return res.redirect('/index');
   }
   // if (loginUrls.includes(req.url) && req.method === 'post' && req.session.user) {
-  //   console.log('已登录，回退。');
+  //   console.log('已登录，禁止重复登录。');
   //   return res.redirect('back');
   // }
   next();

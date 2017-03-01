@@ -1,7 +1,4 @@
 <%- include header %>
-  <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="/javascripts/main.js"></script>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
   
   <div class="header">
     <h1></h1>
@@ -16,9 +13,9 @@
       <div class="signup">
         <form method="post" action="/user/signup">
           <label>请输入正确字符</label>
-          <input type="text" name="name" value="" placeholder="name" required="true">
+          <input type="text" name="name" value="" placeholder="昵称" required="true">
           <label>请输入2-10个字符</label>
-          <input type="text" name="password" value="" placeholder="password" required="true">
+          <input type="text" name="password" value="" placeholder="密码" required="true">
           <label>请输入2-20个字符</label>
           <button type="submit">注册</button>
           <p>点击「注册」按钮，即代表你同意<a href="#xieyi">《好学协议》</a></p>
@@ -28,9 +25,9 @@
         <form method="post" action="/user/signin">
           <label>请输入正确字符</label>
           <label>请输入2-10个字符</label>
-          <input type="text" name="name" value="" placeholder="name" required="true">
+          <input type="text" name="name" value="" placeholder="昵称" required="true">
           <label>请输入2-10个字符</label>
-          <input type="text" name="password" value="" placeholder="password" required="true">
+          <input type="text" name="password" value="" placeholder="密码" required="true">
           <label>请输入2-20个字符</label>
           <button type="submit">登录</button>
           <p><a href="#error">无法登录？</a></p>
@@ -55,5 +52,8 @@
     <span>你是第 <%= count %> 位访客</span>
   </div>
   <script type="text/javascript" color="0,0,0" opacity='0.5' zIndex="-1" count="250" src="/canvas-nest.js/dist/canvas-nest.min.js"></script>
+  <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/javascripts/entry.js"></script>
+  <link rel='stylesheet' href='/stylesheets/entry.css' />
 
   <%- include footer %>
