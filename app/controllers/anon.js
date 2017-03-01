@@ -17,7 +17,15 @@ const getIndex = (req, res, next) => {
   });
 }
 
+const getChat = (req, res, next) => {
+  res.render('chat', {
+    title: 'chat',
+    subtitle: '勇士，这个世界欢迎你。'
+  });
+}
+
 module.exports = {
   getLogin,
-  getIndex
+  getIndex,
+  getChat
 }

@@ -59,7 +59,8 @@ app.use(session({
 
 
 
-app.use('/', middle.authenticate, middle.countVisit, index);
+app.use('/', middle.countVisit, index);
+// app.use('/', middle.authenticate, middle.countVisit, index);
 app.use('/user', middle.authenticate, middle.countVisit, user);
 
 // catch 404 and forward to error handler

@@ -1,0 +1,58 @@
+.chat {
+  border: solid 1px #666;
+  border-radius: 4px;
+  height: 620px;
+  margin: 0 auto;
+  position: relative;
+  top: 150px;
+  width: 960px;
+}
+
+.list {
+  border: solid 1px #666;
+  border-radius: 4px;
+  float: left;
+  height: 620px;
+  width: 250px;
+}
+
+.room {
+  border: solid 1px #666;
+  border-radius: 4px;
+  float: right;
+  height: 620px;
+  left: 250px;
+  width: 700px;
+}
+
+.hist {
+  border: solid 1px #666;
+  border-radius: 4px;
+  height: 500px;
+  width: 100%;
+}
+
+.cont {
+  border: solid 1px #666;
+  border-radius: 4px;
+  height: 110px;
+  line-height: 110px;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+
+textarea {
+  float: left;
+  font-size: 12px;
+  height: 100%;
+  line-height: 100%;
+  width: 630px;
+}
+
+button {
+  float: left;
+  height: 100%;
+  line-height: 100%;
+  width: 65px;
+}

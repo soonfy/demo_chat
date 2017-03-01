@@ -1,5 +1,5 @@
 $(() => {
-  console.log('document over.');
+  console.log('entry page document over.');
 
   // 验证
   let verification = false;
