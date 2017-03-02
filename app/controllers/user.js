@@ -1,3 +1,6 @@
+/**
+ *  user events
+ */
 const UserModel = require('../models/user.js');
 
 const getLogin = (req, res, next) => {

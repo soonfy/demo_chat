@@ -8,6 +8,8 @@ var app = require('../app');
 var debug = require('debug')('soonfy-chat:server');
 var http = require('http');
 
+const chat = require('../app/controllers/chat.js');
+
 /**
  * Get port from environment and store in Express.
  */
@@ -22,6 +24,8 @@ app.set('host', host);
  */
 
 var server = http.createServer(app);
+
+chat(server);
 
 /**
  * Listen on provided port, on all network interfaces.

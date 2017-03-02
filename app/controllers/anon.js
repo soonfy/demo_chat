@@ -1,3 +1,6 @@
+/**
+ *  anon events
+ */
 const visitModel = require('../models/visit.js');
 
 const getLogin = (req, res, next) => {
