@@ -1,7 +1,12 @@
 .chat {
-  border: solid 1px #666;
-  border-radius: 4px;
+  align-content: stretch;
+  align-items: stretch;
+  border: solid 1px #337fed;
+  border-radius: 6px;
+  flex-direction: row;
+  flex-wrap: nowrap;
   height: 620px;
+  justify-content: center;
   margin: 0 auto;
   position: relative;
   top: 150px;
@@ -9,47 +14,64 @@
 }
 
 #list {
-  border: solid 1px #666;
-  border-radius: 4px;
+  box-shadow: 2px 2px 2px 2px #97c4fe;
+  border-radius: 6px;
+  border: solid 1px #337fed;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .15);
   float: left;
-  height: 620px;
+  height: 100%;
   overflow-y: auto;
-  width: 250px;
+  width: 21%;
 }
 
 .room {
-  border: solid 1px #666;
-  border-radius: 4px;
+  align-content: stretch;
+  align-items: center;
+  border: solid 1px #337fed;
+  border-radius: 6px;
+  flex-direction: column;
+  flex-wrap: nowrap;
   float: right;
-  height: 620px;
-  left: 250px;
-  width: 700px;
+  height: 100%;
+  justify-content: space-between;
+  width: 78%;
 }
 
-#hist {
-  border: solid 1px #666;
-  border-radius: 4px;
-  height: 500px;
+#content {
+  border: solid 1px #337fed;
+  border-radius: 6px;
+  height: 66%;
   overflow-y: auto;
+  padding: 38px 0;
   width: 100%;
 }
 
-.cont {
-  border: solid 1px #666;
-  border-radius: 4px;
-  height: 110px;
-  line-height: 110px;
+.message {
+  align-content: stretch;
+  align-items: stretch;
+  border: solid 1px #337fed;
+  border-radius: 6px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 21%;
+  justify-content: center;
   text-align: center;
   vertical-align: top;
   width: 100%;
 }
 
-textarea {
+#message {
+  box-shadow: 1px 1px 1px 1px #97c4fe;
+  border-radius: 6px;
+  border: 1px solid #337fed;
   float: left;
   font-size: 12px;
-  height: 100%;
-  line-height: 100%;
-  width: 630px;
+  height: 81%;
+  line-height: 160%;
+  overflow-y: auto;
+  padding: 1em;
+  text-align: left;
+  width: 87%;
 }
 
 button {
@@ -57,15 +79,67 @@ button {
   height: 100%;
   line-height: 100%;
   cursor: pointer;
-  width: 65px;
+  width: 9%;
+}
+
+#send {
+  box-shadow: 1px 1px 1px 1px #97c4fe;
+  background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+  background-color: #3d94f6;
+  border-radius: 6px;
+  border: 1px solid #337fed;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 20px 8px;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px #1570cd;
+}
+
+#send:hover {
+  background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+  background-color: #1e62d0;
+}
+
+#send:active {
+  position: relative;
+  top: 1px;
 }
 
 p {
-  border: solid 1px #666;
-  border-radius: 4px;
   display: inline-block;
-  height: 20px;
-  margin: 6px 0 0 6px;
-  max-width: 80%;
-  padding: 2px 4px;
+  width: 100%;
+}
+
+.name {
+  border: 1px solid #97c4fe;
+  background-color: #3d94f6;
+  border-radius: 25%;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 10px;
+  padding: 4px;
+}
+
+.msg {
+  border: 1px solid #97c4fe;
+  border-radius: 6px;
+  display: inline-block;
+  padding: 4px;
+}
+
+.time {
+  display: inline-block;
+  font-size: 10px;
+  color: #666;
+  padding: 8px 6px;
+}
+
+.owner {
+  float: right;
+}
+
+.other {
+  float: left;
 }

@@ -60,8 +60,7 @@ app.use(session({
 
 
 app.use('/', middle.countVisit, index);
-// app.use('/', middle.authenticate, middle.countVisit, index);
-app.use('/user', middle.authenticate, middle.countVisit, user);
+app.use('/user', middle.countVisit, middle.authenticate, user);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

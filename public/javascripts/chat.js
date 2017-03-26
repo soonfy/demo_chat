@@ -1,50 +1,33 @@
 $(() => {
   console.log('chat page document over.');
-  let user = '<%= user %>';
-  console.log(user);
-
-  let list = $('#list');
-  let hist = $('#hist');
-  let cont = $('#cont');
-
-  //建立websocket连接
-  socket = io.connect('http://localhost:3000');
-  //收到server的连接确认
-  socket.on('open', function () {
-    console.log('[client] connect suc.');
-  });
-
-  //监听system事件，判断welcome或者disconnect，打印系统消息信息
-  socket.on('system', function (json) {
-    console.log(json);
-    let p = '';
-    if (json.type === 'welcome') {
-      // if (myName == json.text) status.text(myName + ': ').css('color', json.color);
-      p = '<p style="background:' + json.color + '">system  @ ' + json.time + ' : Welcome ' + json.text + '</p>';
-    } else if (json.type == 'disconnect') {
-      p = '<p style="background:' + json.color + '">system  @ ' + json.time + ' : Bye ' + json.text + '</p>';
+  let socket = io('http://localhost:3000');
+  let name = 'owner';
+  let last = new Date();
+  $('#message').keypress((e) => {
+    if (e.which && e.which === 13) {
+      socket.emit('chat message', $('#message').text());
+      $('#message').text('');
     }
-    hist.prepend(p);
   });
-
-  //监听message事件，打印消息信息
-  socket.on('message', function (json) {
-    console.log(json);
-    var p = '<p><span style="color:' + json.color + ';">' + json.author + '</span> @ ' + json.time + ' : ' + json.text + '</p>';
-    hist.prepend(p);
+  $('#send').click(() => {
+    socket.emit('chat message', $('#message').text());
+    $('#message').text('');
   });
-
-  //通过“回车”提交聊天信息
-  cont.keydown((e) => {
-    if (e.keyCode === 13) {
-      var msg = cont.val();
-      if (!msg) {
-        return;
-      } else {
-        socket.send(msg);
-        cont.val('');
+  socket.on('chat message', function (data) {
+    let msg, date = new Date();
+    if (name === data.name) {
+      msg = $('<p>').append($('<span class="owner name">').text(data.name)).append($('<span class="msg owner">').text(data.text));
+      if (date - last > 1000 * 10) {
+        msg.append($('<span class="time owner">').text(date));
+        last = date;
+      }
+    } else {
+      msg = $('<p>').append($('<span class="other name">').text(data.name)).append($('<span class="msg other">').text(data.text));
+      if (date - last > 1000 * 10) {
+        msg.append($('<span class="time other">').text(date));
+        last = date;
       }
     }
-  })
-
+    $('#content').append(msg);
+  });
 })
