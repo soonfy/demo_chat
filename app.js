@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.set('debug', true);
-const dburi = 'mongodb://localhost/owner';
+const dburi = 'mongodb://localhost/personal';
 const connection = mongoose.connection;
 connection.once('open', () => {
   console.log(`[mongo] <${connection.db.databaseName}> connect success.`);
@@ -36,7 +36,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
-app.use(cookieParser());
+app.use(cookieParser('soonfy'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
@@ -57,10 +57,8 @@ app.use(session({
   })
 }))
 
-
-
-app.use('/', middle.countVisit, index);
-app.use('/user', middle.countVisit, middle.authenticate, user);
+app.use('/', index);
+app.use('/user', user);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

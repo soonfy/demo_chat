@@ -1,12 +1,11 @@
 .chat {
-  align-content: stretch;
-  align-items: stretch;
-  border: solid 1px #337fed;
+  background-color: #fcfcfc;
+  border: solid 2px #666;
   border-radius: 6px;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  -moz-box-shadow: 4px 4px 2px #999;
+  -webkit-box-shadow: 4px 4px 2px #999;
+  box-shadow: 4px 4px 2px #999;
   height: 620px;
-  justify-content: center;
   margin: 0 auto;
   position: relative;
   top: 150px;
@@ -14,132 +13,161 @@
 }
 
 #list {
-  box-shadow: 2px 2px 2px 2px #97c4fe;
+  background-color: #fcfcfc;
+  border-right: solid 2px #666;
   border-radius: 6px;
-  border: solid 1px #337fed;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .15);
   float: left;
-  height: 100%;
+  height: 614px;
   overflow-y: auto;
-  width: 21%;
+  padding: 2px;
+  width: 250px;
 }
+
+#list div {
+  background-color: #ddd;
+  border-radius: 6px;
+  float: left;
+  height: 80px;
+  margin-top: 2px;
+  overflow-y: auto;
+  padding: 2px;
+  width: 244px;
+}
+
 
 .room {
   align-content: stretch;
   align-items: center;
-  border: solid 1px #337fed;
+  background-color: #fcfcfc;
   border-radius: 6px;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  float: right;
-  height: 100%;
-  justify-content: space-between;
-  width: 78%;
+  float: left;
+  height: 616px;
+  padding: 2px;
+  width: 696px;
 }
 
 #content {
-  border: solid 1px #337fed;
+  background-color: #fcfcfc;
+  border-bottom: solid 2px #666;
   border-radius: 6px;
-  height: 66%;
+  height: 520px;
+  margin: 2px 0;
   overflow-y: auto;
-  padding: 38px 0;
+  padding: 2px;
+  width: 696px;
+}
+
+.notice {
+  border-radius: 6px;
+  border: solid 2px #bbb;
+  color: #222;
+  display: block;
+  font-weight: bold;
+  margin: 0 auto 10px;
+  padding: 6px;
+  text-align: center;
+  width: 80%;
+}
+
+.notice span {
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
   width: 100%;
 }
 
-.message {
-  align-content: stretch;
-  align-items: stretch;
-  border: solid 1px #337fed;
-  border-radius: 6px;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  height: 21%;
-  justify-content: center;
-  text-align: center;
-  vertical-align: top;
-  width: 100%;
+.notice span:first-child {
+  font-size: 20px;
+  letter-spacing: 20px;
+  text-shadow: 1px 1px 1px #222;
 }
 
 #message {
-  box-shadow: 1px 1px 1px 1px #97c4fe;
+  background-color: #fcfcfc;
   border-radius: 6px;
-  border: 1px solid #337fed;
-  float: left;
   font-size: 12px;
-  height: 81%;
-  line-height: 160%;
-  overflow-y: auto;
-  padding: 1em;
-  text-align: left;
-  width: 87%;
-}
-
-button {
-  float: left;
-  height: 100%;
+  height: 74px;
   line-height: 100%;
-  cursor: pointer;
-  width: 9%;
+  overflow-y: auto;
+  padding: 6px;
+  position: absolute;
+  width: 600px;
 }
 
 #send {
-  box-shadow: 1px 1px 1px 1px #97c4fe;
-  background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
-  background-color: #3d94f6;
+  background: rgb(125,126,125);
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(150,150,150,1) 0%, rgba(80,80,80,1) 100%);
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(150,150,150,1) 0%,rgba(80,80,80,1) 100%);
+  background: radial-gradient(ellipse at center,  rgba(150,150,150,1) 0%,rgba(80,80,80,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 );
   border-radius: 6px;
-  border: 1px solid #337fed;
+  bottom: 0;
   color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
   font-size: 14px;
   font-weight: bold;
-  padding: 20px 8px;
-  text-decoration: none;
-  text-shadow: 2px 2px 2px #1570cd;
+  height: 90px;
+  letter-spacing: 6px;
+  line-height: 84px;
+  margin-right: 2px;
+  position: absolute;
+  right: -4px;
+  text-align: center;
+  text-shadow: 2px 2px 2px #333;
+  width: 90px;
+  z-index: 1;
 }
 
 #send:hover {
-  background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
-  background-color: #1e62d0;
-}
-
-#send:active {
-  position: relative;
-  top: 1px;
-}
-
-p {
-  display: inline-block;
-  width: 100%;
-}
-
-.name {
-  border: 1px solid #97c4fe;
-  background-color: #3d94f6;
-  border-radius: 25%;
-  color: #ffffff;
-  display: inline-block;
-  font-size: 14px;
-  margin: 0 10px;
-  padding: 4px;
+  background: rgb(149,149,149);
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(149,149,149,1) 0%, rgba(13,13,13,1) 46%, rgba(1,1,1,1) 50%, rgba(10,10,10,1) 53%, rgba(78,78,78,1) 76%, rgba(56,56,56,1) 87%, rgba(27,27,27,1) 100%);
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%);
+  background: radial-gradient(ellipse at center,  rgba(149,149,149,1) 0%,rgba(13,13,13,1) 46%,rgba(1,1,1,1) 50%,rgba(10,10,10,1) 53%,rgba(78,78,78,1) 76%,rgba(56,56,56,1) 87%,rgba(27,27,27,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#959595', endColorstr='#1b1b1b',GradientType=1 );
 }
 
 .msg {
-  border: 1px solid #97c4fe;
-  border-radius: 6px;
-  display: inline-block;
   padding: 4px;
 }
 
-.time {
+.msg p {
+  font-size: 14px;
   display: inline-block;
-  font-size: 10px;
-  color: #666;
-  padding: 8px 6px;
+  line-height: 20px;
+  max-width: 80%;
+  padding: 4px;
+  text-align: left;
+  vertical-align: middle;
+  width: auto;
 }
 
-.owner {
-  float: right;
+.msg p:first-child{
+  background: rgb(125,126,125);
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(150,150,150,1) 0%, rgba(80,80,80,1) 100%);
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(150,150,150,1) 0%,rgba(80,80,80,1) 100%);
+  background: radial-gradient(ellipse at center,  rgba(150,150,150,1) 0%,rgba(80,80,80,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=1 );
+  border: solid 2px #aaa;
+  border-radius: 6px;
+  color: #ccc;
+  font-weight: bold;
+  margin-right: 14px;
+  max-width: 80px;
+  text-align: center;
 }
 
-.other {
-  float: left;
+.msg p span {
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 8px;
+  margin-bottom: 2px;
+  margin-right: 6px;
+  padding: 2px;
+}
+
+.msg p span:first-child {
+  border: solid 2px #aaa;
+  font-size: 12px;
 }

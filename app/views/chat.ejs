@@ -1,23 +1,90 @@
 <%- include header %>
 
-<%- include nav %>
+  <%- include nav %>
 
-  <div class="chat">
-    <div id="list" class="list">
-      
-    </div>
-    <div class="room">
-      <div id="content">
+    <link rel='stylesheet' href='/stylesheets/chat.css' />
+
+    <div class="chat">
+      <div id="list" class="list">
+        <div>
+
+        </div>
+        <div>
+
+        </div>
       </div>
-      <div class="message">
-        <span id="message" contentEditable="true"></span>
-        <button id="send" type="button">发送</button>
+      <div class="room">
+        <div id="content">
+          <p class="notice">
+            <span>公告</span>
+            <span>聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+          </p>
+
+          <div class="msg">
+            <p>聊天室目前只支持中英文输入</p>
+            <p>
+              <span>msg聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+              <span>time聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+            </p>
+          </div>
+
+          <div class="msg">
+            <p>聊天室目前只支持中英文输入</p>
+            <p>
+              <span>msg聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+              <span>time聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+            </p>
+          </div>
+          <div class="msg">
+            <p>聊天室目前只支持中英文输入</p>
+            <p>
+              <span>msg聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+              <span>time聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+            </p>
+          </div>
+          <div class="msg">
+            <p>聊天室目前只支持中英文输入</p>
+            <p>
+              <span>msg聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+              <span>time聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+            </p>
+          </div>
+          <div class="msg">
+            <p>聊天室目前只支持中英文输入</p>
+            <p>
+              <span>msg聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+              <span>time聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+            </p>
+          </div>
+          <div class="msg">
+            <p>聊天室目前只支持中英文输入</p>
+            <p>
+              <span>msg聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+              <span>time聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+            </p>
+          </div>
+          <div class="msg">
+            <p>聊天室目前只支持中英文输入</p>
+            <p>
+              <span>msg聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+              <span>time聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+            </p>
+          </div>
+          <div class="msg">
+            <p>聊天室目前只支持中英文输入</p>
+            <p>
+              <span>msg聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+              <span>time聊天室目前只支持中英文输入，不支持emoji表情，图片或者文件功能。</span>
+            </p>
+          </div>
+          
+        </div>
+        <span id="message" contenteditable="true"></span>
+        <span id="send">发送</span>
       </div>
     </div>
-  </div>
 
-  <link rel='stylesheet' href='/stylesheets/chat.css' />
-  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-  <script type="text/javascript" src="/javascripts/chat.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/javascripts/chat.js"></script>
 
-<%- include footer %>
+    <%- include footer %>

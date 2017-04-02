@@ -30,5 +30,6 @@ node_modules
 npm-debug.log
 
 # owner
-/.vscode
+.vscode
 .DS_Store
+demo.*

@@ -3,44 +3,48 @@
  */
 const UserModel = require('../models/user.js');
 
-const getLogin = (req, res, next) => {
-  res.send('login page.');
+const postSignup = (req, res, next) => {
+  let user = req.body;
+  console.log(user);
+  UserModel._create(user, (error, doc) => {
+    if (error) {
+      console.error(error);
+      res.redirect('/user/signup.html');
+    } else {
+      req.session.uid = doc._id;
+      req.session.name = doc.name;
+      res.redirect('/home.html');
+    }
+  })
 }
 
-const postSign = (req, res, next) => {
-  let {
-    name,
-    password
-  } = req.body;
-  name = name.trim();
-  password = password.trim();
-  if (name.length === 0 || password.length === 0) {
-    return res.redirect('back');
-  }
-  let _user = new UserModel({
-    name,
-    password,
-    status: 0,
-    createdAt: new Date(),
-    updatedAt: new Date()
-  })
-  UserModel.findOne({
-    name: name
-  }).then((data) => {
-    if (data) {
-      throw new Error(`name ${name} already exists.`)
+const postLogin = (req, res, next) => {
+  let user = req.body;
+  console.log(user);
+  UserModel._read(user, (error, doc) => {
+    if (error) {
+      console.error(error);
+      res.redirect('/user/login.html');
+    } else {
+      req.session.uid = doc._id;
+      req.session.name = doc.name;
+      res.redirect('/home.html');
     }
-    _user.save();
-    }).then(() => {
-    req.session.user = _user;
-    res.redirect('/index');
-  }).catch((error) => {
-    console.log(error);
-    res.redirect('back');
+  })
+}
+
+const logout = (req, res, next) => {
+  req.session.destroy((error) => {
+    if (error) {
+      console.error(error);
+    } else {
+      res.redirect('/index.html');
+    }
   })
 }
 
 module.exports = {
-  getLogin,
-  postSign
+  postSignup,
+  postLogin,
+  logout
 }
