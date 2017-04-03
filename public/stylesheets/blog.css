@@ -1,24 +1,3 @@
-.bread {
-  background-color: #fcfcfc;
-  /*border: solid 2px #666;*/
-  -moz-box-shadow: 4px 4px 2px #999;
-  -webkit-box-shadow: 4px 4px 2px #999;
-  box-shadow: 4px 4px 2px #999;
-  /*display: inline-block;*/
-  /*height: 620px;*/
-  margin: 0 auto;
-  position: relative;
-  top: 80px;
-  width: 960px;
-}
-
-.bread span{
-  padding: 4px;
-}
-
-.bread span:before {
-  content: '>> ';
-}
 
 .container {
   background-color: #fcfcfc;
@@ -34,22 +13,74 @@
   width: 960px;
 }
 
-#left,
-#right {
-  float: left;
+.left,
+.right {
+  /*float: left;*/
   height: 100%;
+  /*min-height: 600px;*/
 }
 
-#left {
-  margin-left: -300px;
+
+.left {
+  margin-left: -306px;
   width: 300px;
 }
 
-#right {
+.right {
   width: 100%;
 }
 
-#left div {
+.left div {
   min-height: 100px;
   border: solid 2px #ccc;
+}
+
+.right p {
+  /*border: solid 2px #ccc;*/
+  padding: 4px;
+}
+
+.right p span{
+  border: solid 2px #ccc;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 6px;
+  padding: 2px 8px;
+  width: 60%;
+}
+
+.right p span:first-child{
+  width: 60px;
+}
+
+.post {
+  background: rgb(181,189,200);
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%);
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+  background: radial-gradient(ellipse at center,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=1 );
+  border-radius: 6px;
+  color: #ddd;
+  cursor: pointer;
+  float: right;
+  font-size: 14px;
+  font-weight: bold;
+  height: 80px;
+  letter-spacing: 4px;
+  line-height: 80px;
+  width: 80px;
+}
+
+.blog {
+  border: solid 2px #ccc;
+  border-radius: 6px;
+  display: inline-block;
+  height: 100%;
+  letter-spacing: 2px;
+  min-height: 600px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  text-align: left;
+  width: 97%;
 }

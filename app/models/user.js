@@ -36,9 +36,11 @@ const userSchema = new Schema({
   },
   createdAt: {
     type: Date,
+    default: Date.now
   },
   updatedAt: {
     type: Date,
+    default: Date.now
   }
 });
 
@@ -53,6 +55,8 @@ userSchema.static('_create', function (doc, cb) {
   doc.salt = salt;
   const hmac = crypto.createHmac('md5', salt);
   doc.password = hmac.update(password).digest('hex');
+  doc.createdAt = doc.createdAt || new Date();
+  doc.updatedAt = doc.updatedAt || new Date();
   this.create(doc, (error, _user) => {
     if (error) {
       console.error(error);

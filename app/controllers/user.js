@@ -4,30 +4,28 @@
 const UserModel = require('../models/user.js');
 
 const postSignup = (req, res, next) => {
-  let user = req.body;
-  console.log(user);
-  UserModel._create(user, (error, doc) => {
+  let doc = req.body;
+  UserModel._create(doc, (error, user) => {
     if (error) {
       console.error(error);
       res.redirect('/user/signup.html');
     } else {
-      req.session.uid = doc._id;
-      req.session.name = doc.name;
+      req.session.uid = user._id;
+      req.session.name = user.name;
       res.redirect('/home.html');
     }
   })
 }
 
 const postLogin = (req, res, next) => {
-  let user = req.body;
-  console.log(user);
-  UserModel._read(user, (error, doc) => {
+  let doc = req.body;
+  UserModel._read(doc, (error, user) => {
     if (error) {
       console.error(error);
       res.redirect('/user/login.html');
     } else {
-      req.session.uid = doc._id;
-      req.session.name = doc.name;
+      req.session.uid = user._id;
+      req.session.name = user.name;
       res.redirect('/home.html');
     }
   })

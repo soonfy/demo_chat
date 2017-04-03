@@ -208,3 +208,23 @@
   text-shadow: 0 1px 1px rgba(0,0,0,.12);
   width: 100%;
 }
+
+.bread {
+  margin: 0 auto;
+  position: relative;
+  top: 80px;
+  width: 960px;
+}
+
+.bread span{
+  border: solid 2px #ccc;
+  -moz-box-shadow: 4px 4px 2px #999;
+  -webkit-box-shadow: 4px 4px 2px #999;
+  box-shadow: 4px 4px 2px #999;
+  margin: 2px;
+  padding: 4px;
+}
+
+.bread span:before {
+  content: '>> ';
+}

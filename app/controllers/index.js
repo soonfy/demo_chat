@@ -2,6 +2,7 @@
  *  anon events
  */
 const visitModel = require('../models/visit.js');
+const BlogModel = require('../models/blog.js');
 
 const getIndex = (req, res, next) => {
   if (!req.session.name) {
@@ -47,10 +48,24 @@ const getBlog = (req, res, next) => {
 }
 
 const postBlog = (req, res, next) => {
-  res.render('post', {
-    title: 'post',
-    name: req.session.name
-  });
+  let userId = req.session.uid;
+  let {title, summary, key, content} = req.body;
+  key = key.split(';');
+  let doc = {
+    title,
+    summary,
+    key,
+    content,
+    userId
+  };
+  BlogModel._create(doc, (error, blog) => {
+    if (error) {
+      console.error(error);
+      res.send(error);
+    } else {
+      res.send(blog);
+    }
+  })
 }
 
 const getTool = (req, res, next) => {

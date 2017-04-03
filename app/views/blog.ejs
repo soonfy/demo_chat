@@ -2,14 +2,10 @@
 
   <%- include nav %>
 
-    <link rel='stylesheet' href='/stylesheets/post.css' />
-
-    <div class="bread">
-      <span><a href="/">首页</a></span><span><a href="/">前端</a></span><span>html</span>
-    </div>
+    <link rel='stylesheet' href='/stylesheets/blog.css' />
 
     <div class="container">
-      <div id="left">
+      <!--<div class="left">
         <div>
           热门
         </div>
@@ -22,17 +18,25 @@
         <div>
           友情
         </div>
+      </div>-->
+      <div class="right">
+        <p>
+          <span>文章标题</span><span contenteditable="true" holdertext="文章标题"></span>
+          <button class="post" type="button">发布</button>
+        </p>
+        <p>
+          <span>文章摘要</span><span contenteditable="true" holdertext="文章摘要"></span>
+        </p>
+        <p>
+          <span>文章关键词</span><span contenteditable="true" holdertext="文章关键词"></span>
+        </p>
+        <!--<p>-->
+          <!--<span class="blog" contenteditable="true" holdertext="文章内容"></span>-->
+        <!--</p>-->
       </div>
-      <div id="right">
-        <span>文章标题</span><span contenteditable="true" holdertext="文章标题"></span>
-        <span>文章摘要</span><span contenteditable="true" holdertext="文章摘要"></span>
-        <span>文章关键词</span><span contenteditable="true" holdertext="文章关键词"></span>
-        <span>文章内容</span><span contenteditable="true" holdertext="文章内容"></span>
-        <button type="button">发布</button>
-      </div>
-      <div style="text-align: center">
-        zhelissss
-      </div>
+        <div class="blog" contenteditable="true" holdertext="文章内容"></div>
     </div>
+
+    <script type="text/javascript" src="/javascripts/blog.js"></script>
 
     <%- include footer %>
