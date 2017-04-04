@@ -1,5 +1,7 @@
 const visitModel = require('../app/models/visit.js');
-let http = require('http');
+const http = require('http');
+const str = 'qwertyuiopasdfghjklzxcvbnm1234567890';
+const len = str.length;
 
 let getIp = (req) => {
   return req.headers['x-forwarded-for'] ||
@@ -39,24 +41,30 @@ let ipadd_pro = (req) => {
   return promise;
 }
 
-const authenticate = (req, res, next) => {
-  let noLoginUrls = ['/index'];
-  if (noLoginUrls.includes(req.url)) {
-    return next();
+const authenticate = (uris = []) => {
+  return (req, res, next) => {
+    if (req.session.uid) {
+      console.log(`${req.session.uname} 访问网页。`);
+      return next();
+    }
+    if (req.path === '/index.html') {
+      return next();
+    }
+    if (uris.includes(req.path)) {
+      let salt = '',
+        ind = 0;
+      while (ind < 4) {
+        ++ind;
+        salt += str.charAt(Math.floor(Math.random() * len));
+      }
+      req.session.uname = salt;
+      console.log(`未登录，随机名字${req.session.uname}。`);
+      next();
+    } else {
+      console.log(`限制登录，跳转到登录页。`);
+      return res.redirect('/index.html');
+    }
   }
-  let loginUrls = ['/', '/signup', '/signin', '/user/signup', '/user/signin'];
-  if (!loginUrls.includes(req.url) && !req.session.user) {
-    console.log('未登录，跳转到登录页。');
-    return res.redirect('/');
-  } else if(loginUrls.includes(req.url) && req.session.user){
-    console.log('已登录，自动跳转到首页。');
-    return res.redirect('/index');
-  }
-  // if (loginUrls.includes(req.url) && req.method === 'post' && req.session.user) {
-  //   console.log('已登录，禁止重复登录。');
-  //   return res.redirect('back');
-  // }
-  next();
 }
 
 const countVisit = (req, res, next) => {
@@ -73,7 +81,7 @@ const countVisit = (req, res, next) => {
     next();
   }).catch((error) => {
     console.log(error);
-    next(error);
+    res.redirect('/index.html');
   })
 }
 

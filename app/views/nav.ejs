@@ -8,13 +8,11 @@
     <div class="nav-wrapper">
       <input type="text" name="key" value="" placeholder="输入关键词搜索...">
       <button type="button"><span></span></button>
-      <!--<label class="active"><a href="">首页</a></label>-->
       <label><a href="/home.html">首页</a></label>
       <label><a href="/blog.html">博文</a></label>
-      <!--<label><a href="">话题</a></label>-->
       <label><a href="/chat.html">聊天室</a></label>
       <label><a href="/tool.html">工具</a></label>
-      <label><a href="/about.html">关于后学</a></label>
+      <label><a href="/about.html">关于博主</a></label>
     </div>
     <div class="login">
       <span><%= name %></span>
@@ -27,9 +25,17 @@
   </div>
 </div>
 
-<div class="bread">
-  <span><a href="/">首页</a></span><span><a href="/">前端</a></span><span>html</span>
-</div>
+  <% if (bread.length > 0){ %>
+    <div class="bread">
+      <% for(var index = 0, len = bread.length; index < len; index++){ %>
+        <% if(bread[index].href){ %>
+          <span><a href="<%= bread[index].href %>"><%= bread[index].name %></a></span>
+        <% } else { %>
+          <span><%= bread[index].name %></span>
+        <% } %>
+      <% } %>
+    </div>
+  <% } %>
 
-<script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="/javascripts/nav.js"></script>
+    <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/nav.js"></script>

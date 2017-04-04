@@ -1,0 +1,84 @@
+
+.container {
+  border: solid 2px #666;
+  border-radius: 6px;
+  -moz-box-shadow: 4px 4px 2px #999;
+  -webkit-box-shadow: 4px 4px 2px #999;
+  box-shadow: 4px 4px 2px #999;
+  font-size: 12px;
+  height: 100%;
+  line-height: 16px;
+  margin: 0 auto;
+  position: relative;
+  top: 120px;
+  width: 960px;
+}
+
+.left {
+  /*border: solid 2px #ccc;*/
+  float: left;
+  letter-spacing: 1px;
+  margin-left: -308px;
+  width: 300px;
+}
+
+.left span {
+  border: solid 2px #ccc;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  height: 100%;
+  margin: 10px auto 6px;
+  padding: 6px;
+  width: 96%;
+}
+
+.left p {
+  border: solid 2px #ccc;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  height: 100%;
+  padding: 6px;
+  width: 96%;
+}
+
+.right div {
+  border-bottom: solid 2px #ccc;
+  color: #888;
+  font-size: 12px;
+  margin: 10px auto 20px;
+  padding: 10px;
+}
+
+.right div:last-child {
+  margin-bottom: 0;
+}
+
+.right div p {
+  height: 20px;
+  line-height: 20px;
+  padding: 10px;
+}
+
+.right div p:first-child {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.right div p a{
+  color: #888;
+  display: inline-block;
+  height: 100%;
+  line-height: 100%;
+  width: 100%;
+}
+
+.right div span {
+  color: #bbb;
+  font-size: 10px;
+  margin-right: 80px;
+  padding: 10px;
+}

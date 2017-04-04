@@ -217,12 +217,14 @@
 }
 
 .bread span{
+  background-color: #666;
   border: solid 2px #ccc;
   -moz-box-shadow: 4px 4px 2px #999;
   -webkit-box-shadow: 4px 4px 2px #999;
   box-shadow: 4px 4px 2px #999;
+  color: #ddd;
   margin: 2px;
-  padding: 4px;
+  padding: 6px 4px;
 }
 
 .bread span:before {

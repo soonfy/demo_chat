@@ -1,3 +1,7 @@
+/**
+ *  chat controllers
+ */
+
 const socket = require('socket.io');
 const moment = require('moment');
 

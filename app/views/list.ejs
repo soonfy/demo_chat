@@ -5,40 +5,50 @@
     <link rel='stylesheet' href='/stylesheets/list.css' />
 
     <div class="container">
-      <div id="left">
+      <div class="left">
         <div>
-          热门
+          <span>热门</span>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
         </div>
         <div>
-          标签
+          <span>标签</span>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
         </div>
         <div>
-          分类
+          <span>分类</span>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
         </div>
         <div>
-          友情
-        </div>
-      </div>
-      <div id="right">
-        <div>
-          文章1
-        </div>
-        <div>
-          文章2
-        </div>
-        <div>
-          文章3
-        </div>
-        <div>
-          文章4
-        </div>
-        <div>
-          文章5
+          <span>热门</span>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
+          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
         </div>
       </div>
-      <div style="text-align: center">
-      zhelissss
-      </div>
+      <% if (lastBlogs.length > 0){ %>
+        <div class="right">
+          <% for(var index = 0, len = lastBlogs.length; index < len; index++){ %>
+            <div>
+              <p>
+                <a href="/blog/<%= lastBlogs[index]._id %>.html"><%= lastBlogs[index].title %></a>
+              </p>
+              <p>
+                <%= lastBlogs[index].summary %>
+              </p>
+              <span><%= lastBlogs[index].updatedAt %></span><span><%= lastBlogs[index].key.join(';') %></span>
+            </div>
+            <% } %>
+        </div>
+        <% } %>
     </div>
 
     <%- include footer %>

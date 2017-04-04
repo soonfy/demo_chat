@@ -57,8 +57,9 @@ app.use(session({
   })
 }))
 
-app.use('/', index);
 app.use('/user', user);
+app.use('/', middle.authenticate(['/home.html']));
+app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,6 +1,7 @@
 /**
- *  user events
+ *  user controllers
  */
+
 const UserModel = require('../models/user.js');
 
 const postSignup = (req, res, next) => {
