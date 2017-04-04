@@ -12,7 +12,7 @@ const postSignup = (req, res, next) => {
       res.redirect('/user/signup.html');
     } else {
       req.session.uid = user._id;
-      req.session.name = user.name;
+      req.session.uname = user.name;
       res.redirect('/home.html');
     }
   })
@@ -26,7 +26,7 @@ const postLogin = (req, res, next) => {
       res.redirect('/user/login.html');
     } else {
       req.session.uid = user._id;
-      req.session.name = user.name;
+      req.session.uname = user.name;
       res.redirect('/home.html');
     }
   })
