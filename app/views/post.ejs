@@ -6,16 +6,16 @@
 
     <div class="container">
         <p>
-          <span>文章标题</span><span holdertext="文章标题"><%= blog.title %></span>
-          <button class="post" type="button">更新</button>
+          <span>文章标题</span><span contenteditable="true" holdertext="文章标题"></span>
+          <button class="post" type="button">发布</button>
         </p>
         <p>
-          <span>文章摘要</span><span holdertext="文章摘要"><%= blog.summary %></span>
+          <span>文章摘要</span><span contenteditable="true" holdertext="文章摘要"></span>
         </p>
         <p>
-          <span>文章关键词</span><span holdertext="文章关键词"><%= blog.key.join(';') %></span>
+          <span>文章关键词</span><span contenteditable="true" holdertext="文章关键词"></span>
         </p>
-        <div class="blog" holdertext="文章内容"><%- blog.content %></div>
+        <div class="blog" contenteditable="true" holdertext="文章内容"></div>
     </div>
 
     <script type="text/javascript" src="/javascripts/post.js"></script>

@@ -16,9 +16,9 @@
         </div>
         <div>
           <span>标签</span>
-          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
-          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
-          <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
+          <% for(var key in keyCount){ %>
+            <p><a href="/blog/key/<%= key %>.html" title="<%= keyCount[key] %> 篇文章"><%= key %></a></p>
+          <% } %>
         </div>
         <div>
           <span>分类</span>
@@ -34,17 +34,17 @@
           <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
         </div>
       </div>
-      <% if (lastBlogs.length > 0){ %>
+      <% if (blogs.length > 0){ %>
         <div class="right">
-          <% for(var index = 0, len = lastBlogs.length; index < len; index++){ %>
+          <% for(var index = 0, len = blogs.length; index < len; index++){ %>
             <div>
               <p>
-                <a href="/blog/<%= lastBlogs[index]._id %>.html"><%= lastBlogs[index].title %></a>
+                <a href="/blog/<%= blogs[index]._id %>.html"><%= blogs[index].title %></a>
               </p>
               <p>
-                <%= lastBlogs[index].summary %>
+                <%= blogs[index].summary %>
               </p>
-              <span><%= lastBlogs[index].updatedAt %></span><span><%= lastBlogs[index].key.join(';') %></span>
+              <span><%= blogs[index].updatedAt %></span><span><%= blogs[index].key.join(';') %></span>
             </div>
             <% } %>
         </div>

@@ -1,4 +1,6 @@
 const visitModel = require('../app/models/visit.js');
+const BlogModel = require('../app/models/blog.js');
+
 const http = require('http');
 const str = 'qwertyuiopasdfghjklzxcvbnm1234567890';
 const len = str.length;
@@ -67,25 +69,97 @@ const authenticate = (uris = []) => {
   }
 }
 
-const countVisit = (req, res, next) => {
-  ipadd_pro(req).then((data) => {
-    return data;
-  }).then((data) => {
-    let _visit = new visitModel({
-      url: req.url,
-      ip: data.ip,
-      address: data.address
+const countVisit = (uris = []) => {
+  return (req, res, next) => {
+    ipadd_pro(req).then((data) => {
+      return data;
+    }).then((data) => {
+      if (!uris.includes(req.path)) {
+        let _visit = new visitModel({
+          uid: req.session.uid || req.session.uname,
+          url: req.path,
+          ip: data.ip,
+          address: data.address
+        })
+        _visit.save();
+      }
+    }).then(() => {
+      next();
+    }).catch((error) => {
+      console.log(error);
+      res.redirect('/index.html');
     })
-    _visit.save();
-  }).then(() => {
+  }
+}
+
+const countBlog = (keys = []) => {
+  return (req, res, next) => {
+    BlogModel.distinct('key', (error, keys) => {
+      if (error) {
+        next(error);
+      } else {
+        req.keys = res.locals.keys = keys;
+        next();
+      }
+    })
+  }
+}
+
+const countKeys = (keys) => {
+  return (req, res, next) => {
+    keys = keys || req.keys || [];
+    let completedTasks = 0,
+      len = keys.length,
+      keyCount = {};
+    const checkIfComplete = (tasks) => {
+      completedTasks++;
+      if (completedTasks === len) {
+        console.log(keyCount);
+        req.keyCount = res.locals.keyCount = keyCount;
+        next();
+      }
+    }
+    for (var index in keys) {
+      ((key) => {
+        BlogModel.count({
+          key: key
+        }, (error, num) => {
+          if (error) {
+            console.error(error);
+          } else {
+            keyCount[key] = num;
+            checkIfComplete(keys);
+          }
+        })
+      })(keys[index])
+    }
+  }
+}
+
+const createBread = () => {
+  return (req, res, next) => {
+    let uri = req.path,
+      bread = [{
+        name: '首页',
+        href: '/home.html'
+      }];
+    switch (uri) {
+      case '/home.html':
+        bread = [];
+        break;
+
+      default:
+        break;
+    }
+    res.locals.bread = bread;
     next();
-  }).catch((error) => {
-    console.log(error);
-    res.redirect('/index.html');
-  })
+  }
 }
 
 module.exports = {
   authenticate,
-  countVisit
+  countVisit,
+  countBlog,
+  countKeys,
+  createBread
 }

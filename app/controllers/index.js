@@ -18,21 +18,20 @@ const getIndex = (req, res, next) => {
 const getHome = (req, res, next) => {
   res.render('home', {
     title: '首页',
-    name: req.session.uname,
-    bread: [{
-      name: '首页',
-      href: null
-    }]
+    name: req.session.uname
   });
 }
 
 const getBlog = (req, res, next) => {
+  res.locals.bread.push({
+    name: '博文列表',
+    href: null
+  });
   BlogModel.find({}, {}, {
     sort: {
       createdAt: -1
     }
   }, (error, blogs) => {
-    let lastBlogs = blogs;
     BlogModel.find({}, {}, {
       sort: {
         createdAt: 1
@@ -42,14 +41,7 @@ const getBlog = (req, res, next) => {
       res.render('list', {
         title: '博文列表',
         name: req.session.uname,
-        bread: [{
-          name: '首页',
-          href: '/home.html'
-        }, {
-          name: '博文列表',
-          href: null
-        }],
-        lastBlogs,
+        blogs,
         hotBlogs
       });
     })
@@ -57,44 +49,35 @@ const getBlog = (req, res, next) => {
 }
 
 const getChat = (req, res, next) => {
+  res.locals.bread.push({
+    name: '聊天室',
+    href: null
+  });
   res.render('chat', {
     title: '聊天室',
-    name: req.session.uname,
-    bread: [{
-      name: '首页',
-      href: '/home.html'
-    }, {
-      name: '聊天室',
-      href: null
-    }]
+    name: req.session.uname
   });
 }
 
 const getTool = (req, res, next) => {
+  res.locals.bread.push({
+    name: '工具列表',
+    href: null
+  });
   res.render('tool', {
     title: '工具列表',
-    name: req.session.uname,
-    bread: [{
-      name: '首页',
-      href: '/home.html'
-    }, {
-      name: '工具列表',
-      href: null
-    }]
+    name: req.session.uname
   });
 }
 
 const getAbout = (req, res, next) => {
+  res.locals.bread.push({
+    name: '关于博主',
+    href: null
+  });
   res.render('about', {
     title: '关于博主',
-    name: req.session.uname,
-    bread: [{
-      name: '首页',
-      href: '/home.html'
-    }, {
-      name: '关于博主',
-      href: null
-    }]
+    name: req.session.uname
   });
 }
 

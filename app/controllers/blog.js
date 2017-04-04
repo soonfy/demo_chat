@@ -5,16 +5,13 @@
 const BlogModel = require('../models/blog.js');
 
 const getPost = (req, res, next) => {
-  res.render('blog', {
+  res.locals.bread.push({
+    name: '发布博文',
+    href: null
+  });
+  res.render('post', {
     title: '发布博文',
-    name: req.session.uname,
-    bread: [{
-      name: '首页',
-      href: '/home.html'
-    }, {
-      name: '发布博文',
-      href: null
-    }]
+    name: req.session.uname
   });
 }
 
@@ -46,24 +43,47 @@ const postBlog = (req, res, next) => {
 }
 
 const getBlog = (req, res, next) => {
+  res.locals.bread.push({
+    name: '博文列表',
+    href: '/blog.html'
+  });
   let {
     id
   } = req.params;
   BlogModel.findById(id, (error, blog) => {
-    res.render('post', {
+    res.locals.bread.push({
+      name: blog.title,
+      href: null
+    });
+    res.render('blog', {
       title: blog.title,
       name: req.session.uname,
-      blog,
-      bread: [{
-        name: '首页',
-        href: '/home.html'
-      }, {
-        name: '博文列表',
-        href: '/blog.html'
-      }, {
-        name: blog.title,
-        href: null
-      }]
+      blog
+    });
+  })
+}
+
+const getKey = (req, res, next) => {
+  let {
+    key
+  } = req.params;
+  res.locals.bread.push({
+    name: '博文列表',
+    href: '/blog.html'
+  });
+  res.locals.bread.push({
+    name: key,
+    href: null
+  });
+  BlogModel.find({
+    key: key
+  }, (error, blogs) => {
+    let hotBlogs = blogs;
+    res.render('list', {
+      title: key,
+      name: req.session.uname,
+      blogs,
+      hotBlogs
     });
   })
 }
@@ -71,5 +91,6 @@ const getBlog = (req, res, next) => {
 module.exports = {
   getPost,
   postBlog,
-  getBlog
+  getBlog,
+  getKey
 }

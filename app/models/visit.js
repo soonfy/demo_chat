@@ -14,15 +14,7 @@ const visitSchema = new Schema({
     type: String,
     required: true
   },
-  title: {
-    type: String,
-    default: ''
-  },
-  desc: {
-    type: String,
-    default: ''
-  },
-  user: {
+  uid: {
     type: String,
     default: ''
   },
@@ -40,23 +32,6 @@ visitSchema.pre('save', function (next) {
 
 visitSchema.post('save', (doc) => {
   console.log(`user visit ${doc.title} saved success.`);
-})
-
-visitSchema.post('find', (docs) => {
-  console.log(`find success, all ${docs.length} data.`);
-})
-
-visitSchema.post('findOne', (doc) => {
-  if (doc) {
-    console.log(`findOne data.`);
-    console.log(doc);
-  } else {
-    console.log(`findOne no data.`);
-  }
-})
-
-visitSchema.post('count', (num) => {
-  console.log(`count success, all ${num} data.`);
 })
 
 const visitModel = mongoose.model('visit', visitSchema, 'owner_visits');

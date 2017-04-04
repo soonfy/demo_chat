@@ -35,37 +35,43 @@
 }
 
 .left p {
+  background-color: #888;
   border: solid 2px #ccc;
   border-radius: 6px;
+  color: #ddd;
   display: inline-block;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 12px;
   height: 100%;
-  padding: 6px;
-  width: 96%;
+  margin: 2px;
+  padding: 2px;
+}
+
+.left p:hover {
+  background-color: #933;
 }
 
 .right div {
   border-bottom: solid 2px #ccc;
   color: #888;
   font-size: 12px;
-  margin: 10px auto 20px;
+  margin: 0 auto;
   padding: 10px;
 }
 
-.right div:last-child {
+/*.right div:last-child {
   margin-bottom: 0;
-}
+}*/
 
 .right div p {
   height: 20px;
   line-height: 20px;
-  padding: 10px;
+  padding: 10px 10px;
 }
 
 .right div p:first-child {
   font-size: 20px;
   font-weight: bold;
+  padding-bottom: 20px;
 }
 
 .right div p a{
