@@ -1,6 +1,7 @@
 $(() => {
   console.log('chat page document over.');
   let socket = io('http://localhost:3000');
+  alert(socket.id);
   let name = 'owner';
   let last = new Date();
   $('#message').keyup((e) => {

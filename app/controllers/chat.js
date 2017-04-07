@@ -7,7 +7,7 @@ const moment = require('moment');
 
 let chat = (server) => {
   let io = socket.listen(server);
-
+  let nsp = io.sockets;
   io.on('connection', (socket) => {
     console.log(`a user connected.`);
     socket.on('disconnect', () => {

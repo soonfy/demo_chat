@@ -12,10 +12,10 @@ let chat = require('../app/controllers/chat');
  * Get port from environment and store in Express.
  */
 
-var host = process.env.HOST || 'localhost';
+// var host = process.env.HOST || 'localhost';
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
-app.set('host', host);
+// app.set('host', host);
 
 /**
  * Create HTTP server.
@@ -28,8 +28,8 @@ chat(server);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port, host, () => {
-  console.log(`server is running on ${host}:${port}`);
+server.listen(port, () => {
+  console.log(`server is running on ${port}`);
 });
 server.on('error', onError);
 server.on('listening', onListening);

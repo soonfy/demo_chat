@@ -114,7 +114,6 @@ const countKeys = (keys) => {
     const checkIfComplete = (tasks) => {
       completedTasks++;
       if (completedTasks === len) {
-        console.log(keyCount);
         req.keyCount = res.locals.keyCount = keyCount;
         next();
       }
