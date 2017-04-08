@@ -47,6 +47,7 @@ const authenticate = (uris = []) => {
   return (req, res, next) => {
     if (req.session.uid) {
       console.log(`${req.session.uname} 访问网页。`);
+      res.cookie('uname', req.session.uname);
       return next();
     }
     if (req.path === '/index.html') {
@@ -61,6 +62,7 @@ const authenticate = (uris = []) => {
       }
       req.session.uname = salt;
       console.log(`未登录，随机名字${req.session.uname}。`);
+      res.cookie('uname', req.session.uname);
       next();
     } else {
       console.log(`限制登录，跳转到登录页。`);

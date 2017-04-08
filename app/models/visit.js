@@ -30,9 +30,5 @@ visitSchema.pre('save', function (next) {
   next();
 })
 
-visitSchema.post('save', (doc) => {
-  console.log(`user visit ${doc.title} saved success.`);
-})
-
 const visitModel = mongoose.model('visit', visitSchema, 'owner_visits');
 module.exports = visitModel;

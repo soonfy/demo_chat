@@ -58,9 +58,9 @@ app.use(session({
 }))
 
 app.use('/user', user);
-app.use('/', middle.authenticate(['/home.html']));
+app.use('/', middle.authenticate(['/home.html', '/chat.html']));
+app.use('/', middle.countVisit());
 app.use('/', middle.createBread());
-// app.use('/blog', middle.countBlog());
 app.use('/', index);
 
 // catch 404 and forward to error handler
