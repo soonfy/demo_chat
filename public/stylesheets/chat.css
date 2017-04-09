@@ -1,3 +1,20 @@
+
+
+.chat-info {
+  background-color: #fcfcfc;
+  border: solid 2px #666;
+  border-radius: 6px;
+  -moz-box-shadow: 4px 4px 2px #999;
+  -webkit-box-shadow: 4px 4px 2px #999;
+  box-shadow: 4px 4px 2px #999;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
+  position: relative;
+  top: 150px;
+  width: 960px;
+}
+
 .chat {
   background-color: #fcfcfc;
   border: solid 2px #666;

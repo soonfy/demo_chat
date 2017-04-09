@@ -1,5 +1,5 @@
 {
-  "name": "soonfy-chat",
+  "name": "soonfy",
   "version": "1.0.0",
   "description": "chat, ejs+express+mongo",
   "private": true,
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/soonfy/soonfy_chat.git"
+    "url": "git+ssh://git@github.com/soonfy/soonfy.git"
   },
   "keywords": [
     "ejs",
@@ -20,9 +20,9 @@
   "author": "soonfy <soonfy@163.com> (https://github.com/soonfy)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/soonfy/soonfy_chat/issues"
+    "url": "https://github.com/soonfy/soonfy/issues"
   },
-  "homepage": "https://github.com/soonfy/soonfy_chat#readme",
+  "homepage": "https://github.com/soonfy/soonfy#readme",
   "dependencies": {
     "body-parser": "~1.16.0",
     "canvas-nest.js": "^1.0.1",
