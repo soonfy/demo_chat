@@ -6,7 +6,7 @@ const start = (url = `http://expressjs.com/en/4x/api.html`) => {
   console.log(`start crawl Express`);
   console.log(`Express url ${url}`);
   let htmlpath = `./util/express.html`,
-    filepath = `./util/express.json`,
+    filepath = `./util/express.apis.json`,
     options = {
       url: `http://expressjs.com/`,
       method: 'GET',
@@ -22,8 +22,10 @@ const start = (url = `http://expressjs.com/en/4x/api.html`) => {
     })
     .on('response', (resp) => {
       console.log(resp.statusCode);
-      options.url = url;
+      console.log(resp.headers);
       options.headers.Cookie = resp.headers['set-cookie'];
+      
+      options.url = url;
       console.log(options);
       request(options, (error, resp, body) => {
         if (error) {
@@ -34,7 +36,7 @@ const start = (url = `http://expressjs.com/en/4x/api.html`) => {
             if (error) {
               console.error(error);
             } else {
-              console.log(`Node.js update success.`);
+              console.log(`Express update html success.`);
             }
           })
           let $ = cheerio.load(body);
@@ -53,12 +55,22 @@ const start = (url = `http://expressjs.com/en/4x/api.html`) => {
             let attrs = $(e).nextUntil('h2', 'h3');
             attrs.map((ii, ee) => {
               let attr = $(ee).text().trim();
-              let children = $(ee).nextUntil('p', 'section');
-              console.log(children.length);
-              children = children.map((iii, eee) => {
+              let els = $(ee).nextAll().toArray();
+              let children = [];
+              for (let child of els) {
+                if ($(child).is('h2') || $(child).is('h3')) {
+                  break;
+                } else if ($(child).is('section')) {
+                  children.push(child);
+                } else {
+                  // console.log($(child).text());
+                }
+              }
+              children = children.map((eee) => {
                 return {
                   api: $(eee).children().first().text().trim(),
-                  description: $(eee).find('p').first().text().trim()
+                  description: $(eee).find('p').first().text().trim(),
+                  uri: url + '#' + $(eee).children().first().attr('id').trim()
                 }
               });
               api[attr] = Array.prototype.slice.call(children);
@@ -69,7 +81,7 @@ const start = (url = `http://expressjs.com/en/4x/api.html`) => {
             if (error) {
               console.error(error);
             } else {
-              console.log(`Express update success.`);
+              console.log(`Express update apis success.`);
             }
           })
         } else {
