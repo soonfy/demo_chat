@@ -39,5 +39,9 @@
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.2",
     "socket.io": "^1.7.3"
+  },
+  "devDependencies": {
+    "cheerio": "^0.22.0",
+    "request": "^2.81.0"
   }
 }

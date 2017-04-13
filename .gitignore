@@ -35,3 +35,4 @@ npm-debug.log
 demo.*
 
 /api/
+/backup/
