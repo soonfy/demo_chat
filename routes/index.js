@@ -19,4 +19,6 @@ router.get('/blog/:id.html', Blog.getBlog);
 
 router.get('/blog/key/:key.html', middle.countBlog(), middle.countKeys(), Blog.getKey);
 
+router.get('/search.html', middle.countBlog(), middle.countKeys(), Index.search);
+
 module.exports = router;

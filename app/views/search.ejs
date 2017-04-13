@@ -34,17 +34,18 @@
           <p><a href="/blog.html">msg聊天室目前只支持中英文输入，不支持emoji表情。</a></p>
         </div>-->
       </div>
-      <% if (blogs.length > 0){ %>
+      <% if (results.length > 0){ %>
         <div class="right">
-          <% for(var index = 0, len = blogs.length; index < len; index++){ %>
+          <% for(var index = 0, len = results.length; index < len; index++){ %>
             <div>
               <p>
-                <a href="/blog/<%= blogs[index]._id %>.html"><%= blogs[index].title %></a>
+                <a href="/blog/<%= results[index]._id %>.html"><%- results[index].title.replace(new RegExp(keyword, 'igm'), str => `<strong class="highlight">${str}</strong>`) %></a>
+                <span><%= results[index].score %></span>
               </p>
               <p>
-                <%= blogs[index].summary %>
+                <%- results[index].summary.replace(new RegExp(keyword, 'igm'), str => `<strong class="highlight">${str}</strong>`) %>
               </p>
-              <span><%= blogs[index].updatedAt %></span><span><%= blogs[index].key.join(';') %></span>
+              <span><%= results[index].updatedAt %></span><span><%- results[index].key.join(';').replace(new RegExp(keyword, 'igm'), str => `<strong class="highlight">${str}</strong>`) %></span>
             </div>
             <% } %>
         </div>

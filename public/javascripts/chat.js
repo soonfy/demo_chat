@@ -29,8 +29,9 @@ $(() => {
     } = message;
     let roomsArr = Object.keys(rooms);
     $('#list').empty().append(`<div title="房间列表(${roomsArr.length}) - ${allusers.length}">房间列表(${roomsArr.length}) - ${allusers.length}</div>`);
+    $('#list').append(`<div name="新建房间" title="双击新建房间">新建房间</div>`);
     roomsArr.map((_room) => {
-      $('#list').append(`<p data-type="room" name="${_room}" title="房间 ${_room}, 双击进入">${_room} - ${rooms[_room].length}</p>`)
+      $('#list').append(`<p data-type="room" name="${_room}" title="房间 ${_room}, 双击进入">${_room} - ${rooms[_room].length}</p>`);
     })
     $('[data-type="room"]').dblclick((e) => {
       let room = $(e.target).attr('name');
@@ -41,7 +42,25 @@ $(() => {
       status = STATUS.ROOM;
       uroom = room;
       chatTo.type = STATUS.ROOM;
+      $('#message').text(``);
       socket.emit('join', data);
+    })
+    $('[name="新建房间"]').dblclick((e) => {
+      $('#list').append(`<p data-type="room" contenteditable="true"></p>`);
+      $('#list p:last').keyup((e) => {
+        if (e.which && e.which === 13) {
+          let text = $(e.target).text().trim();
+          if (!text) {
+            return;
+          }
+          let data = {
+            user,
+            room: text,
+          };
+          socket.emit('create', data);
+          $(e.target).text(text);
+        }
+      });
     })
   }
 
@@ -53,7 +72,7 @@ $(() => {
     $('#list').empty().append(`<div data-type="room" title="${room} - ${users.length}, 双击回到房间模式。">${room} - ${users.length} </div>`);
     $('#list').append(`<div data-type="leave" name="${room}" title="双击离开房间">离开房间</div>`);
     users.map((_user) => {
-      $('#list').append(`<p data-type="user" name="${_user}" title="用户 ${_user}, 双击私信模式。">${_user}</p>`)
+      $('#list').append(`<p data-type="user" name="${_user}" title="用户 ${_user}, 双击私信模式。">${_user}</p>`);
     })
     $('[data-type="leave"]').dblclick((e) => {
       let room = $(e.target).attr('name');
@@ -63,12 +82,14 @@ $(() => {
       };
       status = STATUS.HALL;
       chatTo.type = STATUS.HALL;
+      $('#message').text(``);
       uroom = null;
       socket.emit('leave', data);
     })
     $('[data-type="room"]').dblclick((e) => {
       let _user = $(e.target).attr('name');
       chatTo.type = STATUS.ROOM;
+      $('#message').text(``);
     })
     $('[data-type="user"]').dblclick((e) => {
       let name = $(e.target).attr('name');
@@ -76,10 +97,9 @@ $(() => {
       if (chatTo.type === STATUS.USER) {
         text = text.replace(/\[.+\]:?/, '');
       }
-      $('#message').text(`[say to ${name}]`);
-      // $('#message').text(`[say to ${name}] ${text}`);
       chatTo.user = name;
       chatTo.type = STATUS.USER;
+      $('#message').text(`[say to ${chatTo.user}]`);
     })
   }
 
@@ -197,18 +217,7 @@ $(() => {
 
   $('#message').keyup((e) => {
     if (e.which && e.which === 13) {
-      let text = $('#message').text();
-      if (!text) {
-        return;
-      }
-      let data = {
-        user,
-        text,
-        room: uroom,
-        chatTo
-      };
-      socket.emit('chat', data);
-      $('#message').text('');
+      $('#send').click();
     }
   });
   $('#send').click(() => {
@@ -223,7 +232,11 @@ $(() => {
       chatTo
     };
     socket.emit('chat', data);
-    $('#message').text('');
+    if (chatTo.type === STATUS.USER) {
+      $('#message').text(`[say to ${chatTo.user}]`);
+    } else {
+      $('#message').text('');
+    }
   });
   socket.on('chat', function (message) {
     if (message.chatTo.type !== STATUS.HALL || status === message.chatTo.type) {
@@ -245,6 +258,51 @@ $(() => {
       msg.append(temp);
       $('#content').append(msg);
       scrollToBottom();
+    }
+  });
+
+  socket.on('create', (message) => {
+    if (status === STATUS.HALL) {
+      flushRoomList(message);
+      if (message.status === 'success') {
+        let msg = $('<div class="msg">'),
+          temp = $('<p>'),
+          time = new Date();
+        temp = $('<p>');
+        msg.append($('<p>').text(message.type));
+        if (message.user === user) {
+          temp.append($('<span>').text(`新建房间${message.text}成功。`));
+        } else {
+          temp.append($('<span>').text(`用户${message.user}新建了房间${message.text}。`));
+        }
+
+        if (time - last > timeout) {
+          temp.append('<br>');
+          temp.append($('<span>').text(message.date));
+          last = time;
+        }
+        msg.append(temp);
+        $('#content').append(msg);
+        scrollToBottom();
+      } else {
+        if (message.user === user) {
+          let msg = $('<div class="msg">'),
+            temp = $('<p>'),
+            time = new Date();
+          temp = $('<p>');
+          msg.append($('<p>').text(message.type));
+          temp.append($('<span>').text(`房间${message.text}已存在。`));
+          if (time - last > timeout) {
+            temp.append('<br>');
+            temp.append($('<span>').text(message.date));
+            last = time;
+          }
+          msg.append(temp);
+          $('#content').append(msg);
+          scrollToBottom();
+        }
+
+      }
     }
   });
 })

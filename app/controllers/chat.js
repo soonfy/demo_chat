@@ -107,7 +107,7 @@ let chat = (server) => {
     });
 
     socket.on('disconnect', () => {
-      let user = socket.user,
+      let user = socket.user || '匿名',
         room = socket.room;
       if (allusers && allusers.includes(user)) {
         allusers.splice(allusers.indexOf(user), 1);
@@ -129,7 +129,12 @@ let chat = (server) => {
     });
 
     socket.on('chat', (message) => {
-      let {user, text, room, chatTo} = message;
+      let {
+        user,
+        text,
+        room,
+        chatTo
+      } = message;
       let data = {
         type: '用户消息',
         user,
@@ -152,6 +157,30 @@ let chat = (server) => {
         }
         io.to(socketid).emit('chat', data);
         socket.emit('chat', data);
+      }
+    });
+
+    socket.on('create', (message) => {
+      let {
+        user,
+        room
+      } = message;
+      let data = {
+        type: '系统消息', // 消息类型
+        user: user, // 消息来源
+        text: room, // 消息内容
+        allusers, // 用户信息
+        rooms, // 房间信息
+        date: moment().format('YYYY-MM-DD HH:mm:ss') // 时间戳
+      };
+      if (room in rooms) {
+        data.status = 'error';
+        socket.emit('create', data);
+      } else {
+        rooms[room] = [];
+        data.rooms = rooms;
+        data.status = 'success'
+        io.emit('create', data);
       }
     });
   })

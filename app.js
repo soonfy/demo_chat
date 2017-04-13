@@ -58,7 +58,7 @@ app.use(session({
 }))
 
 app.use('/user', user);
-app.use('/', middle.authenticate(['/home.html', '/chat.html']));
+// app.use('/', middle.authenticate(['/home.html', '/chat.html', '/search.html']));
 app.use('/', middle.countVisit());
 app.use('/', middle.createBread());
 app.use('/', index);
