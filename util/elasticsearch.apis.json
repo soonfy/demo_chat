@@ -1,0 +1,612 @@
+{
+  "title": "elasticsearch API Cheat Sheet",
+  "author": "soonfy <soonfy@163.com>",
+  "description": "Elasticsearch is a distributed, RESTful search and analytics engine capable of solving a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data so you can discover the expected and uncover the unexpected.",
+  "apis": [
+    {
+      "name": "5.0 API",
+      "methods": [
+        {
+          "name": "client.bulk([params, [callback]])",
+          "description": "Perform many index/delete operations in a single API call.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-bulk"
+        },
+        {
+          "name": "client.clearScroll([params, [callback]])",
+          "description": "Clear the scroll request created by specifying the scroll parameter to search.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-clearscroll"
+        },
+        {
+          "name": "client.count([params, [callback]])",
+          "description": "Get the number of documents for the cluster, index, type, or a query.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-count"
+        },
+        {
+          "name": "client.countPercolate([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-countpercolate"
+        },
+        {
+          "name": "client.create([params, [callback]])",
+          "description": "Adds a typed JSON document in a specific index, making it searchable. If a document with the same index, type, and id already exists, an error will occur.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-create"
+        },
+        {
+          "name": "client.delete([params, [callback]])",
+          "description": "Delete a typed JSON document from a specific index based on its id.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-delete"
+        },
+        {
+          "name": "client.deleteByQuery([params, [callback]])",
+          "description": "Delete documents from one or more indices and one or more types based on a query.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-deletebyquery"
+        },
+        {
+          "name": "client.deleteScript([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-deletescript"
+        },
+        {
+          "name": "client.deleteTemplate([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-deletetemplate"
+        },
+        {
+          "name": "client.exists([params, [callback]])",
+          "description": "Returns a boolean indicating whether or not a given document exists.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-exists"
+        },
+        {
+          "name": "client.explain([params, [callback]])",
+          "description": "Provides details about a specific document’s score in relation to a specific query. It will also tell you if the document matches the specified query. Also check out percolaters.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-explain"
+        },
+        {
+          "name": "client.fieldStats([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-fieldstats"
+        },
+        {
+          "name": "client.get([params, [callback]])",
+          "description": "Get a typed JSON document from the index based on its id.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-get"
+        },
+        {
+          "name": "client.getScript([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-getscript"
+        },
+        {
+          "name": "client.getSource([params, [callback]])",
+          "description": "Get the source of a document by its index, type and id.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-getsource"
+        },
+        {
+          "name": "client.getTemplate([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-gettemplate"
+        },
+        {
+          "name": "client.index([params, [callback]])",
+          "description": "Stores a typed JSON document in an index, making it searchable. When the id param is not set, a unique id will be auto-generated. When you specify an id either a new document will be created, or an existing document will be updated. To enforce \"put-if-absent\" behavior set the opType to \"create\" or use the create() method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-index"
+        },
+        {
+          "name": "client.info([params, [callback]])",
+          "description": "Get basic info from the current cluster.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-info"
+        },
+        {
+          "name": "client.mget([params, [callback]])",
+          "description": "Get multiple documents based on an index, type (optional) and ids. The body required by mget can take two forms: an array of document locations, or an array of document ids.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-mget"
+        },
+        {
+          "name": "client.mpercolate([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-mpercolate"
+        },
+        {
+          "name": "client.msearch([params, [callback]])",
+          "description": "Execute several search requests within the same request.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-msearch"
+        },
+        {
+          "name": "client.msearchTemplate([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-msearchtemplate"
+        },
+        {
+          "name": "client.mtermvectors([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-mtermvectors"
+        },
+        {
+          "name": "client.percolate([params, [callback]])",
+          "description": "Match a document against registered percolator queries.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-percolate"
+        },
+        {
+          "name": "client.ping([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-ping"
+        },
+        {
+          "name": "client.putScript([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-putscript"
+        },
+        {
+          "name": "client.putTemplate([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-puttemplate"
+        },
+        {
+          "name": "client.reindex([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-reindex"
+        },
+        {
+          "name": "client.reindexRethrottle([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-reindexrethrottle"
+        },
+        {
+          "name": "client.renderSearchTemplate([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-rendersearchtemplate"
+        },
+        {
+          "name": "client.scroll([params, [callback]])",
+          "description": "Scroll a search request (retrieve the next set of results) after specifying the scroll parameter in a search() call.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-scroll"
+        },
+        {
+          "name": "client.search([params, [callback]])",
+          "description": "Return documents matching a query, aggregations/facets, highlighted snippets, suggestions, and more. Write your queries as either simple query strings in the q parameter, or by specifying a full request definition using the Elasticsearch Query DSL in the body parameter.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-search"
+        },
+        {
+          "name": "client.searchShards([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-searchshards"
+        },
+        {
+          "name": "client.searchTemplate([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-searchtemplate"
+        },
+        {
+          "name": "client.suggest([params, [callback]])",
+          "description": "The suggest feature suggests similar looking terms based on a provided text by using a specific suggester.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-suggest"
+        },
+        {
+          "name": "client.termvectors([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-termvectors"
+        },
+        {
+          "name": "client.update([params, [callback]])",
+          "description": "Update parts of a document. The required body parameter can contain one of two things:",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-update"
+        },
+        {
+          "name": "client.updateByQuery([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-updatebyquery"
+        },
+        {
+          "name": "client.cat.aliases([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-aliases"
+        },
+        {
+          "name": "client.cat.allocation([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-allocation"
+        },
+        {
+          "name": "client.cat.count([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-count"
+        },
+        {
+          "name": "client.cat.fielddata([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-fielddata"
+        },
+        {
+          "name": "client.cat.health([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-health"
+        },
+        {
+          "name": "client.cat.help([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-help"
+        },
+        {
+          "name": "client.cat.indices([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-indices"
+        },
+        {
+          "name": "client.cat.master([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-master"
+        },
+        {
+          "name": "client.cat.nodeattrs([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-nodeattrs"
+        },
+        {
+          "name": "client.cat.nodes([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-nodes"
+        },
+        {
+          "name": "client.cat.pendingTasks([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-pendingtasks"
+        },
+        {
+          "name": "client.cat.plugins([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-plugins"
+        },
+        {
+          "name": "client.cat.recovery([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-recovery"
+        },
+        {
+          "name": "client.cat.repositories([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-repositories"
+        },
+        {
+          "name": "client.cat.segments([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-segments"
+        },
+        {
+          "name": "client.cat.shards([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-shards"
+        },
+        {
+          "name": "client.cat.snapshots([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-snapshots"
+        },
+        {
+          "name": "client.cat.tasks([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-tasks"
+        },
+        {
+          "name": "client.cat.threadPool([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cat-threadpool"
+        },
+        {
+          "name": "client.cluster.allocationExplain([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cluster-allocationexplain"
+        },
+        {
+          "name": "client.cluster.getSettings([params, [callback]])",
+          "description": "Get cluster settings (previously set with putSettings())",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cluster-getsettings"
+        },
+        {
+          "name": "client.cluster.health([params, [callback]])",
+          "description": "Get a very simple status on the health of the cluster.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cluster-health"
+        },
+        {
+          "name": "client.cluster.pendingTasks([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cluster-pendingtasks"
+        },
+        {
+          "name": "client.cluster.putSettings([params, [callback]])",
+          "description": "Update cluster wide specific settings.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cluster-putsettings"
+        },
+        {
+          "name": "client.cluster.reroute([params, [callback]])",
+          "description": "Explicitly execute a cluster reroute allocation command including specific commands.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cluster-reroute"
+        },
+        {
+          "name": "client.cluster.state([params, [callback]])",
+          "description": "Get comprehensive details about the state of the whole cluster (indices settings, allocations, etc).",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cluster-state"
+        },
+        {
+          "name": "client.cluster.stats([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-cluster-stats"
+        },
+        {
+          "name": "client.indices.analyze([params, [callback]])",
+          "description": "Perform the analysis process on a text and return the tokens breakdown of the text.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-analyze"
+        },
+        {
+          "name": "client.indices.clearCache([params, [callback]])",
+          "description": "Clear either all caches or specific cached associated with one ore more indices.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-clearcache"
+        },
+        {
+          "name": "client.indices.close([params, [callback]])",
+          "description": "Close an index to remove its overhead from the cluster. Closed index is blocked for read/write operations.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-close"
+        },
+        {
+          "name": "client.indices.create([params, [callback]])",
+          "description": "Create an index in Elasticsearch.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-create"
+        },
+        {
+          "name": "client.indices.delete([params, [callback]])",
+          "description": "Delete an index in Elasticsearch",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-delete"
+        },
+        {
+          "name": "client.indices.deleteAlias([params, [callback]])",
+          "description": "Delete a specific alias.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-deletealias"
+        },
+        {
+          "name": "client.indices.deleteTemplate([params, [callback]])",
+          "description": "Delete an index template by its name.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-deletetemplate"
+        },
+        {
+          "name": "client.indices.exists([params, [callback]])",
+          "description": "Return a boolean indicating whether given index exists.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-exists"
+        },
+        {
+          "name": "client.indices.existsAlias([params, [callback]])",
+          "description": "Return a boolean indicating whether given alias exists.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-existsalias"
+        },
+        {
+          "name": "client.indices.existsTemplate([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-existstemplate"
+        },
+        {
+          "name": "client.indices.existsType([params, [callback]])",
+          "description": "Check if a type/types exists in an index/indices.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-existstype"
+        },
+        {
+          "name": "client.indices.flush([params, [callback]])",
+          "description": "Explicitly flush one or more indices.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-flush"
+        },
+        {
+          "name": "client.indices.flushSynced([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-flushsynced"
+        },
+        {
+          "name": "client.indices.forcemerge([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-forcemerge"
+        },
+        {
+          "name": "client.indices.get([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-get"
+        },
+        {
+          "name": "client.indices.getAlias([params, [callback]])",
+          "description": "Retrieve a specified alias.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-getalias"
+        },
+        {
+          "name": "client.indices.getFieldMapping([params, [callback]])",
+          "description": "Retrieve mapping definition of a specific field.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-getfieldmapping"
+        },
+        {
+          "name": "client.indices.getMapping([params, [callback]])",
+          "description": "Retrieve mapping definition of index or index/type.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-getmapping"
+        },
+        {
+          "name": "client.indices.getSettings([params, [callback]])",
+          "description": "Retrieve settings for one or more (or all) indices.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-getsettings"
+        },
+        {
+          "name": "client.indices.getTemplate([params, [callback]])",
+          "description": "Retrieve an index template by its name.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-gettemplate"
+        },
+        {
+          "name": "client.indices.getUpgrade([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-getupgrade"
+        },
+        {
+          "name": "client.indices.open([params, [callback]])",
+          "description": "Open a closed index, making it available for search.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-open"
+        },
+        {
+          "name": "client.indices.putAlias([params, [callback]])",
+          "description": "Create an alias for a specific index/indices.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-putalias"
+        },
+        {
+          "name": "client.indices.putMapping([params, [callback]])",
+          "description": "Register specific mapping definition for a specific type.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-putmapping"
+        },
+        {
+          "name": "client.indices.putSettings([params, [callback]])",
+          "description": "Change specific index level settings in real time.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-putsettings"
+        },
+        {
+          "name": "client.indices.putTemplate([params, [callback]])",
+          "description": "Create an index template that will automatically be applied to new indices created.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-puttemplate"
+        },
+        {
+          "name": "client.indices.recovery([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-recovery"
+        },
+        {
+          "name": "client.indices.refresh([params, [callback]])",
+          "description": "Explicitly refresh one or more index, making all operations performed since the last refresh available for search.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-refresh"
+        },
+        {
+          "name": "client.indices.rollover([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-rollover"
+        },
+        {
+          "name": "client.indices.segments([params, [callback]])",
+          "description": "Retrieve low level segments information that a Lucene index (shard level) is built with.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-segments"
+        },
+        {
+          "name": "client.indices.shardStores([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-shardstores"
+        },
+        {
+          "name": "client.indices.shrink([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-shrink"
+        },
+        {
+          "name": "client.indices.stats([params, [callback]])",
+          "description": "Retrieve statistics on different operations happening on an index.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-stats"
+        },
+        {
+          "name": "client.indices.updateAliases([params, [callback]])",
+          "description": "Update specified aliases.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-updatealiases"
+        },
+        {
+          "name": "client.indices.upgrade([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-upgrade"
+        },
+        {
+          "name": "client.indices.validateQuery([params, [callback]])",
+          "description": "Validate a potentially expensive query without executing it.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-indices-validatequery"
+        },
+        {
+          "name": "client.ingest.deletePipeline([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-ingest-deletepipeline"
+        },
+        {
+          "name": "client.ingest.getPipeline([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-ingest-getpipeline"
+        },
+        {
+          "name": "client.ingest.putPipeline([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-ingest-putpipeline"
+        },
+        {
+          "name": "client.ingest.simulate([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-ingest-simulate"
+        },
+        {
+          "name": "client.nodes.hotThreads([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-nodes-hotthreads"
+        },
+        {
+          "name": "client.nodes.info([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-nodes-info"
+        },
+        {
+          "name": "client.nodes.stats([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-nodes-stats"
+        },
+        {
+          "name": "client.snapshot.create([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-snapshot-create"
+        },
+        {
+          "name": "client.snapshot.createRepository([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-snapshot-createrepository"
+        },
+        {
+          "name": "client.snapshot.delete([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-snapshot-delete"
+        },
+        {
+          "name": "client.snapshot.deleteRepository([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-snapshot-deleterepository"
+        },
+        {
+          "name": "client.snapshot.get([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-snapshot-get"
+        },
+        {
+          "name": "client.snapshot.getRepository([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-snapshot-getrepository"
+        },
+        {
+          "name": "client.snapshot.restore([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-snapshot-restore"
+        },
+        {
+          "name": "client.snapshot.status([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-snapshot-status"
+        },
+        {
+          "name": "client.snapshot.verifyRepository([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-snapshot-verifyrepository"
+        },
+        {
+          "name": "client.tasks.cancel([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-tasks-cancel"
+        },
+        {
+          "name": "client.tasks.get([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-tasks-get"
+        },
+        {
+          "name": "client.tasks.list([params, [callback]])",
+          "description": "Check the API Conventions and the elasticsearch docs for more information pertaining to this method.",
+          "uri": "https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#api-tasks-list"
+        }
+      ]
+    }
+  ]
+}
