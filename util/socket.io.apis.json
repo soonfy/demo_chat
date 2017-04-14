@@ -2,5 +2,393 @@
   "title": "socket.io API Cheat Sheet",
   "author": "soonfy <soonfy@163.com>",
   "description": "Socket.IO enables real-time bidirectional event-based communication. It works on every platform, browser or device, focusing equally on reliability and speed.",
-  "apis": []
+  "apis": [
+    {
+      "name": "[client-api] IO",
+      "methods": [
+        {
+          "api": "io.protocol",
+          "uri": "https://socket.io/docs/client-api/#io-protocol"
+        },
+        {
+          "api": "io(url[, options])",
+          "uri": "https://socket.io/docs/client-api/#io-url-options"
+        }
+      ]
+    },
+    {
+      "name": "[client-api] Class: io.Manager",
+      "methods": [
+        {
+          "api": "new Manager(url[, options])",
+          "uri": "https://socket.io/docs/client-api/#new-manager-url-options"
+        },
+        {
+          "api": "manager.reconnection([value])",
+          "uri": "https://socket.io/docs/client-api/#manager-reconnection-value"
+        },
+        {
+          "api": "manager.reconnectionAttempts([value])",
+          "uri": "https://socket.io/docs/client-api/#manager-reconnectionattempts-value"
+        },
+        {
+          "api": "manager.reconnectionDelay([value])",
+          "uri": "https://socket.io/docs/client-api/#manager-reconnectiondelay-value"
+        },
+        {
+          "api": "manager.reconnectionDelayMax([value])",
+          "uri": "https://socket.io/docs/client-api/#manager-reconnectiondelaymax-value"
+        },
+        {
+          "api": "manager.timeout([value])",
+          "uri": "https://socket.io/docs/client-api/#manager-timeout-value"
+        },
+        {
+          "api": "manager.open([callback])",
+          "uri": "https://socket.io/docs/client-api/#manager-open-callback"
+        },
+        {
+          "api": "manager.connect([callback])",
+          "uri": "https://socket.io/docs/client-api/#manager-connect-callback"
+        },
+        {
+          "api": "manager.socket(nsp, options)",
+          "uri": "https://socket.io/docs/client-api/#manager-socket-nsp-options"
+        },
+        {
+          "api": "Event: 'connect_error'",
+          "uri": "https://socket.io/docs/client-api/#event-connect_error"
+        },
+        {
+          "api": "Event: 'connect_timeout'",
+          "uri": "https://socket.io/docs/client-api/#event-connect_timeout"
+        },
+        {
+          "api": "Event: 'reconnect'",
+          "uri": "https://socket.io/docs/client-api/#event-reconnect"
+        },
+        {
+          "api": "Event: 'reconnect_attempt'",
+          "uri": "https://socket.io/docs/client-api/#event-reconnect_attempt"
+        },
+        {
+          "api": "Event: 'reconnecting'",
+          "uri": "https://socket.io/docs/client-api/#event-reconnecting"
+        },
+        {
+          "api": "Event: 'reconnect_error'",
+          "uri": "https://socket.io/docs/client-api/#event-reconnect_error"
+        },
+        {
+          "api": "Event: 'reconnect_failed'",
+          "uri": "https://socket.io/docs/client-api/#event-reconnect_failed"
+        },
+        {
+          "api": "Event: 'ping'",
+          "uri": "https://socket.io/docs/client-api/#event-ping"
+        },
+        {
+          "api": "Event: 'pong'",
+          "uri": "https://socket.io/docs/client-api/#event-pong"
+        }
+      ]
+    },
+    {
+      "name": "[client-api] Class: io.Socket",
+      "methods": [
+        {
+          "api": "socket.id",
+          "uri": "https://socket.io/docs/client-api/#socket-id"
+        },
+        {
+          "api": "socket.open()",
+          "uri": "https://socket.io/docs/client-api/#socket-open"
+        },
+        {
+          "api": "socket.connect()",
+          "uri": "https://socket.io/docs/client-api/#socket-connect"
+        },
+        {
+          "api": "socket.send([...args][, ack])",
+          "uri": "https://socket.io/docs/client-api/#socket-send-args-ack"
+        },
+        {
+          "api": "socket.emit(eventName[, ...args][, ack])",
+          "uri": "https://socket.io/docs/client-api/#socket-emit-eventname-args-ack"
+        },
+        {
+          "api": "socket.on(eventName, callback)",
+          "uri": "https://socket.io/docs/client-api/#socket-on-eventname-callback"
+        },
+        {
+          "api": "socket.compress(value)",
+          "uri": "https://socket.io/docs/client-api/#socket-compress-value"
+        },
+        {
+          "api": "socket.close()",
+          "uri": "https://socket.io/docs/client-api/#socket-close"
+        },
+        {
+          "api": "socket.disconnect()",
+          "uri": "https://socket.io/docs/client-api/#socket-disconnect"
+        },
+        {
+          "api": "Event: 'connect'",
+          "uri": "https://socket.io/docs/client-api/#event-connect"
+        },
+        {
+          "api": "Event: 'connect_error'",
+          "uri": "https://socket.io/docs/client-api/#event-connect_error-1"
+        },
+        {
+          "api": "Event: 'connect_timeout'",
+          "uri": "https://socket.io/docs/client-api/#event-connect_timeout-1"
+        },
+        {
+          "api": "Event: 'error'",
+          "uri": "https://socket.io/docs/client-api/#event-error"
+        },
+        {
+          "api": "Event: 'disconnect'",
+          "uri": "https://socket.io/docs/client-api/#event-disconnect"
+        },
+        {
+          "api": "Event: 'reconnect'",
+          "uri": "https://socket.io/docs/client-api/#event-reconnect-1"
+        },
+        {
+          "api": "Event: 'reconnect_attempt'",
+          "uri": "https://socket.io/docs/client-api/#event-reconnect_attempt-1"
+        },
+        {
+          "api": "Event: 'reconnecting'",
+          "uri": "https://socket.io/docs/client-api/#event-reconnecting-1"
+        },
+        {
+          "api": "Event: 'reconnect_error'",
+          "uri": "https://socket.io/docs/client-api/#event-reconnect_error-1"
+        },
+        {
+          "api": "Event: 'reconnect_failed'",
+          "uri": "https://socket.io/docs/client-api/#event-reconnect_failed-1"
+        }
+      ]
+    },
+    {
+      "name": "[server-api] Class: Server",
+      "methods": [
+        {
+          "api": "new Server(httpServer[, options])",
+          "uri": "https://socket.io/docs/server-api/#new-server-httpserver-options"
+        },
+        {
+          "api": "new Server(port[, options])",
+          "uri": "https://socket.io/docs/server-api/#new-server-port-options"
+        },
+        {
+          "api": "new Server(options)",
+          "uri": "https://socket.io/docs/server-api/#new-server-options"
+        },
+        {
+          "api": "server.sockets",
+          "uri": "https://socket.io/docs/server-api/#server-sockets"
+        },
+        {
+          "api": "server.serveClient([value])",
+          "uri": "https://socket.io/docs/server-api/#server-serveclient-value"
+        },
+        {
+          "api": "server.path([value])",
+          "uri": "https://socket.io/docs/server-api/#server-path-value"
+        },
+        {
+          "api": "server.adapter([value])",
+          "uri": "https://socket.io/docs/server-api/#server-adapter-value"
+        },
+        {
+          "api": "server.origins([value])",
+          "uri": "https://socket.io/docs/server-api/#server-origins-value"
+        },
+        {
+          "api": "server.origins(fn)",
+          "uri": "https://socket.io/docs/server-api/#server-origins-fn"
+        },
+        {
+          "api": "server.attach(httpServer[, options])",
+          "uri": "https://socket.io/docs/server-api/#server-attach-httpserver-options"
+        },
+        {
+          "api": "server.attach(port[, options])",
+          "uri": "https://socket.io/docs/server-api/#server-attach-port-options"
+        },
+        {
+          "api": "server.listen(httpServer[, options])",
+          "uri": "https://socket.io/docs/server-api/#server-listen-httpserver-options"
+        },
+        {
+          "api": "server.listen(port[, options])",
+          "uri": "https://socket.io/docs/server-api/#server-listen-port-options"
+        },
+        {
+          "api": "server.bind(engine)",
+          "uri": "https://socket.io/docs/server-api/#server-bind-engine"
+        },
+        {
+          "api": "server.onconnection(socket)",
+          "uri": "https://socket.io/docs/server-api/#server-onconnection-socket"
+        },
+        {
+          "api": "server.of(nsp)",
+          "uri": "https://socket.io/docs/server-api/#server-of-nsp"
+        },
+        {
+          "api": "server.close([callback])",
+          "uri": "https://socket.io/docs/server-api/#server-close-callback"
+        }
+      ]
+    },
+    {
+      "name": "[server-api] Class: Namespace",
+      "methods": [
+        {
+          "api": "namespace.name",
+          "uri": "https://socket.io/docs/server-api/#namespace-name"
+        },
+        {
+          "api": "namespace.connected",
+          "uri": "https://socket.io/docs/server-api/#namespace-connected"
+        },
+        {
+          "api": "namespace.emit(eventName[, ...args])",
+          "uri": "https://socket.io/docs/server-api/#namespace-emit-eventname-args"
+        },
+        {
+          "api": "namespace.clients(callback)",
+          "uri": "https://socket.io/docs/server-api/#namespace-clients-callback"
+        },
+        {
+          "api": "namespace.use(fn)",
+          "uri": "https://socket.io/docs/server-api/#namespace-use-fn"
+        },
+        {
+          "api": "Event: 'connect'",
+          "uri": "https://socket.io/docs/server-api/#event-connect"
+        },
+        {
+          "api": "Event: 'connection'",
+          "uri": "https://socket.io/docs/server-api/#event-connection"
+        },
+        {
+          "api": "Flag: 'volatile'",
+          "uri": "https://socket.io/docs/server-api/#flag-volatile"
+        },
+        {
+          "api": "Flag: 'local'",
+          "uri": "https://socket.io/docs/server-api/#flag-local"
+        }
+      ]
+    },
+    {
+      "name": "[server-api] Class: Socket",
+      "methods": [
+        {
+          "api": "socket.id",
+          "uri": "https://socket.io/docs/server-api/#socket-id"
+        },
+        {
+          "api": "socket.rooms",
+          "uri": "https://socket.io/docs/server-api/#socket-rooms"
+        },
+        {
+          "api": "socket.client",
+          "uri": "https://socket.io/docs/server-api/#socket-client"
+        },
+        {
+          "api": "socket.conn",
+          "uri": "https://socket.io/docs/server-api/#socket-conn"
+        },
+        {
+          "api": "socket.request",
+          "uri": "https://socket.io/docs/server-api/#socket-request"
+        },
+        {
+          "api": "socket.use(fn)",
+          "uri": "https://socket.io/docs/server-api/#socket-use-fn"
+        },
+        {
+          "api": "socket.send([...args][, ack])",
+          "uri": "https://socket.io/docs/server-api/#socket-send-args-ack"
+        },
+        {
+          "api": "socket.emit(eventName[, ...args][, ack])",
+          "uri": "https://socket.io/docs/server-api/#socket-emit-eventname-args-ack"
+        },
+        {
+          "api": "socket.on(eventName, callback)",
+          "uri": "https://socket.io/docs/server-api/#socket-on-eventname-callback"
+        },
+        {
+          "api": "socket.join(room[, callback])",
+          "uri": "https://socket.io/docs/server-api/#socket-join-room-callback"
+        },
+        {
+          "api": "socket.join(rooms[, callback])",
+          "uri": "https://socket.io/docs/server-api/#socket-join-rooms-callback"
+        },
+        {
+          "api": "socket.leave(room[, callback])",
+          "uri": "https://socket.io/docs/server-api/#socket-leave-room-callback"
+        },
+        {
+          "api": "socket.to(room)",
+          "uri": "https://socket.io/docs/server-api/#socket-to-room"
+        },
+        {
+          "api": "socket.in(room)",
+          "uri": "https://socket.io/docs/server-api/#socket-in-room"
+        },
+        {
+          "api": "socket.compress(value)",
+          "uri": "https://socket.io/docs/server-api/#socket-compress-value"
+        },
+        {
+          "api": "socket.disconnect(close)",
+          "uri": "https://socket.io/docs/server-api/#socket-disconnect-close"
+        },
+        {
+          "api": "Flag: 'broadcast'",
+          "uri": "https://socket.io/docs/server-api/#flag-broadcast"
+        },
+        {
+          "api": "Flag: 'volatile'",
+          "uri": "https://socket.io/docs/server-api/#flag-volatile-1"
+        },
+        {
+          "api": "Event: 'disconnect'",
+          "uri": "https://socket.io/docs/server-api/#event-disconnect"
+        },
+        {
+          "api": "Event: 'error'",
+          "uri": "https://socket.io/docs/server-api/#event-error"
+        },
+        {
+          "api": "Event: 'disconnecting'",
+          "uri": "https://socket.io/docs/server-api/#event-disconnecting"
+        }
+      ]
+    },
+    {
+      "name": "[server-api] Class: Client",
+      "methods": [
+        {
+          "api": "client.conn",
+          "uri": "https://socket.io/docs/server-api/#client-conn"
+        },
+        {
+          "api": "client.request",
+          "uri": "https://socket.io/docs/server-api/#client-request"
+        }
+      ]
+    }
+  ]
 }

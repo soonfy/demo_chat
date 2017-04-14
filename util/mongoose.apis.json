@@ -1,0 +1,2987 @@
+{
+  "title": "mongoose API Cheat Sheet",
+  "author": "soonfy <soonfy@163.com>",
+  "description": "elegant mongodb object modeling for node.js. Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.",
+  "apis": [
+    {
+      "name": "index.js",
+      "methods": [
+        {
+          "name": "Mongoose#_applyPlugins(schema)",
+          "description": "Applies global plugins to schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-_applyPlugins"
+        },
+        {
+          "name": "Mongoose#Aggregate()",
+          "description": "The Mongoose Aggregate constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-Aggregate"
+        },
+        {
+          "name": "Mongoose#CastError(type, value, path, [reason])",
+          "description": "The Mongoose CastError constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-CastError"
+        },
+        {
+          "name": "MongooseThenable#catch(onFulfilled, onRejected)",
+          "description": "Ability to use mongoose object as a pseudo-promise so .connect().then()and .disconnect().then() are viable.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_MongooseThenable-catch"
+        },
+        {
+          "name": "checkReplicaSetInUri(uri)",
+          "description": "Checks if ?replicaSet query parameter is specified in URI",
+          "uri": "http://mongoosejs.com/docs/api.html#index_checkReplicaSetInUri"
+        },
+        {
+          "name": "Mongoose#Collection()",
+          "description": "The Mongoose Collection constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-Collection"
+        },
+        {
+          "name": "Mongoose#connect(uri(s), [options], [callback])",
+          "description": "Opens the default mongoose connection.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-connect"
+        },
+        {
+          "name": "Mongoose#Connection()",
+          "description": "The Mongoose Connection constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-Connection"
+        },
+        {
+          "name": "Mongoose#createConnection([uri], [options], [options.config], [options.config.autoIndex])",
+          "description": "Creates a Connection instance.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-createConnection"
+        },
+        {
+          "name": "Mongoose#disconnect([fn])",
+          "description": "Disconnects all connections.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-disconnect"
+        },
+        {
+          "name": "Mongoose#Document()",
+          "description": "The Mongoose Document constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-Document"
+        },
+        {
+          "name": "Mongoose#DocumentProvider()",
+          "description": "The Mongoose DocumentProvider constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-DocumentProvider"
+        },
+        {
+          "name": "Mongoose#Error()",
+          "description": "The MongooseError constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-Error"
+        },
+        {
+          "name": "Mongoose#get(key)",
+          "description": "Gets mongoose options",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-get"
+        },
+        {
+          "name": "Mongoose#model(name, [schema], [collection], [skipInit])",
+          "description": "Defines a model or retrieves it.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-model"
+        },
+        {
+          "name": "Mongoose#Model()",
+          "description": "The Mongoose Model constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-Model"
+        },
+        {
+          "name": "Mongoose#modelNames()",
+          "description": "Returns an array of model names created on this instance of Mongoose.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-modelNames"
+        },
+        {
+          "name": "Mongoose()",
+          "description": "Mongoose constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose"
+        },
+        {
+          "name": "Mongoose#Mongoose()",
+          "description": "The Mongoose constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-Mongoose"
+        },
+        {
+          "name": "MongooseThenable()",
+          "description": "Wraps the given Mongoose instance into a thenable (pseudo-promise). Thisis so connect() and disconnect() can return a thenable while maintainingbackwards compatibility.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_MongooseThenable"
+        },
+        {
+          "name": "Mongoose#plugin(fn, [opts])",
+          "description": "Declares a global plugin executed on all Schemas.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-plugin"
+        },
+        {
+          "name": "function Object() { [native code] }#Promise()",
+          "description": "The Mongoose Promise constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_function%20Object()%20%7B%20%5Bnative%20code%5D%20%7D-Promise"
+        },
+        {
+          "name": "Mongoose#PromiseProvider()",
+          "description": "Storage layer for mongoose promises",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-PromiseProvider"
+        },
+        {
+          "name": "Mongoose#Query()",
+          "description": "The Mongoose Query constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-Query"
+        },
+        {
+          "name": "Mongoose#Schema()",
+          "description": "The Mongoose Schema constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-Schema"
+        },
+        {
+          "name": "Mongoose#SchemaType()",
+          "description": "The Mongoose SchemaType constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-SchemaType"
+        },
+        {
+          "name": "Mongoose#set(key, value)",
+          "description": "Sets mongoose options",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-set"
+        },
+        {
+          "name": "()",
+          "description": "Expose connection states for user-land",
+          "uri": "http://mongoosejs.com/docs/api.html#index_"
+        },
+        {
+          "name": "MongooseThenable#then(onFulfilled, onRejected)",
+          "description": "Ability to use mongoose object as a pseudo-promise so .connect().then()and .disconnect().then() are viable.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_MongooseThenable-then"
+        },
+        {
+          "name": "Mongoose#VirtualType()",
+          "description": "The Mongoose VirtualType constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-VirtualType"
+        },
+        {
+          "name": "Mongoose#connection",
+          "description": "The default connection of the mongoose module.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-connection"
+        },
+        {
+          "name": "Mongoose#mongo",
+          "description": "The node-mongodb-native driver Mongoose uses.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-mongo"
+        },
+        {
+          "name": "Mongoose#mquery",
+          "description": "The mquery query builder Mongoose uses.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-mquery"
+        },
+        {
+          "name": "Mongoose#SchemaTypes",
+          "description": "The various Mongoose SchemaTypes.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-SchemaTypes"
+        },
+        {
+          "name": "Mongoose#Types",
+          "description": "The various Mongoose Types.",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-Types"
+        },
+        {
+          "name": "Mongoose#version",
+          "description": "The Mongoose version",
+          "uri": "http://mongoosejs.com/docs/api.html#index_Mongoose-version"
+        }
+      ]
+    },
+    {
+      "name": "querystream.js",
+      "methods": [
+        {
+          "name": "QueryStream#__next()",
+          "description": "Pulls the next doc from the cursor.",
+          "uri": "http://mongoosejs.com/docs/api.html#querystream_QueryStream-__next"
+        },
+        {
+          "name": "QueryStream#_init()",
+          "description": "Initializes the query.",
+          "uri": "http://mongoosejs.com/docs/api.html#querystream_QueryStream-_init"
+        },
+        {
+          "name": "QueryStream#_next()",
+          "description": "Trampoline for pulling the next doc from cursor.",
+          "uri": "http://mongoosejs.com/docs/api.html#querystream_QueryStream-_next"
+        },
+        {
+          "name": "QueryStream#_onNextObject(err, doc)",
+          "description": "Transforms raw docs returned from the cursor into a model instance.",
+          "uri": "http://mongoosejs.com/docs/api.html#querystream_QueryStream-_onNextObject"
+        },
+        {
+          "name": "QueryStream#destroy([err])",
+          "description": "Destroys the stream, closing the underlying cursor, which emits the close event. No more events will be emitted after the close event.",
+          "uri": "http://mongoosejs.com/docs/api.html#querystream_QueryStream-destroy"
+        },
+        {
+          "name": "QueryStream#pause()",
+          "description": "Pauses this stream.",
+          "uri": "http://mongoosejs.com/docs/api.html#querystream_QueryStream-pause"
+        },
+        {
+          "name": "QueryStream#pipe()",
+          "description": "Pipes this query stream into another stream. This method is inherited from NodeJS Streams.",
+          "uri": "http://mongoosejs.com/docs/api.html#querystream_QueryStream-pipe"
+        },
+        {
+          "name": "QueryStream(query, [options])",
+          "description": "Provides a Node.js 0.8 style ReadStream interface for Queries.",
+          "uri": "http://mongoosejs.com/docs/api.html#querystream_QueryStream"
+        },
+        {
+          "name": "QueryStream#resume()",
+          "description": "Resumes this stream.",
+          "uri": "http://mongoosejs.com/docs/api.html#querystream_QueryStream-resume"
+        },
+        {
+          "name": "QueryStream#paused",
+          "description": "Flag stating whether or not this stream is paused.",
+          "uri": "http://mongoosejs.com/docs/api.html#querystream_QueryStream-paused"
+        },
+        {
+          "name": "QueryStream#readable",
+          "description": "Flag stating whether or not this stream is readable.",
+          "uri": "http://mongoosejs.com/docs/api.html#querystream_QueryStream-readable"
+        }
+      ]
+    },
+    {
+      "name": "connection.js",
+      "methods": [
+        {
+          "name": "Connection(base)",
+          "description": "Connection constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection"
+        },
+        {
+          "name": "Connection#open(connection_string, [database], [port], [options], [callback])",
+          "description": "Opens the connection to MongoDB.",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-open"
+        },
+        {
+          "name": "Connection#dropDatabase(callback)",
+          "description": "Helper for dropDatabase().",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-dropDatabase"
+        },
+        {
+          "name": "Connection#openSet(uris, [database], [options], [callback])",
+          "description": "Opens the connection to a replica set.",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-openSet"
+        },
+        {
+          "name": "Connection#error(err, callback)",
+          "description": "error",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-error"
+        },
+        {
+          "name": "Connection#_open(callback)",
+          "description": "Handles opening the connection with the appropriate method based on connection type.",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-_open"
+        },
+        {
+          "name": "Connection#onOpen()",
+          "description": "Called when the connection is opened",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-onOpen"
+        },
+        {
+          "name": "Connection#close([callback])",
+          "description": "Closes the connection",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-close"
+        },
+        {
+          "name": "Connection#_close(callback)",
+          "description": "Handles closing the connection",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-_close"
+        },
+        {
+          "name": "Connection#onClose()",
+          "description": "Called when the connection closes",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-onClose"
+        },
+        {
+          "name": "Connection#collection(name, [options])",
+          "description": "Retrieves a collection, creating it if not cached.",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-collection"
+        },
+        {
+          "name": "Connection#model(name, [schema], [collection])",
+          "description": "Defines or retrieves a model.",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-model"
+        },
+        {
+          "name": "Connection#modelNames()",
+          "description": "Returns an array of model names created on this connection.",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-modelNames"
+        },
+        {
+          "name": "Connection#shouldAuthenticate()",
+          "description": "@brief Returns if the connection requires authentication after it is opened. Generally if ausername and password are both provided than authentication is needed, but in some cases apassword is not required.",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-shouldAuthenticate"
+        },
+        {
+          "name": "Connection#authMechanismDoesNotRequirePassword()",
+          "description": "@brief Returns a boolean value that specifies if the current authentication mechanism needs apassword to authenticate according to the auth objects passed into the open/openSet methods.",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-authMechanismDoesNotRequirePassword"
+        },
+        {
+          "name": "Connection#optionsProvideAuthenticationData([options])",
+          "description": "@brief Returns a boolean value that specifies if the provided objects object provides enoughdata to authenticate with. Generally this is true if the username and password are both specifiedbut in some authentication methods, a password is not required for authentication so only a usernameis required.",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-optionsProvideAuthenticationData"
+        },
+        {
+          "name": "Connection#config",
+          "description": "A hash of the global options that are associated with this connection",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-config"
+        },
+        {
+          "name": "Connection#db",
+          "description": "The mongodb.Db instance, set when the connection is opened",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-db"
+        },
+        {
+          "name": "Connection#collections",
+          "description": "A hash of the collections associated with this connection",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-collections"
+        },
+        {
+          "name": "Connection#readyState",
+          "description": "Connection ready state",
+          "uri": "http://mongoosejs.com/docs/api.html#connection_Connection-readyState"
+        }
+      ]
+    },
+    {
+      "name": "utils.js",
+      "methods": [
+        {
+          "name": "exports.each(arr, fn)",
+          "description": "Executes a function on each element of an array (like _.each)",
+          "uri": "http://mongoosejs.com/docs/api.html#utils_exports.each"
+        },
+        {
+          "name": "exports.mergeClone(to, fromObj)",
+          "description": "merges to with a copy of from",
+          "uri": "http://mongoosejs.com/docs/api.html#utils_exports.mergeClone"
+        },
+        {
+          "name": "exports.pluralization",
+          "description": "Pluralization rules.",
+          "uri": "http://mongoosejs.com/docs/api.html#utils_exports.pluralization"
+        },
+        {
+          "name": "exports.uncountables",
+          "description": "Uncountable words.",
+          "uri": "http://mongoosejs.com/docs/api.html#utils_exports.uncountables"
+        }
+      ]
+    },
+    {
+      "name": "browser.js",
+      "methods": [
+        {
+          "name": "function Object() { [native code] }#Promise()",
+          "description": "The Mongoose Promise constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#browser_function%20Object()%20%7B%20%5Bnative%20code%5D%20%7D-Promise"
+        },
+        {
+          "name": "exports.Document()",
+          "description": "The Mongoose browser Document constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#browser_exports.Document"
+        },
+        {
+          "name": "exports.Error()",
+          "description": "The MongooseError constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#browser_exports.Error"
+        },
+        {
+          "name": "exports.PromiseProvider()",
+          "description": "Storage layer for mongoose promises",
+          "uri": "http://mongoosejs.com/docs/api.html#browser_exports.PromiseProvider"
+        },
+        {
+          "name": "exports.Schema()",
+          "description": "The Mongoose Schema constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#browser_exports.Schema"
+        },
+        {
+          "name": "exports.VirtualType()",
+          "description": "The Mongoose VirtualType constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#browser_exports.VirtualType"
+        },
+        {
+          "name": "exports#SchemaTypes",
+          "description": "The various Mongoose SchemaTypes.",
+          "uri": "http://mongoosejs.com/docs/api.html#browser_exports-SchemaTypes"
+        },
+        {
+          "name": "exports#Types",
+          "description": "The various Mongoose Types.",
+          "uri": "http://mongoosejs.com/docs/api.html#browser_exports-Types"
+        },
+        {
+          "name": "exports#utils",
+          "description": "Internal utils",
+          "uri": "http://mongoosejs.com/docs/api.html#browser_exports-utils"
+        }
+      ]
+    },
+    {
+      "name": "drivers/node-mongodb-native/collection.js",
+      "methods": [
+        {
+          "name": "function Object() { [native code] }#$format()",
+          "description": "Formatter for debug print args",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_collection_function%20Object()%20%7B%20%5Bnative%20code%5D%20%7D-%24format"
+        },
+        {
+          "name": "function Object() { [native code] }#$print()",
+          "description": "Debug print helper",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_collection_function%20Object()%20%7B%20%5Bnative%20code%5D%20%7D-%24print"
+        },
+        {
+          "name": "NativeCollection#getIndexes(callback)",
+          "description": "Retreives information about this collections indexes.",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_collection_NativeCollection-getIndexes"
+        },
+        {
+          "name": "NativeCollection()",
+          "description": "A node-mongodb-native collection implementation.",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_collection_NativeCollection"
+        },
+        {
+          "name": "NativeCollection#onClose()",
+          "description": "Called when the connection closes",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_collection_NativeCollection-onClose"
+        },
+        {
+          "name": "NativeCollection#onOpen()",
+          "description": "Called when the connection opens.",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_collection_NativeCollection-onOpen"
+        }
+      ]
+    },
+    {
+      "name": "drivers/node-mongodb-native/connection.js",
+      "methods": [
+        {
+          "name": "NativeConnection#doClose(fn)",
+          "description": "Closes the connection",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_connection_NativeConnection-doClose"
+        },
+        {
+          "name": "NativeConnection#doOpen(fn)",
+          "description": "Opens the connection to MongoDB.",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_connection_NativeConnection-doOpen"
+        },
+        {
+          "name": "NativeConnection#doOpenSet(fn)",
+          "description": "Opens a connection to a MongoDB ReplicaSet.",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_connection_NativeConnection-doOpenSet"
+        },
+        {
+          "name": "NativeConnection()",
+          "description": "A node-mongodb-native connection implementation.",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_connection_NativeConnection"
+        },
+        {
+          "name": "NativeConnection#parseOptions(passed, [connStrOptions])",
+          "description": "Prepares default connection options for the node-mongodb-native driver.",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_connection_NativeConnection-parseOptions"
+        },
+        {
+          "name": "NativeConnection#useDb(name)",
+          "description": "Switches to a different database using the same connection pool.",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_connection_NativeConnection-useDb"
+        },
+        {
+          "name": "NativeConnection.STATES",
+          "description": "Expose the possible connection states.",
+          "uri": "http://mongoosejs.com/docs/api.html#drivers_node-mongodb-native_connection_NativeConnection.STATES"
+        }
+      ]
+    },
+    {
+      "name": "error/version.js",
+      "methods": [
+        {
+          "name": "VersionError()",
+          "description": "Version Error constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#error_version_VersionError"
+        }
+      ]
+    },
+    {
+      "name": "error/messages.js",
+      "methods": [
+        {
+          "name": "MongooseError.messages()",
+          "description": "The default built-in validator error messages. These may be customized.",
+          "uri": "http://mongoosejs.com/docs/api.html#error_messages_MongooseError.messages"
+        }
+      ]
+    },
+    {
+      "name": "error/disconnected.js",
+      "methods": [
+        {
+          "name": "DisconnectedError(type, value)",
+          "description": "Casting Error constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#error_disconnected_DisconnectedError"
+        }
+      ]
+    },
+    {
+      "name": "error/strict.js",
+      "methods": [
+        {
+          "name": "StrictModeError(type, value)",
+          "description": "Strict mode error constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#error_strict_StrictModeError"
+        }
+      ]
+    },
+    {
+      "name": "error/validation.js",
+      "methods": [
+        {
+          "name": "ValidationError#toString()",
+          "description": "Console.log helper",
+          "uri": "http://mongoosejs.com/docs/api.html#error_validation_ValidationError-toString"
+        },
+        {
+          "name": "ValidationError(instance)",
+          "description": "Document Validation Error",
+          "uri": "http://mongoosejs.com/docs/api.html#error_validation_ValidationError"
+        }
+      ]
+    },
+    {
+      "name": "error/cast.js",
+      "methods": [
+        {
+          "name": "CastError(type, value)",
+          "description": "Casting Error constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#error_cast_CastError"
+        }
+      ]
+    },
+    {
+      "name": "error/validator.js",
+      "methods": [
+        {
+          "name": "ValidatorError(properties)",
+          "description": "Schema validator error",
+          "uri": "http://mongoosejs.com/docs/api.html#error_validator_ValidatorError"
+        }
+      ]
+    },
+    {
+      "name": "error/objectExpected.js",
+      "methods": [
+        {
+          "name": "ObjectExpectedError(type, value)",
+          "description": "Strict mode error constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#error_objectExpected_ObjectExpectedError"
+        }
+      ]
+    },
+    {
+      "name": "error.js",
+      "methods": [
+        {
+          "name": "MongooseError(msg)",
+          "description": "MongooseError constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#error_MongooseError"
+        },
+        {
+          "name": "MongooseError.messages",
+          "description": "The default built-in validator error messages.",
+          "uri": "http://mongoosejs.com/docs/api.html#error_MongooseError.messages"
+        }
+      ]
+    },
+    {
+      "name": "querycursor.js",
+      "methods": [
+        {
+          "name": "QueryCursor#close(callback)",
+          "description": "Marks this cursor as closed. Will stop streaming and subsequent calls tonext() will error.",
+          "uri": "http://mongoosejs.com/docs/api.html#querycursor_QueryCursor-close"
+        },
+        {
+          "name": "QueryCursor#eachAsync(fn, [callback])",
+          "description": "Execute fn for every document in the cursor. If fn returns a promise,will wait for the promise to resolve before iterating on to the next one.Returns a promise that resolves when done.",
+          "uri": "http://mongoosejs.com/docs/api.html#querycursor_QueryCursor-eachAsync"
+        },
+        {
+          "name": "QueryCursor#map(fn)",
+          "description": "Registers a transform function which subsequently maps documents retrievedvia the streams interface or .next()",
+          "uri": "http://mongoosejs.com/docs/api.html#querycursor_QueryCursor-map"
+        },
+        {
+          "name": "QueryCursor#next(callback)",
+          "description": "Get the next document from this cursor. Will return null when there areno documents left.",
+          "uri": "http://mongoosejs.com/docs/api.html#querycursor_QueryCursor-next"
+        },
+        {
+          "name": "QueryCursor(query, options)",
+          "description": "A QueryCursor is a concurrency primitive for processing query resultsone document at a time. A QueryCursor fulfills the Node.js streams3 API,in addition to several other mechanisms for loading documents from MongoDBone at a time.",
+          "uri": "http://mongoosejs.com/docs/api.html#querycursor_QueryCursor"
+        }
+      ]
+    },
+    {
+      "name": "virtualtype.js",
+      "methods": [
+        {
+          "name": "VirtualType#applyGetters(value, scope)",
+          "description": "Applies getters to value using optional scope.",
+          "uri": "http://mongoosejs.com/docs/api.html#virtualtype_VirtualType-applyGetters"
+        },
+        {
+          "name": "VirtualType#applySetters(value, scope)",
+          "description": "Applies setters to value using optional scope.",
+          "uri": "http://mongoosejs.com/docs/api.html#virtualtype_VirtualType-applySetters"
+        },
+        {
+          "name": "VirtualType#get(fn)",
+          "description": "Defines a getter.",
+          "uri": "http://mongoosejs.com/docs/api.html#virtualtype_VirtualType-get"
+        },
+        {
+          "name": "VirtualType#set(fn)",
+          "description": "Defines a setter.",
+          "uri": "http://mongoosejs.com/docs/api.html#virtualtype_VirtualType-set"
+        },
+        {
+          "name": "VirtualType()",
+          "description": "VirtualType constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#virtualtype_VirtualType"
+        }
+      ]
+    },
+    {
+      "name": "document_provider.js",
+      "methods": [
+        {
+          "name": "module.exports()",
+          "description": "Returns the Document constructor for the current context",
+          "uri": "http://mongoosejs.com/docs/api.html#document_provider_module.exports"
+        }
+      ]
+    },
+    {
+      "name": "schema.js",
+      "methods": [
+        {
+          "name": "Schema#add(obj, prefix)",
+          "description": "Adds key path / schema type pairs to this schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-add"
+        },
+        {
+          "name": "Schema#clone()",
+          "description": "Returns a deep copy of the schema",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-clone"
+        },
+        {
+          "name": "Schema#defaultOptions(options)",
+          "description": "Returns default options for this schema, merged with options.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-defaultOptions"
+        },
+        {
+          "name": "Schema#eachPath(fn)",
+          "description": "Iterates the schemas paths similar to Array#forEach.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-eachPath"
+        },
+        {
+          "name": "Schema#get(key)",
+          "description": "Gets a schema option.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-get"
+        },
+        {
+          "name": "Schema#hasMixedParent(path)",
+          "description": "Returns true iff this path is a child of a mixed schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-hasMixedParent"
+        },
+        {
+          "name": "Schema#index(fields, [options], [options.expires=null])",
+          "description": "Defines an index (most likely compound) for this schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-index"
+        },
+        {
+          "name": "Schema#indexedPaths()",
+          "description": "Returns indexes from fields and schema-level indexes (cached).",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-indexedPaths"
+        },
+        {
+          "name": "Schema#indexes()",
+          "description": "Compiles indexes from fields and schema-level indexes",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-indexes"
+        },
+        {
+          "name": "Schema#loadClass(model)",
+          "description": "Loads an ES6 class into a schema. Maps setters + getters, static methods, and instance methods to schema virtuals, statics, and methods.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-loadClass"
+        },
+        {
+          "name": "Schema#method(method, [fn])",
+          "description": "Adds an instance method to documents constructed from Models compiled from this schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-method"
+        },
+        {
+          "name": "Schema#path(path, constructor)",
+          "description": "Gets/sets schema paths.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-path"
+        },
+        {
+          "name": "Schema#pathType(path)",
+          "description": "Returns the pathType of path for this schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-pathType"
+        },
+        {
+          "name": "Schema#plugin(plugin, [opts])",
+          "description": "Registers a plugin for this schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-plugin"
+        },
+        {
+          "name": "Schema#post(method, fn)",
+          "description": "Defines a post hook for the document",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-post"
+        },
+        {
+          "name": "Schema#pre(method, callback)",
+          "description": "Defines a pre hook for the document.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-pre"
+        },
+        {
+          "name": "Schema#queue(name, args)",
+          "description": "Adds a method call to the queue.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-queue"
+        },
+        {
+          "name": "Schema#remove(path)",
+          "description": "Removes the given path (or [paths]).",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-remove"
+        },
+        {
+          "name": "Schema#requiredPaths(invalidate)",
+          "description": "Returns an Array of path strings that are required by this schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-requiredPaths"
+        },
+        {
+          "name": "Schema(definition, [options])",
+          "description": "Schema constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema"
+        },
+        {
+          "name": "Schema#set(key, [value])",
+          "description": "Sets/gets a schema option.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-set"
+        },
+        {
+          "name": "Schema#setupTimestamp(timestamps)",
+          "description": "Setup updatedAt and createdAt timestamps to documents if enabled",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-setupTimestamp"
+        },
+        {
+          "name": "Schema#static(name, [fn])",
+          "description": "Adds static \"class\" methods to Models compiled from this schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-static"
+        },
+        {
+          "name": "Schema#virtual(name, [options])",
+          "description": "Creates a virtual type with the given name.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-virtual"
+        },
+        {
+          "name": "Schema#virtualpath(name)",
+          "description": "Returns the virtual type with the given name.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-virtualpath"
+        },
+        {
+          "name": "Schema.indexTypes()",
+          "description": "The allowed index types",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema.indexTypes"
+        },
+        {
+          "name": "Schema.interpretAsType(path, obj)",
+          "description": "Converts type arguments into Mongoose Types.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema.interpretAsType"
+        },
+        {
+          "name": "Schema.reserved",
+          "description": "Reserved document keys.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema.reserved"
+        },
+        {
+          "name": "Schema.Types",
+          "description": "The various built-in Mongoose Schema Types.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema.Types"
+        },
+        {
+          "name": "Schema#_defaultMiddleware",
+          "description": "Default middleware attached to a schema. Cannot be changed.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-_defaultMiddleware"
+        },
+        {
+          "name": "Schema#obj",
+          "description": "The original object passed to the schema constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-obj"
+        },
+        {
+          "name": "Schema#paths",
+          "description": "Schema as flat paths",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-paths"
+        },
+        {
+          "name": "Schema#tree",
+          "description": "Schema as a tree",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_Schema-tree"
+        }
+      ]
+    },
+    {
+      "name": "document.js",
+      "methods": [
+        {
+          "name": "Document#$__buildDoc(obj, [fields], [skipId])",
+          "description": "Builds the default doc structure",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24__buildDoc"
+        },
+        {
+          "name": "Document#$__dirty()",
+          "description": "Returns this documents dirty paths / vals.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24__dirty"
+        },
+        {
+          "name": "Document#$__fullPath([path])",
+          "description": "Returns the full path to this document.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24__fullPath"
+        },
+        {
+          "name": "Document#$__getAllSubdocs()",
+          "description": "Get all subdocs (by bfs)",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24__getAllSubdocs"
+        },
+        {
+          "name": "Document#$__getArrayPathsToValidate()",
+          "description": "Get active path that were changed and are arrays",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24__getArrayPathsToValidate"
+        },
+        {
+          "name": "Document#$__path(path)",
+          "description": "Returns the schematype for the given path.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24__path"
+        },
+        {
+          "name": "Document#$__reset()",
+          "description": "Resets the internal modified state of this document.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24__reset"
+        },
+        {
+          "name": "Document#$__set()",
+          "description": "Handles the actual setting of the value and marking the path modified if appropriate.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24__set"
+        },
+        {
+          "name": "Document#$__setSchema(schema)",
+          "description": "Assigns/compiles schema into this documents prototype.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24__setSchema"
+        },
+        {
+          "name": "Document#$__shouldModify()",
+          "description": "Determine if we should mark this change as modified.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24__shouldModify"
+        },
+        {
+          "name": "Document#$__storeShard()",
+          "description": "Stores the current values of the shard keys.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24__storeShard"
+        },
+        {
+          "name": "Document#$ignore(path)",
+          "description": "Don't run validation on this path or persist changes to this path.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24ignore"
+        },
+        {
+          "name": "Document#$isDefault([path])",
+          "description": "Checks if a path is set to its default.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24isDefault"
+        },
+        {
+          "name": "Document#$toObject()",
+          "description": "Internal helper for toObject() and toJSON() that doesn't manipulate options",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-%24toObject"
+        },
+        {
+          "name": "Document#depopulate(path)",
+          "description": "Takes a populated field and returns it to its unpopulated state.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-depopulate"
+        },
+        {
+          "name": "Document(obj, [fields], [skipId])",
+          "description": "Document constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document"
+        },
+        {
+          "name": "Document#equals(doc)",
+          "description": "Returns true if the Document stores the same data as doc.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-equals"
+        },
+        {
+          "name": "Document#execPopulate()",
+          "description": "Explicitly executes population and returns a promise. Useful for ES2015integration.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-execPopulate"
+        },
+        {
+          "name": "Document#get(path, [type])",
+          "description": "Returns the value of a path.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-get"
+        },
+        {
+          "name": "Document#getValue(path)",
+          "description": "Gets a raw value from a path (no getters)",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-getValue"
+        },
+        {
+          "name": "Document#init(doc, fn)",
+          "description": "Initializes the document without setters or marking anything modified.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-init"
+        },
+        {
+          "name": "Document#inspect()",
+          "description": "Helper for console.log",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-inspect"
+        },
+        {
+          "name": "Document#invalidate(path, errorMsg, value, [kind])",
+          "description": "Marks a path as invalid, causing validation to fail.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-invalidate"
+        },
+        {
+          "name": "Document#isDirectModified(path)",
+          "description": "Returns true if path was directly set and modified, else false.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-isDirectModified"
+        },
+        {
+          "name": "Document#isDirectSelected(path)",
+          "description": "Checks if path was explicitly selected. If no projection, always returnstrue.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-isDirectSelected"
+        },
+        {
+          "name": "Document#isInit(path)",
+          "description": "Checks if path was initialized.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-isInit"
+        },
+        {
+          "name": "Document#isModified([path])",
+          "description": "Returns true if this document was modified, else false.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-isModified"
+        },
+        {
+          "name": "Document#isSelected(path)",
+          "description": "Checks if path was selected in the source query which initialized this document.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-isSelected"
+        },
+        {
+          "name": "Document#markModified(path)",
+          "description": "Marks the path as having pending changes to write to the db.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-markModified"
+        },
+        {
+          "name": "Document#modifiedPaths()",
+          "description": "Returns the list of paths that have been modified.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-modifiedPaths"
+        },
+        {
+          "name": "Document#populate([path], [callback])",
+          "description": "Populates document references, executing the callback when complete.If you want to use promises instead, use this function withexecPopulate()",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-populate"
+        },
+        {
+          "name": "Document#populated(path)",
+          "description": "Gets _id(s) used during population of the given path.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-populated"
+        },
+        {
+          "name": "Document#set(path, val, [type], [options])",
+          "description": "Sets the value of a path, or many paths.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-set"
+        },
+        {
+          "name": "Document#setValue(path, value)",
+          "description": "Sets a raw value for a path (no casting, setters, transformations)",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-setValue"
+        },
+        {
+          "name": "Document#toJSON(options)",
+          "description": "The return value of this method is used in calls to JSON.stringify(doc).",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-toJSON"
+        },
+        {
+          "name": "Document#toObject([options])",
+          "description": "Converts this document into a plain javascript object, ready for storage in MongoDB.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-toObject"
+        },
+        {
+          "name": "Document#toString()",
+          "description": "Helper for console.log",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-toString"
+        },
+        {
+          "name": "Document#unmarkModified(path)",
+          "description": "Clears the modified state on the specified path.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-unmarkModified"
+        },
+        {
+          "name": "Document#update(doc, options, callback)",
+          "description": "Sends an update command with this document _id as the query selector.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-update"
+        },
+        {
+          "name": "Document#validate(optional, callback)",
+          "description": "Executes registered validation rules for this document.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-validate"
+        },
+        {
+          "name": "Document#validateSync(pathsToValidate)",
+          "description": "Executes registered validation rules (skipping asynchronous validators) for this document.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-validateSync"
+        },
+        {
+          "name": "Document.$isValid(path)",
+          "description": "Checks if a path is invalid",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document.%24isValid"
+        },
+        {
+          "name": "Document.$markValid(path)",
+          "description": "Marks a path as valid, removing existing validation errors.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document.%24markValid"
+        },
+        {
+          "name": "Document#errors",
+          "description": "Hash containing current validation errors.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-errors"
+        },
+        {
+          "name": "Document#id",
+          "description": "The string version of this documents _id.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-id"
+        },
+        {
+          "name": "Document#isNew",
+          "description": "Boolean flag specifying if the document is new.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-isNew"
+        },
+        {
+          "name": "Document#schema",
+          "description": "The documents schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#document_Document-schema"
+        }
+      ]
+    },
+    {
+      "name": "types/decimal128.js",
+      "methods": [
+        {
+          "name": "exports()",
+          "description": "ObjectId type constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#types_decimal128_exports"
+        }
+      ]
+    },
+    {
+      "name": "types/subdocument.js",
+      "methods": [
+        {
+          "name": "Subdocument#ownerDocument()",
+          "description": "Returns the top level document of this sub-document.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_subdocument_Subdocument-ownerDocument"
+        },
+        {
+          "name": "Subdocument#remove([options], [callback])",
+          "description": "Null-out this subdoc",
+          "uri": "http://mongoosejs.com/docs/api.html#types_subdocument_Subdocument-remove"
+        },
+        {
+          "name": "Subdocument#save([fn])",
+          "description": "Used as a stub for hooks.js",
+          "uri": "http://mongoosejs.com/docs/api.html#types_subdocument_Subdocument-save"
+        },
+        {
+          "name": "Subdocument()",
+          "description": "Subdocument constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_subdocument_Subdocument"
+        }
+      ]
+    },
+    {
+      "name": "types/array.js",
+      "methods": [
+        {
+          "name": "MongooseArray#$__getAtomics()",
+          "description": "Depopulates stored atomic operation values as necessary for direct insertion to MongoDB.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray-%24__getAtomics"
+        },
+        {
+          "name": "MongooseArray#$shift()",
+          "description": "Atomically shifts the array at most one time per document save().",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray-%24shift"
+        },
+        {
+          "name": "MongooseArray(values, path, doc)",
+          "description": "Mongoose Array constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray"
+        },
+        {
+          "name": "MongooseArray#remove()",
+          "description": "Alias of pull",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray-remove"
+        },
+        {
+          "name": "MongooseArray._cast(value)",
+          "description": "Casts a member based on this arrays schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray._cast"
+        },
+        {
+          "name": "MongooseArray._mapCast()",
+          "description": "Internal helper for .map()",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray._mapCast"
+        },
+        {
+          "name": "MongooseArray._markModified(embeddedDoc, embeddedPath)",
+          "description": "Marks this array as modified.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray._markModified"
+        },
+        {
+          "name": "MongooseArray._registerAtomic(op, val)",
+          "description": "Register an atomic operation with the parent.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray._registerAtomic"
+        },
+        {
+          "name": "MongooseArray.$pop()",
+          "description": "Pops the array atomically at most one time per document save().",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.%24pop"
+        },
+        {
+          "name": "MongooseArray.addToSet([args...])",
+          "description": "Adds values to the array if not already present.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.addToSet"
+        },
+        {
+          "name": "MongooseArray.hasAtomics()",
+          "description": "Returns the number of pending atomic operations to send to the db for this array.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.hasAtomics"
+        },
+        {
+          "name": "MongooseArray.indexOf(obj)",
+          "description": "Return the index of obj or -1 if not found.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.indexOf"
+        },
+        {
+          "name": "MongooseArray.inspect()",
+          "description": "Helper for console.log",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.inspect"
+        },
+        {
+          "name": "MongooseArray.nonAtomicPush([args...])",
+          "description": "Pushes items to the array non-atomically.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.nonAtomicPush"
+        },
+        {
+          "name": "MongooseArray.pop()",
+          "description": "Wraps Array#pop with proper change tracking.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.pop"
+        },
+        {
+          "name": "MongooseArray.pull([args...])",
+          "description": "Pulls items from the array atomically. Equality is determined by castingthe provided value to an embedded document and comparing usingthe Document.equals() function.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.pull"
+        },
+        {
+          "name": "MongooseArray.push([args...])",
+          "description": "Wraps Array#push with proper change tracking.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.push"
+        },
+        {
+          "name": "MongooseArray.set()",
+          "description": "Sets the casted val at index i and marks the array modified.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.set"
+        },
+        {
+          "name": "MongooseArray.shift()",
+          "description": "Wraps Array#shift with proper change tracking.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.shift"
+        },
+        {
+          "name": "MongooseArray.sort()",
+          "description": "Wraps Array#sort with proper change tracking.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.sort"
+        },
+        {
+          "name": "MongooseArray.splice()",
+          "description": "Wraps Array#splice with proper change tracking and casting.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.splice"
+        },
+        {
+          "name": "MongooseArray.toObject(options)",
+          "description": "Returns a native js Array.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.toObject"
+        },
+        {
+          "name": "MongooseArray.unshift()",
+          "description": "Wraps Array#unshift with proper change tracking.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray.unshift"
+        },
+        {
+          "name": "MongooseArray#_atomics",
+          "description": "Stores a queue of atomic operations to perform",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray-_atomics"
+        },
+        {
+          "name": "MongooseArray#_parent",
+          "description": "Parent owner document",
+          "uri": "http://mongoosejs.com/docs/api.html#types_array_MongooseArray-_parent"
+        }
+      ]
+    },
+    {
+      "name": "types/documentarray.js",
+      "methods": [
+        {
+          "name": "MongooseDocumentArray(values, path, doc)",
+          "description": "DocumentArray constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#types_documentarray_MongooseDocumentArray"
+        },
+        {
+          "name": "MongooseDocumentArray._cast()",
+          "description": "Overrides MongooseArray#cast",
+          "uri": "http://mongoosejs.com/docs/api.html#types_documentarray_MongooseDocumentArray._cast"
+        },
+        {
+          "name": "MongooseDocumentArray.create(obj)",
+          "description": "Creates a subdocument casted to this schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_documentarray_MongooseDocumentArray.create"
+        },
+        {
+          "name": "MongooseDocumentArray.id(id)",
+          "description": "Searches array items for the first document with a matching _id.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_documentarray_MongooseDocumentArray.id"
+        },
+        {
+          "name": "MongooseDocumentArray.inspect()",
+          "description": "Helper for console.log",
+          "uri": "http://mongoosejs.com/docs/api.html#types_documentarray_MongooseDocumentArray.inspect"
+        },
+        {
+          "name": "MongooseDocumentArray.notify(event)",
+          "description": "Creates a fn that notifies all child docs of event.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_documentarray_MongooseDocumentArray.notify"
+        },
+        {
+          "name": "MongooseDocumentArray.toObject([options])",
+          "description": "Returns a native js Array of plain js objects",
+          "uri": "http://mongoosejs.com/docs/api.html#types_documentarray_MongooseDocumentArray.toObject"
+        }
+      ]
+    },
+    {
+      "name": "types/buffer.js",
+      "methods": [
+        {
+          "name": "MongooseBuffer(value, encode, offset)",
+          "description": "Mongoose Buffer constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_buffer_MongooseBuffer"
+        },
+        {
+          "name": "MongooseBuffer._markModified()",
+          "description": "Marks this buffer as modified.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_buffer_MongooseBuffer._markModified"
+        },
+        {
+          "name": "MongooseBuffer.copy(target)",
+          "description": "Copies the buffer.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_buffer_MongooseBuffer.copy"
+        },
+        {
+          "name": "MongooseBuffer.equals(other)",
+          "description": "Determines if this buffer is equals to other buffer",
+          "uri": "http://mongoosejs.com/docs/api.html#types_buffer_MongooseBuffer.equals"
+        },
+        {
+          "name": "MongooseBuffer.subtype(subtype)",
+          "description": "Sets the subtype option and marks the buffer modified.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_buffer_MongooseBuffer.subtype"
+        },
+        {
+          "name": "MongooseBuffer.toObject([subtype])",
+          "description": "Converts this buffer to its Binary type representation.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_buffer_MongooseBuffer.toObject"
+        },
+        {
+          "name": "MongooseBuffer.write()",
+          "description": "Writes the buffer.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_buffer_MongooseBuffer.write"
+        },
+        {
+          "name": "MongooseBuffer#_parent",
+          "description": "Parent owner document",
+          "uri": "http://mongoosejs.com/docs/api.html#types_buffer_MongooseBuffer-_parent"
+        },
+        {
+          "name": "MongooseBuffer#_subtype",
+          "description": "Default subtype for the Binary representing this Buffer",
+          "uri": "http://mongoosejs.com/docs/api.html#types_buffer_MongooseBuffer-_subtype"
+        }
+      ]
+    },
+    {
+      "name": "types/objectid.js",
+      "methods": [
+        {
+          "name": "ObjectId()",
+          "description": "ObjectId type constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#types_objectid_ObjectId"
+        }
+      ]
+    },
+    {
+      "name": "types/embedded.js",
+      "methods": [
+        {
+          "name": "EmbeddedDocument#$__fullPath([path])",
+          "description": "Returns the full path to this document. If optional path is passed, it is appended to the full path.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument-%24__fullPath"
+        },
+        {
+          "name": "EmbeddedDocument(obj, parentArr, skipId)",
+          "description": "EmbeddedDocument constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument"
+        },
+        {
+          "name": "EmbeddedDocument#inspect()",
+          "description": "Helper for console.log",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument-inspect"
+        },
+        {
+          "name": "EmbeddedDocument#invalidate(path, err)",
+          "description": "Marks a path as invalid, causing validation to fail.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument-invalidate"
+        },
+        {
+          "name": "EmbeddedDocument#ownerDocument()",
+          "description": "Returns the top level document of this sub-document.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument-ownerDocument"
+        },
+        {
+          "name": "EmbeddedDocument#parent()",
+          "description": "Returns this sub-documents parent document.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument-parent"
+        },
+        {
+          "name": "EmbeddedDocument#parentArray()",
+          "description": "Returns this sub-documents parent array.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument-parentArray"
+        },
+        {
+          "name": "EmbeddedDocument#remove([options], [fn])",
+          "description": "Removes the subdocument from its parent array.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument-remove"
+        },
+        {
+          "name": "EmbeddedDocument#save([fn])",
+          "description": "Used as a stub for hooks.js",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument-save"
+        },
+        {
+          "name": "EmbeddedDocument#update()",
+          "description": "Override #update method of parent documents.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument-update"
+        },
+        {
+          "name": "EmbeddedDocument.$isValid(path)",
+          "description": "Checks if a path is invalid",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument.%24isValid"
+        },
+        {
+          "name": "EmbeddedDocument.$markValid(path)",
+          "description": "Marks a path as valid, removing existing validation errors.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument.%24markValid"
+        },
+        {
+          "name": "EmbeddedDocument.markModified(path)",
+          "description": "Marks the embedded doc modified.",
+          "uri": "http://mongoosejs.com/docs/api.html#types_embedded_EmbeddedDocument.markModified"
+        }
+      ]
+    },
+    {
+      "name": "cast.js",
+      "methods": [
+        {
+          "name": "module.exports(schema, obj, options)",
+          "description": "Handles internal casting for queries",
+          "uri": "http://mongoosejs.com/docs/api.html#cast_module.exports"
+        }
+      ]
+    },
+    {
+      "name": "query.js",
+      "methods": [
+        {
+          "name": "Query#_applyPaths()",
+          "description": "Applies schematype selected options to this query.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-_applyPaths"
+        },
+        {
+          "name": "Query#_castFields(fields)",
+          "description": "Casts selected field arguments for field selection with mongo 2.2",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-_castFields"
+        },
+        {
+          "name": "Query#_count([callback])",
+          "description": "Thunk around count()",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-_count"
+        },
+        {
+          "name": "Query#_find([callback])",
+          "description": "Thunk around find()",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-_find"
+        },
+        {
+          "name": "Query#_findOne([callback])",
+          "description": "Thunk around findOne()",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-_findOne"
+        },
+        {
+          "name": "Query#_optionsForExec(model)",
+          "description": "Returns default options for this query.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-_optionsForExec"
+        },
+        {
+          "name": "Query#$where(js)",
+          "description": "Specifies a javascript function or expression to pass to MongoDBs query system.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-%24where"
+        },
+        {
+          "name": "Query#all([path], val)",
+          "description": "Specifies an $all query condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-all"
+        },
+        {
+          "name": "Query#and(array)",
+          "description": "Specifies arguments for a $and condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-and"
+        },
+        {
+          "name": "Query#batchSize(val)",
+          "description": "Specifies the batchSize option.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-batchSize"
+        },
+        {
+          "name": "Query#box(val, Upper)",
+          "description": "Specifies a $box condition",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-box"
+        },
+        {
+          "name": "Query#canMerge(conds)",
+          "description": "Determines if conds can be merged using mquery().merge()",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-canMerge"
+        },
+        {
+          "name": "Query#cast(model, [obj])",
+          "description": "Casts this query to the schema of model",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-cast"
+        },
+        {
+          "name": "Query#catch([reject])",
+          "description": "Executes the query returning a Promise which will beresolved with either the doc(s) or rejected with the error.Like .then(), but only takes a rejection handler.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-catch"
+        },
+        {
+          "name": "Query#center()",
+          "description": "DEPRECATED Alias for circle",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-center"
+        },
+        {
+          "name": "Query#centerSphere([path], val)",
+          "description": "DEPRECATED Specifies a $centerSphere condition",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-centerSphere"
+        },
+        {
+          "name": "Query#circle([path], area)",
+          "description": "Specifies a $center or $centerSphere condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-circle"
+        },
+        {
+          "name": "Query#collation(value)",
+          "description": "Adds a collation to this op (MongoDB 3.4 and up)",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-collation"
+        },
+        {
+          "name": "Query#comment(val)",
+          "description": "Specifies the comment option.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-comment"
+        },
+        {
+          "name": "Query#count([criteria], [callback])",
+          "description": "Specifying this query as a count query.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-count"
+        },
+        {
+          "name": "Query#cursor([options])",
+          "description": "Returns a wrapper around a mongodb driver cursor.A QueryCursor exposes a Streams3-compatibleinterface, as well as a .next() function.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-cursor"
+        },
+        {
+          "name": "Query#deleteMany([criteria], [callback])",
+          "description": "Declare and/or execute this query as a deleteMany() operation. Works likeremove, except it deletes every document that matches criteria in thecollection, regardless of the value of justOne.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-deleteMany"
+        },
+        {
+          "name": "Query#deleteOne([criteria], [callback])",
+          "description": "Declare and/or execute this query as a deleteOne() operation. Works likeremove, except it deletes at most one document regardless of the justOneoption.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-deleteOne"
+        },
+        {
+          "name": "Query#distinct([field], [criteria], [callback])",
+          "description": "Declares or executes a distict() operation.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-distinct"
+        },
+        {
+          "name": "Query#elemMatch(path, criteria)",
+          "description": "Specifies an $elemMatch condition",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-elemMatch"
+        },
+        {
+          "name": "Query#equals(val)",
+          "description": "Specifies the complementary comparison value for paths specified with where()",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-equals"
+        },
+        {
+          "name": "Query#exec([operation], [callback])",
+          "description": "Executes the query",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-exec"
+        },
+        {
+          "name": "Query#exists([path], val)",
+          "description": "Specifies an $exists condition",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-exists"
+        },
+        {
+          "name": "Query#find([criteria], [callback])",
+          "description": "Finds documents.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-find"
+        },
+        {
+          "name": "Query#findOne([criteria], [projection], [callback])",
+          "description": "Declares the query a findOne operation. When executed, the first found document is passed to the callback.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-findOne"
+        },
+        {
+          "name": "Query#findOneAndRemove([conditions], [options], [options.passRawResult], [options.strict], [callback])",
+          "description": "Issues a mongodb findAndModify remove command.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-findOneAndRemove"
+        },
+        {
+          "name": "Query#findOneAndUpdate([query], [doc], [options], [options.passRawResult], [options.strict], [callback])",
+          "description": "Issues a mongodb findAndModify update command.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-findOneAndUpdate"
+        },
+        {
+          "name": "Query#geometry(object)",
+          "description": "Specifies a $geometry condition",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-geometry"
+        },
+        {
+          "name": "Query#getQuery()",
+          "description": "Returns the current query conditions as a JSON object.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-getQuery"
+        },
+        {
+          "name": "Query#getUpdate()",
+          "description": "Returns the current update operations as a JSON object.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-getUpdate"
+        },
+        {
+          "name": "Query#gt([path], val)",
+          "description": "Specifies a $gt query condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-gt"
+        },
+        {
+          "name": "Query#gte([path], val)",
+          "description": "Specifies a $gte query condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-gte"
+        },
+        {
+          "name": "Query#hint(val)",
+          "description": "Sets query hints.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-hint"
+        },
+        {
+          "name": "Query#in([path], val)",
+          "description": "Specifies an $in query condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-in"
+        },
+        {
+          "name": "Query#intersects([arg])",
+          "description": "Declares an intersects query for geometry().",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-intersects"
+        },
+        {
+          "name": "Query#lean(bool)",
+          "description": "Sets the lean option.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-lean"
+        },
+        {
+          "name": "Query#limit(val)",
+          "description": "Specifies the maximum number of documents the query will return.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-limit"
+        },
+        {
+          "name": "Query#lt([path], val)",
+          "description": "Specifies a $lt query condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-lt"
+        },
+        {
+          "name": "Query#lte([path], val)",
+          "description": "Specifies a $lte query condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-lte"
+        },
+        {
+          "name": "Query#maxDistance([path], val)",
+          "description": "Specifies a $maxDistance query condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-maxDistance"
+        },
+        {
+          "name": "Query#maxscan()",
+          "description": "DEPRECATED Alias of maxScan",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-maxscan"
+        },
+        {
+          "name": "Query#maxScan(val)",
+          "description": "Specifies the maxScan option.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-maxScan"
+        },
+        {
+          "name": "Query#merge(source)",
+          "description": "Merges another Query or conditions object into this one.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-merge"
+        },
+        {
+          "name": "Query#merge(source)",
+          "description": "Merges another Query or conditions object into this one.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-merge"
+        },
+        {
+          "name": "Query#mod([path], val)",
+          "description": "Specifies a $mod condition",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-mod"
+        },
+        {
+          "name": "Query#mongooseOptions(options)",
+          "description": "Getter/setter around the current mongoose-specific options for this query(populate, lean, etc.)",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-mongooseOptions"
+        },
+        {
+          "name": "Query#ne([path], val)",
+          "description": "Specifies a $ne query condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-ne"
+        },
+        {
+          "name": "Query#near([path], val)",
+          "description": "Specifies a $near or $nearSphere condition",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-near"
+        },
+        {
+          "name": "Query#nearSphere()",
+          "description": "DEPRECATED Specifies a $nearSphere condition",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-nearSphere"
+        },
+        {
+          "name": "Query#nin([path], val)",
+          "description": "Specifies an $nin query condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-nin"
+        },
+        {
+          "name": "Query#nor(array)",
+          "description": "Specifies arguments for a $nor condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-nor"
+        },
+        {
+          "name": "Query#or(array)",
+          "description": "Specifies arguments for an $or condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-or"
+        },
+        {
+          "name": "Query#polygon([path], [coordinatePairs...])",
+          "description": "Specifies a $polygon condition",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-polygon"
+        },
+        {
+          "name": "Query#populate(path, [select], [model], [match], [options])",
+          "description": "Specifies paths which should be populated with other documents.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-populate"
+        },
+        {
+          "name": "Query([options], [model], [conditions], [collection])",
+          "description": "Query constructor used for building queries.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query"
+        },
+        {
+          "name": "Query#read(pref, [tags])",
+          "description": "Determines the MongoDB nodes from which to read.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-read"
+        },
+        {
+          "name": "Query#regex([path], val)",
+          "description": "Specifies a $regex query condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-regex"
+        },
+        {
+          "name": "Query#remove([criteria], [callback])",
+          "description": "Declare and/or execute this query as a remove() operation.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-remove"
+        },
+        {
+          "name": "Query#replaceOne([criteria], [doc], [options], [callback])",
+          "description": "Declare and/or execute this query as a replaceOne() operation. Same asupdate(), except MongoDB will replace the existing document and willnot accept any atomic operators ($set, etc.)",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-replaceOne"
+        },
+        {
+          "name": "Query#select(arg)",
+          "description": "Specifies which document fields to include or exclude (also known as the query \"projection\")",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-select"
+        },
+        {
+          "name": "Query#selected()",
+          "description": "Determines if field selection has been made.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-selected"
+        },
+        {
+          "name": "Query#selectedExclusively()",
+          "description": "Determines if exclusive field selection has been made.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-selectedExclusively"
+        },
+        {
+          "name": "Query#selectedInclusively()",
+          "description": "Determines if inclusive field selection has been made.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-selectedInclusively"
+        },
+        {
+          "name": "Query#setOptions(options)",
+          "description": "Sets query options.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-setOptions"
+        },
+        {
+          "name": "Query#size([path], val)",
+          "description": "Specifies a $size query condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-size"
+        },
+        {
+          "name": "Query#skip(val)",
+          "description": "Specifies the number of documents to skip.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-skip"
+        },
+        {
+          "name": "Query#slaveOk(v)",
+          "description": "DEPRECATED Sets the slaveOk option.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-slaveOk"
+        },
+        {
+          "name": "Query#slice([path], val)",
+          "description": "Specifies a $slice projection for an array.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-slice"
+        },
+        {
+          "name": "Query#snapshot()",
+          "description": "Specifies this query as a snapshot query.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-snapshot"
+        },
+        {
+          "name": "Query#sort(arg)",
+          "description": "Sets the sort order",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-sort"
+        },
+        {
+          "name": "Query#stream([options])",
+          "description": "Returns a Node.js 0.8 style read stream interface.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-stream"
+        },
+        {
+          "name": "Query#tailable(bool, [opts], [opts.numberOfRetries], [opts.tailableRetryInterval])",
+          "description": "Sets the tailable option (for use with capped collections).",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-tailable"
+        },
+        {
+          "name": "Query#then([resolve], [reject])",
+          "description": "Executes the query returning a Promise which will beresolved with either the doc(s) or rejected with the error.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-then"
+        },
+        {
+          "name": "Query#toConstructor()",
+          "description": "Converts this query to a customized, reusable query constructor with all arguments and options retained.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-toConstructor"
+        },
+        {
+          "name": "Query#update([criteria], [doc], [options], [callback])",
+          "description": "Declare and/or execute this query as an update() operation.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-update"
+        },
+        {
+          "name": "Query#updateMany([criteria], [doc], [options], [callback])",
+          "description": "Declare and/or execute this query as an updateMany() operation. Same asupdate(), except MongoDB will update all documents that matchcriteria (as opposed to just the first one) regardless of the value ofthe multi option.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-updateMany"
+        },
+        {
+          "name": "Query#updateOne([criteria], [doc], [options], [callback])",
+          "description": "Declare and/or execute this query as an updateOne() operation. Same asupdate(), except MongoDB will update only the first document thatmatches criteria regardless of the value of the multi option.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-updateOne"
+        },
+        {
+          "name": "Query#where([path], [val])",
+          "description": "Specifies a path for use with chaining.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-where"
+        },
+        {
+          "name": "Query#within()",
+          "description": "Defines a $within or $geoWithin argument for geo-spatial queries.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-within"
+        },
+        {
+          "name": "Query._ensurePath(method)",
+          "description": "Makes sure _path is set.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query._ensurePath"
+        },
+        {
+          "name": "Query._fieldsForExec()",
+          "description": "Returns fields selection for this query.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query._fieldsForExec"
+        },
+        {
+          "name": "Query._updateForExec()",
+          "description": "Return an update document with corrected $set operations.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query._updateForExec"
+        },
+        {
+          "name": "Query#use$geoWithin",
+          "description": "Flag to opt out of using $geoWithin.",
+          "uri": "http://mongoosejs.com/docs/api.html#query_Query-use%2524geoWithin"
+        }
+      ]
+    },
+    {
+      "name": "schema/decimal128.js",
+      "methods": [
+        {
+          "name": "Decimal128#cast(value, doc, init)",
+          "description": "Casts to Decimal128",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_decimal128_Decimal128-cast"
+        },
+        {
+          "name": "Decimal128#castForQuery($conditional, [val])",
+          "description": "Casts contents for queries.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_decimal128_Decimal128-castForQuery"
+        },
+        {
+          "name": "Decimal128#checkRequired(value, doc)",
+          "description": "Check if the given value satisfies a required validator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_decimal128_Decimal128-checkRequired"
+        },
+        {
+          "name": "Decimal128(key, options)",
+          "description": "Decimal128 SchemaType constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_decimal128_Decimal128"
+        },
+        {
+          "name": "Decimal128.schemaName",
+          "description": "This schema type's name, to defend against minifiers that manglefunction names.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_decimal128_Decimal128.schemaName"
+        }
+      ]
+    },
+    {
+      "name": "schema/array.js",
+      "methods": [
+        {
+          "name": "SchemaArray#applyGetters(value, scope)",
+          "description": "Overrides the getters application for the population special-case",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_array_SchemaArray-applyGetters"
+        },
+        {
+          "name": "SchemaArray#cast(value, doc, init)",
+          "description": "Casts values for set().",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_array_SchemaArray-cast"
+        },
+        {
+          "name": "SchemaArray#castForQuery($conditional, [value])",
+          "description": "Casts values for queries.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_array_SchemaArray-castForQuery"
+        },
+        {
+          "name": "SchemaArray#checkRequired(value)",
+          "description": "Check if the given value satisfies a required validator. The given valuemust be not null nor undefined, and have a positive length.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_array_SchemaArray-checkRequired"
+        },
+        {
+          "name": "SchemaArray(key, cast, options)",
+          "description": "Array SchemaType constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_array_SchemaArray"
+        },
+        {
+          "name": "SchemaArray.schemaName",
+          "description": "This schema type's name, to defend against minifiers that manglefunction names.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_array_SchemaArray.schemaName"
+        }
+      ]
+    },
+    {
+      "name": "schema/string.js",
+      "methods": [
+        {
+          "name": "SchemaString#cast()",
+          "description": "Casts to String",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_string_SchemaString-cast"
+        },
+        {
+          "name": "SchemaString#castForQuery($conditional, [val])",
+          "description": "Casts contents for queries.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_string_SchemaString-castForQuery"
+        },
+        {
+          "name": "SchemaString#checkRequired(value, doc)",
+          "description": "Check if the given value satisfies a required validator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_string_SchemaString-checkRequired"
+        },
+        {
+          "name": "SchemaString#enum([args...])",
+          "description": "Adds an enum validator",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_string_SchemaString-enum"
+        },
+        {
+          "name": "SchemaString#lowercase()",
+          "description": "Adds a lowercase setter.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_string_SchemaString-lowercase"
+        },
+        {
+          "name": "SchemaString#match(regExp, [message])",
+          "description": "Sets a regexp validator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_string_SchemaString-match"
+        },
+        {
+          "name": "SchemaString#maxlength(value, [message])",
+          "description": "Sets a maximum length validator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_string_SchemaString-maxlength"
+        },
+        {
+          "name": "SchemaString#minlength(value, [message])",
+          "description": "Sets a minimum length validator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_string_SchemaString-minlength"
+        },
+        {
+          "name": "SchemaString(key, options)",
+          "description": "String SchemaType constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_string_SchemaString"
+        },
+        {
+          "name": "SchemaString#trim()",
+          "description": "Adds a trim setter.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_string_SchemaString-trim"
+        },
+        {
+          "name": "SchemaString#uppercase()",
+          "description": "Adds an uppercase setter.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_string_SchemaString-uppercase"
+        },
+        {
+          "name": "SchemaString.schemaName",
+          "description": "This schema type's name, to defend against minifiers that manglefunction names.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_string_SchemaString.schemaName"
+        }
+      ]
+    },
+    {
+      "name": "schema/documentarray.js",
+      "methods": [
+        {
+          "name": "DocumentArray#cast(value, document)",
+          "description": "Casts contents",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_documentarray_DocumentArray-cast"
+        },
+        {
+          "name": "DocumentArray(key, schema, options)",
+          "description": "SubdocsArray SchemaType constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_documentarray_DocumentArray"
+        },
+        {
+          "name": "DocumentArray#doValidate()",
+          "description": "Performs local validations first, then validations on each embedded doc",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_documentarray_DocumentArray-doValidate"
+        },
+        {
+          "name": "DocumentArray#doValidateSync()",
+          "description": "Performs local validations first, then validations on each embedded doc.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_documentarray_DocumentArray-doValidateSync"
+        },
+        {
+          "name": "DocumentArray.schemaName",
+          "description": "This schema type's name, to defend against minifiers that manglefunction names.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_documentarray_DocumentArray.schemaName"
+        }
+      ]
+    },
+    {
+      "name": "schema/number.js",
+      "methods": [
+        {
+          "name": "SchemaNumber#cast(value, doc, init)",
+          "description": "Casts to number",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_number_SchemaNumber-cast"
+        },
+        {
+          "name": "SchemaNumber#castForQuery($conditional, [value])",
+          "description": "Casts contents for queries.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_number_SchemaNumber-castForQuery"
+        },
+        {
+          "name": "SchemaNumber#checkRequired(value, doc)",
+          "description": "Check if the given value satisfies a required validator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_number_SchemaNumber-checkRequired"
+        },
+        {
+          "name": "SchemaNumber#max(maximum, [message])",
+          "description": "Sets a maximum number validator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_number_SchemaNumber-max"
+        },
+        {
+          "name": "SchemaNumber#min(value, [message])",
+          "description": "Sets a minimum number validator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_number_SchemaNumber-min"
+        },
+        {
+          "name": "SchemaNumber(key, options)",
+          "description": "Number SchemaType constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_number_SchemaNumber"
+        },
+        {
+          "name": "SchemaNumber.schemaName",
+          "description": "This schema type's name, to defend against minifiers that manglefunction names.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_number_SchemaNumber.schemaName"
+        }
+      ]
+    },
+    {
+      "name": "schema/date.js",
+      "methods": [
+        {
+          "name": "SchemaDate#cast(value)",
+          "description": "Casts to date",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_date_SchemaDate-cast"
+        },
+        {
+          "name": "SchemaDate#castForQuery($conditional, [value])",
+          "description": "Casts contents for queries.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_date_SchemaDate-castForQuery"
+        },
+        {
+          "name": "SchemaDate#checkRequired(value, doc)",
+          "description": "Check if the given value satisfies a required validator. To satisfya required validator, the given value must be an instance of Date.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_date_SchemaDate-checkRequired"
+        },
+        {
+          "name": "SchemaDate#expires(when)",
+          "description": "Declares a TTL index (rounded to the nearest second) for Date types only.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_date_SchemaDate-expires"
+        },
+        {
+          "name": "SchemaDate#max(maximum, [message])",
+          "description": "Sets a maximum date validator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_date_SchemaDate-max"
+        },
+        {
+          "name": "SchemaDate#min(value, [message])",
+          "description": "Sets a minimum date validator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_date_SchemaDate-min"
+        },
+        {
+          "name": "SchemaDate(key, options)",
+          "description": "Date SchemaType constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_date_SchemaDate"
+        },
+        {
+          "name": "SchemaDate.schemaName",
+          "description": "This schema type's name, to defend against minifiers that manglefunction names.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_date_SchemaDate.schemaName"
+        }
+      ]
+    },
+    {
+      "name": "schema/buffer.js",
+      "methods": [
+        {
+          "name": "SchemaBuffer#cast(value, doc, init)",
+          "description": "Casts contents",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_buffer_SchemaBuffer-cast"
+        },
+        {
+          "name": "SchemaBuffer#castForQuery($conditional, [value])",
+          "description": "Casts contents for queries.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_buffer_SchemaBuffer-castForQuery"
+        },
+        {
+          "name": "SchemaBuffer#checkRequired(value, doc)",
+          "description": "Check if the given value satisfies a required validator. To satisfy arequired validator, a buffer must not be null or undefined and havenon-zero length.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_buffer_SchemaBuffer-checkRequired"
+        },
+        {
+          "name": "SchemaBuffer(key, options)",
+          "description": "Buffer SchemaType constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_buffer_SchemaBuffer"
+        },
+        {
+          "name": "SchemaBuffer.schemaName",
+          "description": "This schema type's name, to defend against minifiers that manglefunction names.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_buffer_SchemaBuffer.schemaName"
+        }
+      ]
+    },
+    {
+      "name": "schema/boolean.js",
+      "methods": [
+        {
+          "name": "SchemaBoolean#cast(value)",
+          "description": "Casts to boolean",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_boolean_SchemaBoolean-cast"
+        },
+        {
+          "name": "SchemaBoolean#castForQuery($conditional, val)",
+          "description": "Casts contents for queries.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_boolean_SchemaBoolean-castForQuery"
+        },
+        {
+          "name": "SchemaBoolean#checkRequired(value)",
+          "description": "Check if the given value satisfies a required validator. For a booleanto satisfy a required validator, it must be strictly equal to true or tofalse.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_boolean_SchemaBoolean-checkRequired"
+        },
+        {
+          "name": "SchemaBoolean(path, options)",
+          "description": "Boolean SchemaType constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_boolean_SchemaBoolean"
+        },
+        {
+          "name": "SchemaBoolean.schemaName",
+          "description": "This schema type's name, to defend against minifiers that manglefunction names.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_boolean_SchemaBoolean.schemaName"
+        }
+      ]
+    },
+    {
+      "name": "schema/objectid.js",
+      "methods": [
+        {
+          "name": "ObjectId#auto(turnOn)",
+          "description": "Adds an auto-generated ObjectId default if turnOn is true.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_objectid_ObjectId-auto"
+        },
+        {
+          "name": "ObjectId#cast(value, doc, init)",
+          "description": "Casts to ObjectId",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_objectid_ObjectId-cast"
+        },
+        {
+          "name": "ObjectId#castForQuery($conditional, [val])",
+          "description": "Casts contents for queries.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_objectid_ObjectId-castForQuery"
+        },
+        {
+          "name": "ObjectId#checkRequired(value, doc)",
+          "description": "Check if the given value satisfies a required validator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_objectid_ObjectId-checkRequired"
+        },
+        {
+          "name": "ObjectId(key, options)",
+          "description": "ObjectId SchemaType constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_objectid_ObjectId"
+        },
+        {
+          "name": "ObjectId.schemaName",
+          "description": "This schema type's name, to defend against minifiers that manglefunction names.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_objectid_ObjectId.schemaName"
+        }
+      ]
+    },
+    {
+      "name": "schema/mixed.js",
+      "methods": [
+        {
+          "name": "Mixed#cast(value)",
+          "description": "Casts val for Mixed.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_mixed_Mixed-cast"
+        },
+        {
+          "name": "Mixed#castForQuery($cond, [val])",
+          "description": "Casts contents for queries.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_mixed_Mixed-castForQuery"
+        },
+        {
+          "name": "Mixed(path, options)",
+          "description": "Mixed SchemaType constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_mixed_Mixed"
+        },
+        {
+          "name": "Mixed.schemaName",
+          "description": "This schema type's name, to defend against minifiers that manglefunction names.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_mixed_Mixed.schemaName"
+        }
+      ]
+    },
+    {
+      "name": "schema/embedded.js",
+      "methods": [
+        {
+          "name": "https://docs.mongodb.org/manual/reference/operator/query/geoWithin/",
+          "description": "Special case for when users use a common location schema to representlocations for use with $geoWithin.https://docs.mongodb.org/manual/reference/operator/query/geoWithin/",
+          "uri": "http://mongoosejs.com/docs/api.htmlhttps://docs.mongodb.org/manual/reference/operator/query/geoWithin/"
+        },
+        {
+          "name": "Embedded#cast(value)",
+          "description": "Casts contents",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_embedded_Embedded-cast"
+        },
+        {
+          "name": "Embedded#castForQuery([$conditional], value)",
+          "description": "Casts contents for query",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_embedded_Embedded-castForQuery"
+        },
+        {
+          "name": "Embedded#doValidate()",
+          "description": "Async validation on this single nested doc.",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_embedded_Embedded-doValidate"
+        },
+        {
+          "name": "Embedded#doValidateSync()",
+          "description": "Synchronously validate this single nested doc",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_embedded_Embedded-doValidateSync"
+        },
+        {
+          "name": "Embedded(schema, key, options)",
+          "description": "Sub-schema schematype constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#schema_embedded_Embedded"
+        }
+      ]
+    },
+    {
+      "name": "aggregate.js",
+      "methods": [
+        {
+          "name": "Aggregate#addCursorFlag(flag, value)",
+          "description": "Adds a cursor flag",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-addCursorFlag"
+        },
+        {
+          "name": "Aggregate([ops])",
+          "description": "Aggregate constructor used for building aggregation pipelines.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate"
+        },
+        {
+          "name": "Aggregate#allowDiskUse(value, [tags])",
+          "description": "Sets the allowDiskUse option for the aggregation query (ignored for < 2.6.0)",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-allowDiskUse"
+        },
+        {
+          "name": "Aggregate#append(ops)",
+          "description": "Appends new operators to this aggregate pipeline",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-append"
+        },
+        {
+          "name": "Aggregate#collation(collation, value)",
+          "description": "Adds a collation",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-collation"
+        },
+        {
+          "name": "Aggregate#cursor(options)",
+          "description": "Sets the cursor option option for the aggregation query (ignored for < 2.6.0).Note the different syntax below: .exec() returns a cursor object, and no callbackis necessary.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-cursor"
+        },
+        {
+          "name": "Aggregate#exec([callback])",
+          "description": "Executes the aggregate pipeline on the currently bound Model.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-exec"
+        },
+        {
+          "name": "Aggregate#explain(callback)",
+          "description": "Execute the aggregation with explain",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-explain"
+        },
+        {
+          "name": "Aggregate#facet(facet)",
+          "description": "Combines multiple aggregation pipelines.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-facet"
+        },
+        {
+          "name": "Aggregate#graphLookup(options)",
+          "description": "Appends new custom $graphLookup operator(s) to this aggregate pipeline, performing a recursive search on a collection.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-graphLookup"
+        },
+        {
+          "name": "Aggregate#group(arg)",
+          "description": "Appends a new custom $group operator to this aggregate pipeline.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-group"
+        },
+        {
+          "name": "isOperator(obj)",
+          "description": "Checks whether an object is likely a pipeline operator",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_isOperator"
+        },
+        {
+          "name": "Aggregate#limit(num)",
+          "description": "Appends a new $limit operator to this aggregate pipeline.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-limit"
+        },
+        {
+          "name": "Aggregate#lookup(options)",
+          "description": "Appends new custom $lookup operator(s) to this aggregate pipeline.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-lookup"
+        },
+        {
+          "name": "Aggregate#match(arg)",
+          "description": "Appends a new custom $match operator to this aggregate pipeline.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-match"
+        },
+        {
+          "name": "Aggregate#model(model)",
+          "description": "Binds this aggregate to a model.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-model"
+        },
+        {
+          "name": "Aggregate#near(parameters)",
+          "description": "Appends a new $geoNear operator to this aggregate pipeline.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-near"
+        },
+        {
+          "name": "Aggregate#project(arg)",
+          "description": "Appends a new $project operator to this aggregate pipeline.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-project"
+        },
+        {
+          "name": "Aggregate#read(pref, [tags])",
+          "description": "Sets the readPreference option for the aggregation query.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-read"
+        },
+        {
+          "name": "Aggregate#sample(size)",
+          "description": "Appepnds new custom $sample operator(s) to this aggregate pipeline.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-sample"
+        },
+        {
+          "name": "Aggregate#skip(num)",
+          "description": "Appends a new $skip operator to this aggregate pipeline.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-skip"
+        },
+        {
+          "name": "Aggregate#sort(arg)",
+          "description": "Appends a new $sort operator to this aggregate pipeline.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-sort"
+        },
+        {
+          "name": "Aggregate#then([resolve], [reject])",
+          "description": "Provides promise for aggregate.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-then"
+        },
+        {
+          "name": "Aggregate#unwind(fields)",
+          "description": "Appends new custom $unwind operator(s) to this aggregate pipeline.",
+          "uri": "http://mongoosejs.com/docs/api.html#aggregate_Aggregate-unwind"
+        }
+      ]
+    },
+    {
+      "name": "document_provider.web.js",
+      "methods": [
+        {
+          "name": "module.exports()",
+          "description": "Returns the Document constructor for the current context",
+          "uri": "http://mongoosejs.com/docs/api.html#document_provider.web_module.exports"
+        }
+      ]
+    },
+    {
+      "name": "schematype.js",
+      "methods": [
+        {
+          "name": "SchemaType#applyGetters(value, scope)",
+          "description": "Applies getters to a value",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-applyGetters"
+        },
+        {
+          "name": "SchemaType#applySetters(value, scope, init)",
+          "description": "Applies setters",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-applySetters"
+        },
+        {
+          "name": "SchemaType#castForQuery([$conditional], val)",
+          "description": "Cast the given value with the given optional query operator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-castForQuery"
+        },
+        {
+          "name": "SchemaType#checkRequired(val)",
+          "description": "Default check for if this path satisfies the required validator.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-checkRequired"
+        },
+        {
+          "name": "SchemaType#default(val)",
+          "description": "Sets a default value for this SchemaType.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-default"
+        },
+        {
+          "name": "SchemaType#doValidate(value, callback, scope)",
+          "description": "Performs a validation of value using the validators declared for this SchemaType.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-doValidate"
+        },
+        {
+          "name": "SchemaType#doValidateSync(value, scope)",
+          "description": "Performs a validation of value using the validators declared for this SchemaType.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-doValidateSync"
+        },
+        {
+          "name": "SchemaType#get(fn)",
+          "description": "Adds a getter to this schematype.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-get"
+        },
+        {
+          "name": "SchemaType#getDefault(scope, init)",
+          "description": "Gets the default value",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-getDefault"
+        },
+        {
+          "name": "SchemaType#index(options)",
+          "description": "Declares the index options for this schematype.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-index"
+        },
+        {
+          "name": "SchemaType#required(required, [message])",
+          "description": "Adds a required validator to this SchemaType. The validator gets addedto the front of this SchemaType's validators array using unshift().",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-required"
+        },
+        {
+          "name": "SchemaType(path, [options], [instance])",
+          "description": "SchemaType constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType"
+        },
+        {
+          "name": "SchemaType#select(val)",
+          "description": "Sets default select() behavior for this path.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-select"
+        },
+        {
+          "name": "SchemaType#set(fn)",
+          "description": "Adds a setter to this schematype.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-set"
+        },
+        {
+          "name": "SchemaType#sparse(bool)",
+          "description": "Declares a sparse index.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-sparse"
+        },
+        {
+          "name": "SchemaType#text(bool)",
+          "description": "Declares a full text index.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-text"
+        },
+        {
+          "name": "SchemaType#unique(bool)",
+          "description": "Declares an unique index.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-unique"
+        },
+        {
+          "name": "SchemaType#validate(obj, [errorMsg], [type])",
+          "description": "Adds validator(s) for this document path.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType-validate"
+        },
+        {
+          "name": "SchemaType._isRef(self, value, doc, init)",
+          "description": "Determines if value is a valid Reference.",
+          "uri": "http://mongoosejs.com/docs/api.html#schematype_SchemaType._isRef"
+        }
+      ]
+    },
+    {
+      "name": "promise.js",
+      "methods": [
+        {
+          "name": "Promise#addBack(listener)",
+          "description": "Adds a single function as a listener to both err and complete.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise-addBack"
+        },
+        {
+          "name": "Promise#addCallback(listener)",
+          "description": "Adds a listener to the complete (success) event.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise-addCallback"
+        },
+        {
+          "name": "Promise#addErrback(listener)",
+          "description": "Adds a listener to the err (rejected) event.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise-addErrback"
+        },
+        {
+          "name": "Promise#catch(onReject)",
+          "description": "ES6-style .catch() shorthand",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise-catch"
+        },
+        {
+          "name": "Promise#end()",
+          "description": "Signifies that this promise was the last in a chain of then()s: if a handler passed to the call to then which produced this promise throws, the exception will go uncaught.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise-end"
+        },
+        {
+          "name": "Promise#error(err)",
+          "description": "Rejects this promise with err.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise-error"
+        },
+        {
+          "name": "Promise#on(event, listener)",
+          "description": "Adds listener to the event.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise-on"
+        },
+        {
+          "name": "Promise(fn)",
+          "description": "Promise constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise"
+        },
+        {
+          "name": "Promise#reject(reason)",
+          "description": "Rejects this promise with reason.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise-reject"
+        },
+        {
+          "name": "Promise#resolve([err], [val])",
+          "description": "Resolves this promise to a rejected state if err is passed or a fulfilled state if no err is passed.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise-resolve"
+        },
+        {
+          "name": "Promise#then(onFulFill, onReject)",
+          "description": "Creates a new promise and returns it. If onFulfill or onReject are passed, they are added as SUCCESS/ERROR callbacks to this promise after the nextTick.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise-then"
+        },
+        {
+          "name": "Promise.complete(args)",
+          "description": "Fulfills this promise with passed arguments.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise.complete"
+        },
+        {
+          "name": "Promise.ES6(resolver)",
+          "description": "ES6-style promise constructor wrapper around mpromise.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise.ES6"
+        },
+        {
+          "name": "Promise.fulfill(args)",
+          "description": "Fulfills this promise with passed arguments.",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_Promise.fulfill"
+        }
+      ]
+    },
+    {
+      "name": "ES6Promise.js",
+      "methods": [
+        {
+          "name": "ES6Promise(fn)",
+          "description": "ES6 Promise wrapper constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#ES6Promise_ES6Promise"
+        }
+      ]
+    },
+    {
+      "name": "browserDocument.js",
+      "methods": [
+        {
+          "name": "Document(obj, [fields], [skipId])",
+          "description": "Document constructor.",
+          "uri": "http://mongoosejs.com/docs/api.html#browserDocument_Document"
+        }
+      ]
+    },
+    {
+      "name": "services/setDefaultsOnInsert.js",
+      "methods": [
+        {
+          "name": "module.exports(query, schema, castedDoc, options)",
+          "description": "Applies defaults to update and findOneAndUpdate operations.",
+          "uri": "http://mongoosejs.com/docs/api.html#services_setDefaultsOnInsert_module.exports"
+        }
+      ]
+    },
+    {
+      "name": "services/updateValidators.js",
+      "methods": [
+        {
+          "name": "module.exports(query, schema, castedDoc, options)",
+          "description": "Applies validators and defaults to update and findOneAndUpdate operations,specifically passing a null doc as this to validators and defaults",
+          "uri": "http://mongoosejs.com/docs/api.html#services_updateValidators_module.exports"
+        }
+      ]
+    },
+    {
+      "name": "model.js",
+      "methods": [
+        {
+          "name": "",
+          "description": "If we're doing virtual populate and projection is inclusive and foreignfield is not selected, automatically select it because mongoose needs it.If projection is exclusive and client explicitly unselected the foreignfield, that's the client's fault.",
+          "uri": ""
+        },
+        {
+          "name": "Model#$__delta()",
+          "description": "Produces a special query document of the modified properties used in updates.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-%24__delta"
+        },
+        {
+          "name": "Model#$__version()",
+          "description": "Appends versioning to the where and update clauses.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-%24__version"
+        },
+        {
+          "name": "Model#$__where()",
+          "description": "Returns a query object which applies shardkeys if they exist.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-%24__where"
+        },
+        {
+          "name": "Model#$where(argument)",
+          "description": "Creates a Query and specifies a $where condition.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-%24where"
+        },
+        {
+          "name": "Model#increment()",
+          "description": "Signal that we desire an increment of this documents version.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-increment"
+        },
+        {
+          "name": "Model#model(name)",
+          "description": "Returns another Model instance.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-model"
+        },
+        {
+          "name": "Model(doc)",
+          "description": "Model constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model"
+        },
+        {
+          "name": "Model#remove([fn])",
+          "description": "Removes this document from the db.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-remove"
+        },
+        {
+          "name": "Model#save([options], [options.safe], [options.validateBeforeSave], [fn])",
+          "description": "Saves this document.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-save"
+        },
+        {
+          "name": "Model._getSchema(path)",
+          "description": "Finds the schema for path. This is different thancalling schema.path as it also resolves paths withpositional selectors (something.$.another.$.path).",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model._getSchema"
+        },
+        {
+          "name": "Model.aggregate([...], [callback])",
+          "description": "Performs aggregations on the models collection.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.aggregate"
+        },
+        {
+          "name": "Model.bulkWrite(ops, [options], [callback])",
+          "description": "Sends multiple insertOne, updateOne, updateMany, replaceOne,deleteOne, and/or deleteMany operations to the MongoDB server in onecommand. This is faster than sending multiple independent operations becausewith bulkWrite() there is only one round trip to the server.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.bulkWrite"
+        },
+        {
+          "name": "Model.count(conditions, [callback])",
+          "description": "Counts number of matching documents in a database collection.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.count"
+        },
+        {
+          "name": "Model.create(doc(s), [callback])",
+          "description": "Shortcut for saving one or more documents to the database.MyModel.create(docs) does new MyModel(doc).save() for every doc indocs.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.create"
+        },
+        {
+          "name": "Model.deleteMany(conditions, [callback])",
+          "description": "Deletes the first document that matches conditions from the collection.Behaves like remove(), but deletes all documents that match conditionsregardless of the justOne option.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.deleteMany"
+        },
+        {
+          "name": "Model.deleteOne(conditions, [callback])",
+          "description": "Deletes the first document that matches conditions from the collection.Behaves like remove(), but deletes at most one document regardless of thejustOne option.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.deleteOne"
+        },
+        {
+          "name": "Model.discriminator(name, schema)",
+          "description": "Adds a discriminator type.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.discriminator"
+        },
+        {
+          "name": "Model.distinct(field, [conditions], [callback])",
+          "description": "Creates a Query for a distinct operation.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.distinct"
+        },
+        {
+          "name": "Model.ensureIndexes([options], [cb])",
+          "description": "Sends ensureIndex commands to mongo for each index declared in the schema.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.ensureIndexes"
+        },
+        {
+          "name": "Model.find(conditions, [projection], [options], [callback])",
+          "description": "Finds documents",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.find"
+        },
+        {
+          "name": "Model.findById(id, [projection], [options], [callback])",
+          "description": "Finds a single document by its _id field. findById(id) is almost*equivalent to findOne({ _id: id }). If you want to query by a document's_id, use findById() instead of findOne().",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.findById"
+        },
+        {
+          "name": "Model.findByIdAndRemove(id, [options], [callback])",
+          "description": "Issue a mongodb findAndModify remove command by a document's _id field. findByIdAndRemove(id, ...) is equivalent to findOneAndRemove({ _id: id }, ...).",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.findByIdAndRemove"
+        },
+        {
+          "name": "Model.findByIdAndUpdate(id, [update], [options], [callback])",
+          "description": "Issues a mongodb findAndModify update command by a document's _id field.findByIdAndUpdate(id, ...) is equivalent to findOneAndUpdate({ _id: id }, ...).",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate"
+        },
+        {
+          "name": "Model.findOne([conditions], [projection], [options], [callback])",
+          "description": "Finds one document.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.findOne"
+        },
+        {
+          "name": "Model.findOneAndRemove(conditions, [options], [callback])",
+          "description": "Issue a mongodb findAndModify remove command.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.findOneAndRemove"
+        },
+        {
+          "name": "Model.findOneAndUpdate([conditions], [update], [options], [callback])",
+          "description": "Issues a mongodb findAndModify update command.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.findOneAndUpdate"
+        },
+        {
+          "name": "Model.geoNear(GeoJSON, options, [callback])",
+          "description": "geoNear support for Mongoose",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.geoNear"
+        },
+        {
+          "name": "Model.geoSearch(conditions, options, [callback])",
+          "description": "Implements $geoSearch functionality for Mongoose",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.geoSearch"
+        },
+        {
+          "name": "Model.hydrate(obj)",
+          "description": "Shortcut for creating a new Document from existing raw data, pre-saved in the DB.The document returned has no paths marked as modified initially.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.hydrate"
+        },
+        {
+          "name": "Model.init()",
+          "description": "Called when the model compiles.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.init"
+        },
+        {
+          "name": "Model.insertMany(doc(s), [options], [callback])",
+          "description": "Shortcut for validating an array of documents and inserting them intoMongoDB if they're all valid. This function is faster than .create()because it only sends one operation to the server, rather than one for eachdocument.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.insertMany"
+        },
+        {
+          "name": "Model.mapReduce(o, [callback])",
+          "description": "Executes a mapReduce command.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.mapReduce"
+        },
+        {
+          "name": "Model.populate(docs, options, [callback(err,doc)])",
+          "description": "Populates document references.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.populate"
+        },
+        {
+          "name": "Model.remove(conditions, [callback])",
+          "description": "Removes the first document that matches conditions from the collection.To remove all documents that match conditions, set the justOne optionto false.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.remove"
+        },
+        {
+          "name": "Model.replaceOne(conditions, doc, [options], [callback])",
+          "description": "Same as update(), except MongoDB replace the existing document with thegiven document (no atomic operators like $set).",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.replaceOne"
+        },
+        {
+          "name": "Model.update(conditions, doc, [options], [callback])",
+          "description": "Updates one document in the database without returning it.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.update"
+        },
+        {
+          "name": "Model.updateMany(conditions, doc, [options], [callback])",
+          "description": "Same as update(), except MongoDB will update all documents that matchcriteria (as opposed to just the first one) regardless of the value ofthe multi option.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.updateMany"
+        },
+        {
+          "name": "Model.updateOne(conditions, doc, [options], [callback])",
+          "description": "Same as update(), except MongoDB will update only the first document thatmatches criteria regardless of the value of the multi option.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.updateOne"
+        },
+        {
+          "name": "Model.where(path, [val])",
+          "description": "Creates a Query, applies the passed conditions, and returns the Query.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model.where"
+        },
+        {
+          "name": "Model#$where",
+          "description": "Additional properties to attach to the query when calling save() andisNew is false.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-%2524where"
+        },
+        {
+          "name": "Model#base",
+          "description": "Base Mongoose instance the model uses.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-base"
+        },
+        {
+          "name": "Model#baseModelName",
+          "description": "If this is a discriminator model, baseModelName is the name ofthe base model.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-baseModelName"
+        },
+        {
+          "name": "Model#collection",
+          "description": "Collection the model uses.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-collection"
+        },
+        {
+          "name": "Model#db",
+          "description": "Connection the model uses.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-db"
+        },
+        {
+          "name": "Model#discriminators",
+          "description": "Registered discriminators for this model.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-discriminators"
+        },
+        {
+          "name": "Model#modelName",
+          "description": "The name of the model",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-modelName"
+        },
+        {
+          "name": "Model#schema",
+          "description": "Schema the model uses.",
+          "uri": "http://mongoosejs.com/docs/api.html#model_Model-schema"
+        }
+      ]
+    },
+    {
+      "name": "promise_provider.js",
+      "methods": [
+        {
+          "name": "()",
+          "description": "Helper for multiplexing promise implementations",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_provider_"
+        },
+        {
+          "name": "Promise.get()",
+          "description": "Get the current promise constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_provider_Promise.get"
+        },
+        {
+          "name": "Promise.reset()",
+          "description": "Resets to using mpromise",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_provider_Promise.reset"
+        },
+        {
+          "name": "Promise.set()",
+          "description": "Set the current promise constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#promise_provider_Promise.set"
+        }
+      ]
+    },
+    {
+      "name": "collection.js",
+      "methods": [
+        {
+          "name": "Collection#addQueue(name, args)",
+          "description": "Queues a method for later execution when itsdatabase connection opens.",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-addQueue"
+        },
+        {
+          "name": "Collection(name, conn, opts)",
+          "description": "Abstract Collection constructor",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection"
+        },
+        {
+          "name": "Collection#doQueue()",
+          "description": "Executes all queued methods and clears the queue.",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-doQueue"
+        },
+        {
+          "name": "Collection#ensureIndex()",
+          "description": "Abstract method that drivers must implement.",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-ensureIndex"
+        },
+        {
+          "name": "Collection#find()",
+          "description": "Abstract method that drivers must implement.",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-find"
+        },
+        {
+          "name": "Collection#findAndModify()",
+          "description": "Abstract method that drivers must implement.",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-findAndModify"
+        },
+        {
+          "name": "Collection#findOne()",
+          "description": "Abstract method that drivers must implement.",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-findOne"
+        },
+        {
+          "name": "Collection#getIndexes()",
+          "description": "Abstract method that drivers must implement.",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-getIndexes"
+        },
+        {
+          "name": "Collection#insert()",
+          "description": "Abstract method that drivers must implement.",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-insert"
+        },
+        {
+          "name": "Collection#mapReduce()",
+          "description": "Abstract method that drivers must implement.",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-mapReduce"
+        },
+        {
+          "name": "Collection#onClose()",
+          "description": "Called when the database disconnects",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-onClose"
+        },
+        {
+          "name": "Collection#onOpen()",
+          "description": "Called when the database connects",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-onOpen"
+        },
+        {
+          "name": "Collection#save()",
+          "description": "Abstract method that drivers must implement.",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-save"
+        },
+        {
+          "name": "Collection#update()",
+          "description": "Abstract method that drivers must implement.",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-update"
+        },
+        {
+          "name": "Collection#collectionName",
+          "description": "The collection name",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-collectionName"
+        },
+        {
+          "name": "Collection#conn",
+          "description": "The Connection instance",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-conn"
+        },
+        {
+          "name": "Collection#name",
+          "description": "The collection name",
+          "uri": "http://mongoosejs.com/docs/api.html#collection_Collection-name"
+        }
+      ]
+    }
+  ]
+}

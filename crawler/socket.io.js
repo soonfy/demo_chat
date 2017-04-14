@@ -5,7 +5,7 @@ const cheerio = require('cheerio');
 const start = (urls = [`https://socket.io/docs/server-api/`, `https://socket.io/docs/client-api/`]) => {
   console.log(`start crawl socket.io`);
   console.log(`socket.io url ${urls.join(' ')}`);
-  let htmlpath = `./util/socket.io.html`,
+  let reg = /https\:\/\/socket\.io\/docs\/([\w-]+)\/.*/,
     filepath = `./util/socket.io.apis.json`,
     options = {
       url: `https://socket.io/`,
@@ -31,14 +31,21 @@ const start = (urls = [`https://socket.io/docs/server-api/`, `https://socket.io/
         }
       })
       let socketio = {
-        title: 'socket.io API Cheat Sheet',
-        author: 'soonfy <soonfy@163.com>',
-        description: 'Socket.IO enables real-time bidirectional event-based communication. It works on every platform, browser or device, focusing equally on reliability and speed.',
-        apis: []
-      }
+          title: 'socket.io API Cheat Sheet',
+          author: 'soonfy <soonfy@163.com>',
+          description: 'Socket.IO enables real-time bidirectional event-based communication. It works on every platform, browser or device, focusing equally on reliability and speed.',
+          apis: []
+        },
+        len = urls.length,
+        count = 0;
 
       urls.map(url => {
-        let name = 
+        let match = url.match(reg);
+        if (!match) {
+          count++;
+          return console.error(`${url} url error.`);
+        }
+        let htmlpath = `./util/socket.io.${match[1]}.html`;
         options.url = url;
         console.log(options);
         request(options, (error, resp, body) => {
@@ -57,36 +64,35 @@ const start = (urls = [`https://socket.io/docs/server-api/`, `https://socket.io/
             })
             let $ = cheerio.load(body);
             let eles = $('a.navigation-class');
-            console.log(eles.length);
             eles.map((i, e) => {
               let name = $(e).text().trim(),
                 apis = $(e).next().find('a');
-              console.log(apis.length);
               apis = apis.map((ii, ee) => {
-                console.log($(ee).text().trim());
                 return {
                   api: $(ee).text().trim(),
-                  uri: url + $(ee).attr('href').trim()
+                  uri: $(ee).attr('href') ? url + $(ee).attr('href').trim() : ''
                 }
               });
               apis = Array.prototype.slice.call(apis);
               let api = {
-                name: name,
+                name: '[' + match[1] + '] ' + name,
                 methods: apis
               }
               socketio.apis.push(api);
             })
-            fs.writeFile(filepath, JSON.stringify(socketio, null, 2), (error) => {
-              if (error) {
-                console.error(error);
-              } else {
-                console.log(`socket.io update apis success.`);
-              }
-            })
+            count++;
+            if (count === len) {
+              fs.writeFile(filepath, JSON.stringify(socketio, null, 2), (error) => {
+                if (error) {
+                  console.error(error);
+                } else {
+                  console.log(`socket.io update apis success.`);
+                }
+              })
+            }
           }
         })
       })
-
     })
 }
 

@@ -23,8 +23,8 @@ const start = (url = `http://expressjs.com/en/4x/api.html`) => {
     .on('response', (resp) => {
       console.log(resp.statusCode);
       console.log(resp.headers);
-      options.headers.Cookie = resp.headers['set-cookie'];
-      
+      resp.headers['set-cookie'] ? options.headers.Cookie = resp.headers['set-cookie'] : '';
+
       options.url = url;
       console.log(options);
       request(options, (error, resp, body) => {
@@ -70,7 +70,7 @@ const start = (url = `http://expressjs.com/en/4x/api.html`) => {
                 return {
                   api: $(eee).children().first().text().trim(),
                   description: $(eee).find('p').first().text().trim(),
-                  uri: url + '#' + $(eee).children().first().attr('id').trim()
+                  uri: $(eee).children().first().attr('id') ? url + '#' + $(eee).children().first().attr('id').trim() : ''
                 }
               });
               api[attr] = Array.prototype.slice.call(children);

@@ -23,7 +23,7 @@ const start = (url = `https://nodejs.org/dist/latest-v7.x/docs/api/all.html`) =>
     .on('response', (resp) => {
       console.log(resp.statusCode);
       console.log(resp.headers);
-      options.headers.Cookie = resp.headers['set-cookie'];
+      resp.headers['set-cookie'] ? options.headers.Cookie = resp.headers['set-cookie'] : '';
 
       options.url = `https://nodejs.org/dist/latest-v7.x/docs/api/all.json`;
       console.log(options);
@@ -68,7 +68,7 @@ const start = (url = `https://nodejs.org/dist/latest-v7.x/docs/api/all.html`) =>
             apis = apis.map((ii, ee) => {
               return {
                 api: $(ee).text().trim(),
-                uri: url + $(ee).attr('href').trim()
+                uri: $(ee).attr('href') ? url + $(ee).attr('href').trim() : ''
               }
             });
             apis = Array.prototype.slice.call(apis);
