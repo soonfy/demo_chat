@@ -5,6 +5,7 @@ const Index = require('../app/controllers/index');
 const Blog = require('../app/controllers/blog');
 const middle = require('./middle');
 
+router.get('/', Index.getIndex);
 router.get('/index.html', Index.getIndex);
 
 router.get('/home.html', Index.getHome);
